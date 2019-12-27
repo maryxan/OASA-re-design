@@ -4,8 +4,6 @@ $ git config --global user\.name github-username
 
 $ git config --global user\.email github-email
 
-$ git config --global user\.name github-username
-
 $ cd /c/xampp/htdocs
 
 $ git clone https://github.com/GeorgeMitrakis/eam-oasa.git

@@ -15,7 +15,7 @@
  --><nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="in.html">OASA logo</a>
+      <a class="navbar-brand" href="index.php">OASA logo</a>
     </div>
     <ul class="nav navbar-nav">
 
@@ -38,7 +38,7 @@
  <!-- breadcrumbs -->
  <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="in.html">Αρχική</a></li>
+    <li class="breadcrumb-item"><a href="index.php">Αρχική</a></li>
     <li class="breadcrumb-item active" aria-current="page">AMEA</li>
   </ol>
 </nav>   
