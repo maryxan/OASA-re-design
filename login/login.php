@@ -144,7 +144,7 @@ span.psw {
         <li><a href="#">Διαδρομή</a></li>
         <li><a href="#">Δρομολόγια</a></li>
         <li><a href="tickets.html">Εισητήρια-κάρτες</a></li>
-        <li><a href="amea.php">ΑΜΕΑ</a></li>
+        <li><a href="../amea/amea.php">ΑΜΕΑ</a></li>
         <li><a href="#">Ανακοινώσεις</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="#">Για τον OASA</a></li>
@@ -184,7 +184,7 @@ span.psw {
     
   </div>
   <div class="containerr">
-    <p>Δεν έχεις λογαριασμό? <a href="signup.php">Εγγραφή 
+    <p>Δεν έχεις λογαριασμό? <a href="../signup/signup.php">Εγγραφή 
   </div>
 </form>
 

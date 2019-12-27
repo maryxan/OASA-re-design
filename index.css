@@ -9,7 +9,7 @@ body, html {
   
   .bg-img {
     /* The image used */
-    background-image: url("oasa2.jpg");
+    background-image: url("images/oasa2.jpg");
   
     min-height: 500px;
     /* Center and scale the image nicely */
