@@ -1,0 +1,12 @@
+.ticket {
+	
+	display: flex;
+	justify-content: end;
+
+}
+
+.buttons {
+
+	display: flex;
+	justify-content: space-between;
+}
