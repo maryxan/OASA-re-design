@@ -22,7 +22,7 @@
 
         <li><a href="#">Διαδρομή</a></li>
         <li><a href="#">Δρομολόγια</a></li>
-        <li><a href="tickets/tickets.html">Εισητήρια-κάρτες</a></li>
+        <li><a href="tickets">Εισητήρια-κάρτες</a></li>
         <li><a href="amea/amea.php">ΑΜΕΑ</a></li>
         <li><a href="#">Ανακοινώσεις</a></li>
         <li><a href="faq/faq.html">FAQ</a></li>

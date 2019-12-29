@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once "db_connection.php";
+require_once "../db_connection/db_connection.php";
 
 // initializing variables
 $name = "";
