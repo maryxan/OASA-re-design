@@ -16,7 +16,7 @@
  --><nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="index.php">OASA.gr</a>
+      <a class="navbar-brand" href="index.php">OASA logo</a>
     </div>
     <ul class="nav navbar-nav">
 
@@ -26,7 +26,7 @@
         <li><a href="amea/amea.php">ΑΜΕΑ</a></li>
         <li><a href="#">Ανακοινώσεις</a></li>
         <li><a href="faq/faq.html">FAQ</a></li>
-        <li><a href="#">Για τον OASA</a></li>
+        <li><a href="#">για τον ΟΑΣΑ</a></li>
 
    </ul>
     <ul class="nav navbar-nav navbar-right">
