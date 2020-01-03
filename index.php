@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
@@ -50,74 +50,52 @@
     </form>
   </div>
 
-
-<!--  <div class="container">
-<br>
-    <div class="input-group">
-      <div class="form-group  has-feedback">
-            <input type="text" class="form-control" id="inputSuccess5">
-            <span class="glyphicon glyphicon-search form-control-feedback" aria-hidden="true"></span>
-        </div>
-        <span class="input-group-btn">
-            <button class="btn btn-default" type="button">Consultar!</button>
-        </span>
-    </div>
-</div> -->
-
-<!-- <div class="container">
-  <div class="row">
-<br /><br />
-<form id="togglingForm" method="post" class="form-horizontal">
-    <div class="form-group">
-        <div class="col-xs-9">
-            <input type="text" class="form-control" name="company"
-                   required data-fv-notempty-message="The company name is required" /> <br />
-                   
-            <label class="radio-inline">Search User by </label>  
-            <label class="radio-inline">
-                <input type="radio" name="rating" value="terrible" checked='checked' /> Name
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="rating" value="terrible" /> NIC
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="rating" value="terrible" /> Licence
-            </label>
-            
-    
-                  
-        </div>
-     
-        <div class="col-xs-2">
-            <button type="button" class="btn btn-success" data-toggle="#jobInfo">Search</button>
-        </div>
-    </div>
-</form> -->
-
-
-
-
   </div>
 </div>
   
 
 
-
-
-
 <!-- FOOTER -->
-        <!-- <footer class="footer" style="background-color: #ffffff;padding-top: 50px;">
-            <div class="footer-bottom">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-12"> -->
-                    <!--Footer Bottom-->
-         <!--            <p class="text-center">&copy; Copyright 2019 - University of Athens Di.  All rights reserved.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </footer> -->
+      <br>
+<br>
+<br>
+ 
+ <footer class="site-footer">
+        <div class="containerr">
+        <div class="row" style="margin-left:20px;">
+          <div class="col-sm-12 col-md-6">
+            <h6>Επικοινωνία</h6>
+            <ul class="footer-links">
+              <li>Διευθυνση:Μετσόβου 15,Αθήνα 106 82</li>
+              <li>Τηλέφωνο:210-82.00.999</li>
+              <li>Φαξ:210-82.12.219</li>
+              <li>e-mail:oasa@oasa.gr</li>
+              <li>Τηλεφωνική Πληροφόρηση:11 185</li>
+            </ul>
+          </div>     
+
+          
+
+        </div>
+        <hr>
+      <div class="containerr">
+        <div class="row" style="margin-left:20px;">
+          <div class="col-md-8 col-sm-6 col-xs-12" >
+            <p class="copyright-text">Copyright &copy;2020 - University of Athens. All rights reserved.
+            </p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="https://www.facebook.com/OASA.GR"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="instagram" href="https://www.instagram.com/OASA.GR/"><i class="fa fa-instagram"></i></a></li>
+              <li><a class="youtube" href="https://www.youtube.com/channel/UC0XdkZnOHhRLc3NE9tm4NUQ"><i class="fa fa-youtube"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+</footer>
        
 </body>
 </html>

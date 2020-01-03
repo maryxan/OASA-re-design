@@ -1,39 +1,14 @@
 <?php
 
+  include 'db_connection.php';
   session_start();
+?>
 
-  require_once "db_connection.php";
-
- // if($_SERVER["REQUEST_METHOD"] == "POST") {
- //      // username and password sent from form 
-      
- //      $myusername = mysqli_real_escape_string($link,$_POST['username']);
- //      $mypassword = mysqli_real_escape_string($link,$_POST['password']); 
-      
- //      $sql = "SELECT * FROM user WHERE username = '$myusername' and password = '$mypassword'";
- //      $result = mysqli_query($link,$sql);
- //      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
- //      $active = $row['active'];
-      
- //      $count = mysqli_num_rows($result);
-      
- //      // If result matched $myusername and $mypassword, table row must be 1 row
-    
- //      if($count == 1) {
- //         session_register("myusername");
- //         $_SESSION['login_user'] = $myusername;
-         
- //         header("location: profile.html");
- //      }else {
- //         $error = "Your Login Name or Password is invalid";
- //      }
- //   }
-
-
-// LOGIN USER
-$username = "";
-$password = "";
+<?php
 $errors = array(); 
+
+
+$link = mysqli_connect('localhost', 'root', '', 'sdi1400300');
 
 if (isset($_POST['login_user'])) {
   $username = mysqli_real_escape_string($link, $_POST['username']);
@@ -48,12 +23,13 @@ if (isset($_POST['login_user'])) {
 
   if (count($errors) == 0) {
     //$password = md5($password);
-    $query = "SELECT * FROM user WHERE username='$username' AND password='$password'";
+    $query = "SELECT * FROM simpleuser WHERE username='$username' AND password='$password'";
     $results = mysqli_query($link, $query);
+    $row = mysqli_fetch_array($results);
+    $active = $row['active'];  
+
     if (mysqli_num_rows($results) == 1) {
-      // $_SESSION['username'] = $username;
-      // $_SESSION['success'] = "You are now logged in";
-      header('location: signup.php');
+      header('location:profile.html');
     }else {
       array_push($errors, "Wrong username/password combination");
     }
@@ -63,6 +39,7 @@ if (isset($_POST['login_user'])) {
 
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -82,17 +59,17 @@ if (isset($_POST['login_user'])) {
  --><nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="index.php">OASA logo</a>
+      <a class="navbar-brand" href="in.html">OASA logo</a>
     </div>
     <ul class="nav navbar-nav">
 
         <li><a href="#">Διαδρομή</a></li>
         <li><a href="#">Δρομολόγια</a></li>
         <li><a href="tickets.html">Εισητήρια-κάρτες</a></li>
-        <li><a href="../amea/amea.php">ΑΜΕΑ</a></li>
+        <li><a href="amea.php">ΑΜΕΑ</a></li>
         <li><a href="#">Ανακοινώσεις</a></li>
         <li><a href="faq.html">FAQ</a></li>
-        <li><a href="#">για τον ΟΑΣΑ</a></li>
+        <li><a href="#">Για τον OASA</a></li>
 
    </ul>
     <ul class="nav navbar-nav navbar-right">
@@ -105,7 +82,7 @@ if (isset($_POST['login_user'])) {
    <!-- breadcrumbs -->
    <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="index.php">Αρχική</a></li>
+      <li class="breadcrumb-item"><a href="in.html">Αρχική</a></li>
       <li class="breadcrumb-item active" aria-current="page">Είσοδος</li>
     </ol>
   </nav>   
@@ -129,7 +106,7 @@ if (isset($_POST['login_user'])) {
     
   </div>
   <div class="containerr">
-    <p>Δεν έχεις λογαριασμό? <a href="../signup/signup.php">Εγγραφή 
+    <p>Δεν έχεις λογαριασμό? <a href="signup.php">Εγγραφή 
   </div>
 </form>
 
