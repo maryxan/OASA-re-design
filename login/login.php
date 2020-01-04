@@ -29,6 +29,7 @@ if (isset($_POST['login_user'])) {
     $active = $row['active'];  
 
     if (mysqli_num_rows($results) == 1) {
+
       header('location:profile.html');
     }else {
       array_push($errors, "Wrong username/password combination");
@@ -106,7 +107,7 @@ if (isset($_POST['login_user'])) {
     
   </div>
   <div class="containerr">
-    <p>Δεν έχεις λογαριασμό? <a href="signup.php">Εγγραφή 
+    <p>Δεν έχεις λογαριασμό? <a href="../signup/signup.php">Εγγραφή 
   </div>
 </form>
 

@@ -20,7 +20,7 @@
     </div>
     <ul class="nav navbar-nav">
 
-        <li><a href="#">Διαδρομή</a></li>
+        <li><a href="diadromi/diadromi.php">Διαδρομή</a></li>
         <li><a href="#">Δρομολόγια</a></li>
         <li><a href="tickets">Εισητήρια-κάρτες</a></li>
         <li><a href="amea/amea.php">ΑΜΕΑ</a></li>
@@ -56,7 +56,7 @@
 
 
 <!-- FOOTER -->
-      <br>
+<br>
 <br>
 <br>
  

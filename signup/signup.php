@@ -1,17 +1,19 @@
 <?php
 session_start();
 
-require_once "../db_connection/db_connection.php";
+include '../db_connection/db_connection.php';
+?>
+<!-- // initializing variables
+// $name = "";
+// $surname = "";
+// $username = "";
+// $email    = ""; -->
 
-// initializing variables
-$name = "";
-$surname = "";
-$username = "";
-$email    = "";
+<?php
 $errors = array(); 
 
-// // connect to the database
-// $db = mysqli_connect('localhost', 'root', '', 'registration');
+// connect to the database
+$link = mysqli_connect('localhost', 'root', '', 'sdi1400300');
 
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
@@ -36,7 +38,7 @@ if (isset($_POST['reg_user'])) {
 
   // first check the database to make sure 
   // a user does not already exist with the same username and/or email
-  $user_check_query = "SELECT * FROM user WHERE username='$username' OR email='$email' LIMIT 1";
+  $user_check_query = "SELECT * FROM simpleuser WHERE username='$username' OR email='$email' LIMIT 1";
   $result = mysqli_query($link, $user_check_query);
   $user = mysqli_fetch_assoc($result);
   
@@ -54,13 +56,13 @@ if (isset($_POST['reg_user'])) {
   if (count($errors) == 0) {
     $password = md5($password_1);//encrypt the password before saving in the database
 
-    $query = "INSERT INTO users (username, email, password) 
-          VALUES('$username', '$email', '$password')";
+    $query = "INSERT INTO simpleuser (username, password, name, surname, email) 
+          VALUES ('$username', '$password', '$name', '$surname', '$email')";
     mysqli_query($link, $query);
-    $_SESSION['username'] = $username;
+    // $_SESSION['username'] = $username;
     $_SESSION['success'] = "You are now logged in";
-    header('location: "index.php"');
-  }
+    header('location:../amea/amea.php');
+   }
 }
 ?>
 
@@ -106,15 +108,17 @@ if (isset($_POST['reg_user'])) {
  <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="../index.php">Αρχική</a></li>
-    <li class="breadcrumb-item active" aria-current="page">AMEA</li>
+    <li class="breadcrumb-item active" aria-current="page">Εγγραφή χρήστη</li>
   </ol>
 </nav> 
 <!-- ==============================================  
  -->
- <div class="container">
-  <form action="/action_page.php" style="border:1px solid #ccc">
+<div class="container">
+  <form action="signup.php"  method="post" style="border:1px solid #ccc">
+  <?php include('errors.php'); ?>
+
   <div class="containerr">
-    <h1>Sign Up</h1>
+    <h1>Eγγραφή</h1>
     <hr>
 
     <label for="name"><b>Όνομα</b></label>
@@ -127,13 +131,13 @@ if (isset($_POST['reg_user'])) {
     <input type="text"  name="email" required>
 
     <label for="psw"><b>Κωδικός πρόσβασης</b></label>
-    <input type="password"  name="psw" required>
+    <input type="password"  name="password_1" required>
 
     <label for="psw-repeat"><b>Επιβεβαίωση κωδικού</b></label>
-    <input type="password" name="psw-repeat" required>
+    <input type="password" name="password_2" required>
 
     <hr>
-    <label for="username"><b>Username</b></label>
+    <label for="username"><b>Όνομα χρήστη</b></label>
     <input type="text"  name="username" required>
     
     <p>Η καταχώριση της εγγραφής σας συνεπάγεται ότι αποδέχεστε αυτόματα τους <a href="#" style="color:dodgerblue">Όρους Χρήσης</a>.</p>
@@ -149,6 +153,5 @@ if (isset($_POST['reg_user'])) {
   </div>
 </form>
 </div>
-
 </body>
 </html>
