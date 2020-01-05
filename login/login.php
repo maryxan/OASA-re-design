@@ -49,36 +49,39 @@ if (isset($_POST['login_user'])) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 
 <!--  ============= NAVIGATION BAR ================
- --><nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="../index.php">OASA logo</a>
-    </div>
-    <ul class="nav navbar-nav">
-
-        <li><a href="../diadromi/diadromi.php">Διαδρομή</a></li>
-        <li><a href="#">Δρομολόγια</a></li>
-        <li><a href="tickets.html">Εισητήρια-κάρτες</a></li>
-        <li><a href="../amea/amea.php">ΑΜΕΑ</a></li>
-        <li><a href="#">Ανακοινώσεις</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="#">Για τον OASA</a></li>
-
-   </ul>
-    <ul class="nav navbar-nav navbar-right">
-       <li><a href="../signup/signup.php"><span class="glyphicon glyphicon-user"></span> Εγγραφή</a></li>
-      <li><a href="../login/login.php"><span class="glyphicon glyphicon-log-in"></span> Είσοδος</a></li>
-    </ul>
-  </div>
-</nav>
+ -->
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="../index.php">OASA logo</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">			
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item"><a class="nav-link" href="../diadromi/diadromi.php">Διαδρομή</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">Δρομολόγια</a></li>
+				<li class="nav-item"><a class="nav-link" href="../tickets/tickets.html">Εισιτήρια-κάρτες</a></li>
+				<li class="nav-item"><a class="nav-link" href="../amea/amea.php">ΑΜΕΑ</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">Ανακοινώσεις</a></li>
+				<li class="nav-item"><a class="nav-link" href="../faq/faq.html">FAQ</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">για τον ΟΑΣΑ</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="nav-item"><a class="nav-link" href="../signup/signup.php"><i class="fa fa-user fa-lg`" aria-hidden="true"></i> Εγγραφή</a></li>
+				<li class="nav-item"><a class="nav-link" href="../login/login.php"><i class="fa fa-sign-in fa-lg" aria-hidden="true"></i> Είσοδος</a></li>
+			</ul>
+		</div>
+	</nav>
 
    <!-- breadcrumbs -->
    <nav aria-label="breadcrumb">
