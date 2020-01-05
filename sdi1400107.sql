@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 05, 2020 at 04:47 PM
+-- Generation Time: Jan 05, 2020 at 11:56 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -115,7 +115,14 @@ INSERT INTO `steps` (`id`, `route_id`, `step_number`, `start`, `end`, `in_betwee
 (14, 3, 2, '5η Πανεπιστημιούπολης', 'Αφετηρία', 9, '51min', 'Bus', 'E90'),
 (15, 3, 3, 'Αφετηρία', 'Πλ.Καραϊσκάκη', 0, '2min', 'Walk', 'Walk'),
 (16, 3, 4, 'Πλ.Καραϊσκάκη', 'Νέοι Οικισμοί', 6, '10min', 'Bus', '859'),
-(17, 3, 5, 'Νέοι Οικισμοί', 'Λιμάνι Πειραιά', 0, '7min', 'Walk', 'Walk');
+(17, 3, 5, 'Νέοι Οικισμοί', 'Λιμάνι Πειραιά', 0, '7min', 'Walk', 'Walk'),
+(18, 4, 1, '10η Καισαριανής', 'Νοσοκ.Ευαγγελισμός', 9, '10min', 'Bus', '224'),
+(19, 4, 2, 'Νοσοκ.Ευαγγελισμός', 'Στ.Ευαγγελισμού', 0, '1min', 'Walk', 'Walk'),
+(20, 4, 3, 'Στ.Ευαγγελισμού', 'Στ.Αεροδρομίου', 14, '38min', 'Subway', 'M3'),
+(21, 4, 4, 'Στ.Αεροδρομίου', 'Αεροδρόμιο', 0, '15min', 'Walk', 'Walk'),
+(22, 5, 1, '10η Καισαριανής', 'Νοσοκ.Ευαγγελισμός', 9, '10min', 'Bus', '224'),
+(23, 5, 2, 'Νοσοκ.Ευαγγελισμός', 'Πύλη Οκτώ', 21, '1h 13min', 'Bus', 'X95'),
+(24, 5, 3, 'Πύλη Οκτώ', 'Αεροδρόμιο', 0, '6min', 'Walk', 'Walk');
 
 -- --------------------------------------------------------
 
@@ -178,7 +185,7 @@ ALTER TABLE `routes`
 -- AUTO_INCREMENT for table `steps`
 --
 ALTER TABLE `steps`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
