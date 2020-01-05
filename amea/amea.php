@@ -33,8 +33,8 @@
 			<li class="nav-item"><a class="nav-link" href="#">για τον ΟΑΣΑ</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
-			<li class="nav-item"><a class="nav-link" href="signup/signup.php"><i class="fa fa-user fa-lg`" aria-hidden="true"></i> Εγγραφή</a></li>
-			<li class="nav-item"><a class="nav-link" href="login/login.php"><i class="fa fa-sign-in fa-lg" aria-hidden="true"></i> Είσοδος</a></li>
+			<li class="nav-item"><a class="nav-link" href="../signup/signup.php"><i class="fa fa-user fa-lg`" aria-hidden="true"></i> Εγγραφή</a></li>
+			<li class="nav-item"><a class="nav-link" href="../login/login.php"><i class="fa fa-sign-in fa-lg" aria-hidden="true"></i> Είσοδος</a></li>
 		</ul>
 	</div>
 </nav>
