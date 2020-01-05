@@ -58,3 +58,4 @@ include '../login_logout_button.php';
  <h2><a href="../profile/updateprofile.php">Επεξεργασία</a></h2>
 
 </body>
+</html>

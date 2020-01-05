@@ -4,8 +4,15 @@ title: Pricing example
 extra_css: "pricing.css"
 include_js: false
 -->
+<?php
 
+  include '../db_connection/db_connection.php';
+  session_start();
+  include '../login_logout_button.php';
 
+  ?>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <title>OASA.gr</title>
   <meta charset="utf-8">
@@ -40,8 +47,9 @@ include_js: false
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="nav-item"><a class="nav-link" href="../signup/signup.php"><i class="fa fa-user fa-lg`" aria-hidden="true"></i> Εγγραφή</a></li>
-				<li class="nav-item"><a class="nav-link" href="../login/login.php"><i class="fa fa-sign-in fa-lg" aria-hidden="true"></i> Είσοδος</a></li>
-			</ul>
+        <?php
+          echo login_logout_button();
+        ?>			</ul>
 		</div>
 	</nav>
 
@@ -127,3 +135,4 @@ include_js: false
   <br>
   <br>
 </div>
+</html>

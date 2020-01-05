@@ -1,3 +1,10 @@
+<?php
+
+include '../db_connection/db_connection.php';
+session_start();
+include '../login_logout_button.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,8 +36,9 @@
    </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="../signup/signup.php"><span class="glyphicon glyphicon-user"></span> Εγγραφή</a></li>
-      <li><a href="../login/login.php"><span class="glyphicon glyphicon-log-in"></span> Είσοδος</a></li>
-    </ul>
+      <?php
+          echo login_logout_button();
+        ?>    </ul>
   </div>
 </nav>
    <!-- breadcrumbs -->
@@ -47,3 +55,5 @@
 
 
 </body>
+
+</html>
