@@ -13,30 +13,6 @@
 </head>
 <body>
 
-<!--  ============= NAVIGATION BAR ================
- -->
- <!-- <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="../index.php">OASA logo</a>
-    </div>
-    <ul class="nav navbar-nav">
-
-        <li><a href="#">Διαδρομή</a></li>
-        <li><a href="#">Δρομολόγια</a></li>
-        <li><a href="../tickets/tickets.html">Εισητήρια-κάρτες</a></li>
-        <li><a href="../amea/amea.php">ΑΜΕΑ</a></li>
-        <li><a href="#">Ανακοινώσεις</a></li>
-        <li><a href="../faq/faq.html">FAQ</a></li>
-        <li><a href="#">για τον ΟΑΣΑ</a></li>
-
-   </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="../signup/signup.php"><span class="glyphicon glyphicon-user"></span> Εγγραφή</a></li>
-      <li><a href="../login/login.php"><span class="glyphicon glyphicon-log-in"></span> Είσοδος</a></li>
-    </ul>
-  </div>
-</nav> -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<a class="navbar-brand" href="../index.php">OASA logo</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,10 +22,10 @@
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item"><a class="nav-link" href="../diadromi/diadromi.php">Διαδρομή</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">Δρομολόγια</a></li>
-				<li class="nav-item"><a class="nav-link" href="../tickets/tickets.html">Εισιτήρια-κάρτες</a></li>
+				<li class="nav-item"><a class="nav-link" href="../tickets/tickets.php">Εισιτήρια-κάρτες</a></li>
 				<li class="nav-item"><a class="nav-link" href="../amea/amea.php">ΑΜΕΑ</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">Ανακοινώσεις</a></li>
-				<li class="nav-item"><a class="nav-link" href="../faq/faq.html">FAQ</a></li>
+				<li class="nav-item"><a class="nav-link" href="../faq/faq.php">FAQ</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">για τον ΟΑΣΑ</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
@@ -64,7 +40,7 @@
   <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="../index.php">Αρχική</a></li>
-    <li class="breadcrumb-item"><a href="../tickets/tickets.html">Εισητήρια - καρτες </a></li>
+    <li class="breadcrumb-item"><a href="../tickets/tickets.php">Εισητήρια - καρτες </a></li>
     <li class="breadcrumb-item active" aria-current="page">Εκδοση κάρτας </li>
 
   </ol>

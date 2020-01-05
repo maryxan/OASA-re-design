@@ -36,7 +36,7 @@ include '../login_logout_button.php';
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item"><a class="nav-link" href="../diadromi/diadromi.php">Διαδρομή</a></li>
 			<li class="nav-item"><a class="nav-link" href="#">Δρομολόγια</a></li>
-			<li class="nav-item"><a class="nav-link" href="../tickets/tickets.html">Εισιτήρια-κάρτες</a></li>
+			<li class="nav-item"><a class="nav-link" href="../tickets/tickets.php">Εισιτήρια-κάρτες</a></li>
 			<li class="nav-item active"><a class="nav-link" href="../amea/amea.php">ΑΜΕΑ</a></li>
 			<li class="nav-item"><a class="nav-link" href="#">Ανακοινώσεις</a></li>
 			<li class="nav-item"><a class="nav-link" href="../faq/">FAQ</a></li>
@@ -55,7 +55,7 @@ include '../login_logout_button.php';
  <!-- breadcrumbs -->
  <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="in.html">Αρχική</a></li>
+    <li class="breadcrumb-item"><a href="index.php">Αρχική</a></li>
     <li class="breadcrumb-item active" aria-current="page">AMEA</li>
   </ol>
 </nav>     

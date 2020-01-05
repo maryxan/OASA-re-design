@@ -74,10 +74,10 @@ if (isset($_POST['login_user'])) {
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item"><a class="nav-link" href="../diadromi/diadromi.php">Διαδρομή</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">Δρομολόγια</a></li>
-				<li class="nav-item"><a class="nav-link" href="../tickets/tickets.html">Εισιτήρια-κάρτες</a></li>
+				<li class="nav-item"><a class="nav-link" href="../tickets/tickets.php">Εισιτήρια-κάρτες</a></li>
 				<li class="nav-item"><a class="nav-link" href="../amea/amea.php">ΑΜΕΑ</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">Ανακοινώσεις</a></li>
-				<li class="nav-item"><a class="nav-link" href="../faq/faq.html">FAQ</a></li>
+				<li class="nav-item"><a class="nav-link" href="../faq/faq.php">FAQ</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">για τον ΟΑΣΑ</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
@@ -101,7 +101,7 @@ if (isset($_POST['login_user'])) {
    <!-- breadcrumbs -->
    <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="in.html">Αρχική</a></li>
+      <li class="breadcrumb-item"><a href="index.php">Αρχική</a></li>
       <li class="breadcrumb-item active" aria-current="page">Είσοδος</li>
     </ol>
   </nav>   

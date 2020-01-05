@@ -20,10 +20,10 @@
 
         <li><a href="../diadromi/diadromi.php">Διαδρομή</a></li>
         <li><a href="#">Δρομολόγια</a></li>
-        <li><a href="../tickets/tickets.html">Εισητήρια-κάρτες</a></li>
+        <li><a href="../tickets/tickets.php">Εισητήρια-κάρτες</a></li>
         <li><a href="../amea/amea.php">ΑΜΕΑ</a></li>
         <li><a href="#">Ανακοινώσεις</a></li>
-        <li><a href="../faq/faq.html">FAQ</a></li>
+        <li><a href="../faq/faq.php">FAQ</a></li>
         <li><a href="#">για τον ΟΑΣΑ</a></li>
 
    </ul>

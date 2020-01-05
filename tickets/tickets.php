@@ -32,10 +32,10 @@ include_js: false
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item"><a class="nav-link" href="../diadromi/diadromi.php">Διαδρομή</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">Δρομολόγια</a></li>
-				<li class="nav-item active"><a class="nav-link" href="../tickets/tickets.html">Εισιτήρια-κάρτες</a></li>
+				<li class="nav-item active"><a class="nav-link" href="../tickets/tickets.php">Εισιτήρια-κάρτες</a></li>
 				<li class="nav-item"><a class="nav-link" href="../amea/amea.php">ΑΜΕΑ</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">Ανακοινώσεις</a></li>
-				<li class="nav-item"><a class="nav-link" href="../faq//faq.html">FAQ</a></li>
+				<li class="nav-item"><a class="nav-link" href="../faq//faq.php">FAQ</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">για τον ΟΑΣΑ</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
@@ -63,8 +63,8 @@ include_js: false
 
   <div class="container">
     <div class="buttons">
-      <a href="../ekdosi/ekdosi.html" class="btn btn-warning" role="button">ΕΚΔΟΣΗ</a>
-      <a href="../ekdosi/ekdosi.html" class="btn btn-warning" role="button">ΠΛΗΡΟΦΟΡΙΕΣ</a>
+      <a href="../ekdosi/ekdosi.php" class="btn btn-warning" role="button">ΕΚΔΟΣΗ</a>
+      <a href="../ekdosi/ekdosi.php" class="btn btn-warning" role="button">ΠΛΗΡΟΦΟΡΙΕΣ</a>
     </div>
 
     <!--================-->
