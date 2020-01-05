@@ -82,6 +82,17 @@
 
 			$accordion_list = "";
 
+			if($routes_amount == 0){
+      
+				echo '<div class="container"> 
+					<div class="alert alert-warning alert-dismissible fade show" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<strong>Δεν βρέθηκαν διαδρομές!</strong>
+					</div>
+					</div>';
+			}
 			
 
 			for ($i=0; $i < $routes_amount; $i++) {			
