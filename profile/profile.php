@@ -1,3 +1,11 @@
+<?php
+
+include '../db_connection/db_connection.php';
+session_start();
+include '../login_logout_button.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +40,9 @@
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="nav-item"><a class="nav-link" href="../signup/signup.php"><i class="fa fa-user fa-lg`" aria-hidden="true"></i> Εγγραφή</a></li>
-				<li class="nav-item"><a class="nav-link" href="../login/login.php"><i class="fa fa-sign-in fa-lg" aria-hidden="true"></i> Είσοδος</a></li>
+				 <?php
+		          echo login_logout_button();
+		        ?>
 			</ul>
 		</div>
 	</nav>

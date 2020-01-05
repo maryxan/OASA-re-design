@@ -2,6 +2,7 @@
 
 	include '../db_connection/db_connection.php';
 	session_start();
+  include '../login_logout_button.php';
 
 	?>
   
@@ -42,7 +43,9 @@
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="nav-item"><a class="nav-link" href="../signup/signup.php"><i class="fa fa-user fa-lg`" aria-hidden="true"></i> Εγγραφή</a></li>
-				<li class="nav-item"><a class="nav-link" href="../login/login.php"><i class="fa fa-sign-in fa-lg" aria-hidden="true"></i> Είσοδος</a></li>
+				<?php
+              echo login_logout_button();
+            ?>
 			</ul>
 		</div>
 	</nav>
@@ -50,7 +53,7 @@
 	<!-- breadcrumbs -->
 	<nav aria-label="breadcrumb">
 	<ol class="breadcrumb">
-	<li class="breadcrumb-item"><a href="in.html">Αρχική</a></li>
+	<li class="breadcrumb-item"><a href="index.php">Αρχική</a></li>
 	<li class="breadcrumb-item active" aria-current="page">Εύρεση διαδρομής</li>
 	</ol>
 	</nav>   
