@@ -50,53 +50,56 @@
 <!-- ==============================================  
  -->
 
- <div style="background-image: url('1484992.jpg');">
-
- <div class="container">
-
-  <br>
-  <div class="container">
-  <div class="row">
-      <div class="col-12"><h2>Στάσεις με προεξοχές</h2></div>
-      <div class="col-12">
-          <div id="custom-search-input">
-                <div class="input-group">
-                    <input type="text" class="search-query form-control" placeholder="Search" />
-                    <span class="input-group-btn">
-                        <button type="submit">
-                            <span class="glyphicon glyphicon-search" style="height:26px;width:20px;"></span>
-                        </button>
-                    </span>
-                </div>
-            </div>
-        </div>
-  </div>
-</div>
+	<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h2>Στάσεις με προεξοχές</h2>
+				</div>
+				<div class="col-12">
+					<div id="custom-search-input">
+						<div class="input-group">
+							<input type="text" class="search-query form-control" placeholder="Search" />
+							<span class="input-group-btn">
+								<button type="submit">
+									<span class="glyphicon glyphicon-search" style="height:26px;width:20px;"></span>
+								</button>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 
 
 
 
-<!-- FOOTER -->
-        <br> <br> <br> <br> <br> <br>
-<button type="button" class="collapsible">Μάθετε περισσότερα</button>
-<div class="content">
-  <p>Περιγραφή, Ενέργειες, Δράσεις...</p>
-</div>
 
-  <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
-        <footer class="footer" style="background-color: #ffffff;padding-top: 50px;">
-            <div class="footer-bottom">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-12">
-                    <!--Footer Bottom-->
-                    <p class="text-center">&copy; Copyright 2019 - University of Athens Di.  All rights reserved.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </footer>
+	<br> <br> <br>
+	<div style="background-image: url('1484992.jpg');">
+
+		<br> <br> <br>
+		<button type="button" class="collapsible">Μάθετε περισσότερα</button>
+		<div class="content">
+			<p>Περιγραφή, Ενέργειες, Δράσεις...</p>
+		</div>
+
+		<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+	</div>
+
+	<!-- FOOTER -->
+	<footer class="footer" style="background-color: #ffffff;padding-top: 50px;">
+		<div class="footer-bottom">
+		<div class="container">
+			<div class="row">
+			<div class="col-md-12">
+				<!--Footer Bottom-->
+				<p class="text-center">&copy; Copyright 2019 - University of Athens Di.  All rights reserved.</p>
+			</div>
+			</div>
+		</div>
+		</div>
+	</footer>
 </body>
 
 <script>
