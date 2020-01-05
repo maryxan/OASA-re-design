@@ -37,11 +37,13 @@
  <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="../index.php">Αρχική</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Προφίλ</li>
+    <li class="breadcrumb-item"><a href="../profile/profile.php">Προφίλ</a></li>
+    <li class="breadcrumb-item active" aria-current="../profile/updateprofile.php">Επεξεργασία προφίλ</a></li>
+
   </ol>
 </nav> 
 
- <h2><a href="../logout/logout.php">Logout</a></h2> <br>
- <h2><a href="../profile/updateprofile.php">Επεξεργασία</a></h2>
+
+
 
 </body>
