@@ -70,6 +70,9 @@
 
 	<?php
 
+		include 'getMediumPair.php';
+		include 'getInBetweenStops.php';
+
 		if(isset($_GET['find_route'])){
      
 			$query_for_routes = "select * 
@@ -93,93 +96,96 @@
 					</div>
 					</div>';
 			}
-			
+			else{
 
-			for ($i=0; $i < $routes_amount; $i++) {			
-				$result_routes-> data_seek($i);
-				$route_row = $result_routes->fetch_array(MYSQLI_ASSOC);
+				for ($i=0; $i < $routes_amount; $i++) {			
+					$result_routes-> data_seek($i);
+					$route_row = $result_routes->fetch_array(MYSQLI_ASSOC);
 
-				$query_for_steps = "select 
-					r.id, 
-					s.step_number, 
-					s.start, 
-					s.end, 
-					s.duration,
-					s.medium_type, 
-					s.medium_name, 
-					s.in_between_stops,
-					r.duration as total_duration, 
-					r.price as total_price
-				from routes as r, steps as s
-				where r.id = s.route_id
-				and s.route_id = ".$route_row['id']."
-				order by total_duration asc, s.step_number asc";
+					$query_for_steps = "select 
+						r.id, 
+						s.step_number, 
+						s.start, 
+						s.end, 
+						s.duration,
+						s.medium_type, 
+						s.medium_name, 
+						s.in_between_stops,
+						r.duration as total_duration, 
+						r.price as total_price
+					from routes as r, steps as s
+					where r.id = s.route_id
+					and s.route_id = ".$route_row['id']."
+					order by total_duration asc, s.step_number asc";
 
-				$result_steps = $conn->query($query_for_steps);
-				$steps_amount = $result_steps->num_rows;
+					$result_steps = $conn->query($query_for_steps);
+					$steps_amount = $result_steps->num_rows;
 
-				// echo '<h3>Route #'.$route_row['id'].'</h3>';
+					// echo '<h3>Route #'.$route_row['id'].'</h3>';
 
-				$route_head = "";
-				$route_description = "";
+					$route_head = "";
+					$route_description = "";
 
-				for ($j=0; $j < $steps_amount; $j++) { 
-					$result_steps-> data_seek($j);
-					$step_row = $result_steps->fetch_array(MYSQLI_ASSOC);
+					for ($j=0; $j < $steps_amount; $j++) { 
+						$result_steps-> data_seek($j);
+						$step_row = $result_steps->fetch_array(MYSQLI_ASSOC);
 
-					if($route_head == ""){
-						$route_head = $step_row['medium_name'].'('.$step_row['medium_type'].')';
+						if($route_head == ""){
+							$route_head = getMediumPair($step_row['medium_type'], $step_row['medium_name']);
+						}
+						else{
+							$route_head = $route_head.' -> '.getMediumPair($step_row['medium_type'], $step_row['medium_name']);
+						}
+
+						$route_description = $route_description.'<li>'
+						.getMediumPair($step_row['medium_type'], $step_row['medium_name'])
+						.' : '
+						.$step_row['start']
+						.' - '
+						.$step_row['end']
+						.' ('
+						.$step_row['duration']
+						.getInBetweenStops($step_row['in_between_stops'])
+						.')'.'</li>';
+
+						// echo '<p>Step #'.$step_row['step_number'].'</p>';
 					}
-					else{
-						$route_head = $route_head.'->'.$step_row['medium_name'].'('.$step_row['medium_type'].')';		
-					}
 
-					$route_description = $route_description.'<li>'
-					.$step_row['medium_name']
-					.'('.$step_row['medium_type'].')'.' : '
-					.$step_row['start']
-					.'-'
-					.$step_row['end']
-					.' ( '
-					.$step_row['duration']
-					.')'.'</li>';
+					$route_head = '
+					<div class="card-header" id="heading'.$i.'">
+						<h2 class="mb-0">
+							<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse'.$i.'" aria-expanded="true" aria-controls="collapse'.$i.'">
+							<span>'.$route_head.'</span>
+							<span class="ml-4">('.$route_row['duration'].')</span>
+							</button>
+						</h2>
+					</div>';
 
-					// echo '<p>Step #'.$step_row['step_number'].'</p>';
+					$route_description = '
+					<div id="collapse'.$i.'" class="collapse '.($i == 0?'show':'').'" aria-labelledby="heading'.$i.'" data-parent="#accordionExample">
+						<div class="card-body">
+							<ul>
+								'.$route_description.'
+							</ul>
+						</div>
+					</div>
+					';
+
+					$accordion_list = $accordion_list.'
+					<div class="card">
+					'.$route_head
+					.$route_description
+					.'</div>';
 				}
 
-				$route_head = '
-				<div class="card-header" id="heading'.$i.'">
-					<h2 class="mb-0">
-						<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse'.$i.'" aria-expanded="true" aria-controls="collapse'.$i.'">
-						'.$route_head.'
-						</button>
-					</h2>
-				</div>';
+				$accordion = '
+				<div class="accordion" id="accordionExample">
+				'.$accordion_list.
+				'</div>';
 
-				$route_description = '
-				<div id="collapse'.$i.'" class="collapse '.($i == 0?'show':'').'" aria-labelledby="heading'.$i.'" data-parent="#accordionExample">
-					<div class="card-body">
-						<ul>
-							'.$route_description.'
-						</ul>
-					</div>
-				</div>
-				';
 
-				$accordion_list = $accordion_list.'
-				<div class="card">
-				'.$route_head
-				.$route_description
-				.'</div>';
+				echo $accordion;		
 			}
-
-			$accordion = '
-			<div class="accordion" id="accordionExample">
-			'.$accordion_list.
-			'</div>';
-
-
-			echo $accordion;		
 		} 
 	?>
 
