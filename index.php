@@ -87,9 +87,9 @@
 
           <div class="col-md-4 col-sm-6 col-xs-12">
             <ul class="social-icons">
-              <li><a class="facebook" href="https://www.facebook.com/OASA.GR"><i class="fa fa-facebook"></i></a></li>
-              <li><a class="instagram" href="https://www.instagram.com/OASA.GR/"><i class="fa fa-instagram"></i></a></li>
-              <li><a class="youtube" href="https://www.youtube.com/channel/UC0XdkZnOHhRLc3NE9tm4NUQ"><i class="fa fa-youtube"></i></a></li>
+              <li><a class="facebook" href="https://www.facebook.com/OASA.GR" target="_blank"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="instagram" href="https://www.instagram.com/OASA.GR/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+              <li><a class="youtube" href="https://www.youtube.com/channel/UC0XdkZnOHhRLc3NE9tm4NUQ" target="_blank"><i class="fa fa-youtube"></i></a></li>
             </ul>
           </div>
         </div>

@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
 </head>
 <body>
 
@@ -34,54 +33,14 @@
     </ul>
   </div>
 </nav>
-
- <!-- breadcrumbs -->
+   <!-- breadcrumbs -->
  <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="../index.php">Αρχική</a></li>
-    <li class="breadcrumb-item active" aria-current="page">AMEA</li>
+    <li class="breadcrumb-item active" aria-current="page">Προφίλ</li>
   </ol>
-</nav>   
+</nav> 
 
-<!-- ==============================================  
- -->
- <div class="container">
+ <h2><a href="../logout/logout.php">Logout</a></h2>
 
-  <br>
-  <div class="container">
-  <div class="row">
-      <div class="col-12"><h2>Στάσεις με προεξοχές</h2></div>
-      <div class="col-12">
-          <div id="custom-search-input">
-                <div class="input-group">
-                    <input type="text" class="search-query form-control" placeholder="Search" />
-                    <span class="input-group-btn">
-                        <button type="submit">
-                            <span class="glyphicon glyphicon-search" style="height:26px;width:20px;"></span>
-                        </button>
-                    </span>
-                </div>
-            </div>
-        </div>
-  </div>
-</div>
-
-
-
-
-
-<!-- FOOTER -->
-        <footer class="footer" style="background-color: #ffffff;padding-top: 50px;">
-            <div class="footer-bottom">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-12">
-                    <!--Footer Bottom-->
-                    <p class="text-center">&copy; Copyright 2019 - University of Athens Di.  All rights reserved.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </footer>
 </body>
-</html>

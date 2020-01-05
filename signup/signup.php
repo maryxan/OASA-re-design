@@ -13,7 +13,7 @@ include '../db_connection/db_connection.php';
 $errors = array(); 
 
 // connect to the database
-$link = mysqli_connect('localhost', 'root', '', 'sdi1400300');
+$link = mysqli_connect('localhost', 'root', '', 'sdi1400107');
 
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
@@ -61,7 +61,7 @@ if (isset($_POST['reg_user'])) {
     mysqli_query($link, $query);
     // $_SESSION['username'] = $username;
     $_SESSION['success'] = "You are now logged in";
-    header('location:../amea/amea.php');
+    header('location:../profile/profile.php');
    }
 }
 ?>
@@ -88,7 +88,7 @@ if (isset($_POST['reg_user'])) {
     </div>
     <ul class="nav navbar-nav">
 
-        <li><a href="#">Διαδρομή</a></li>
+        <li><a href="../diadromi/diadromi.php">Διαδρομή</a></li>
         <li><a href="#">Δρομολόγια</a></li>
         <li><a href="../tickets/tickets.html">Εισητήρια-κάρτες</a></li>
         <li><a href="../amea/amea.php">ΑΜΕΑ</a></li>

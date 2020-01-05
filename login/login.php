@@ -8,7 +8,7 @@
 $errors = array(); 
 
 
-$link = mysqli_connect('localhost', 'root', '', 'sdi1400300');
+$link = mysqli_connect('localhost', 'root', '', 'sdi1400107');
 
 if (isset($_POST['login_user'])) {
   $username = mysqli_real_escape_string($link, $_POST['username']);
@@ -30,7 +30,7 @@ if (isset($_POST['login_user'])) {
 
     if (mysqli_num_rows($results) == 1) {
 
-      header('location:profile.html');
+      header('location:../profile/profile.php');
     }else {
       array_push($errors, "Wrong username/password combination");
     }
@@ -60,22 +60,22 @@ if (isset($_POST['login_user'])) {
  --><nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="in.html">OASA logo</a>
+      <a class="navbar-brand" href="../index.php">OASA logo</a>
     </div>
     <ul class="nav navbar-nav">
 
-        <li><a href="#">Διαδρομή</a></li>
+        <li><a href="../diadromi/diadromi.php">Διαδρομή</a></li>
         <li><a href="#">Δρομολόγια</a></li>
         <li><a href="tickets.html">Εισητήρια-κάρτες</a></li>
-        <li><a href="amea.php">ΑΜΕΑ</a></li>
+        <li><a href="../amea/amea.php">ΑΜΕΑ</a></li>
         <li><a href="#">Ανακοινώσεις</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="#">Για τον OASA</a></li>
 
    </ul>
     <ul class="nav navbar-nav navbar-right">
-       <li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Εγγραφή</a></li>
-      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Είσοδος</a></li>
+       <li><a href="../signup/signup.php"><span class="glyphicon glyphicon-user"></span> Εγγραφή</a></li>
+      <li><a href="../login/login.php"><span class="glyphicon glyphicon-log-in"></span> Είσοδος</a></li>
     </ul>
   </div>
 </nav>
