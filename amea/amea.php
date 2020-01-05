@@ -7,10 +7,11 @@
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="amea.css"></link>
+  <link rel="stylesheet" type="text/css" href="amea.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 
@@ -27,7 +28,7 @@
 			<li class="nav-item"><a class="nav-link" href="../diadromi/diadromi.php">Διαδρομή</a></li>
 			<li class="nav-item"><a class="nav-link" href="#">Δρομολόγια</a></li>
 			<li class="nav-item"><a class="nav-link" href="../tickets/tickets.html">Εισιτήρια-κάρτες</a></li>
-			<li class="nav-item"><a class="nav-link" href="../amea/amea.php">ΑΜΕΑ</a></li>
+			<li class="nav-item active"><a class="nav-link" href="../amea/amea.php">ΑΜΕΑ</a></li>
 			<li class="nav-item"><a class="nav-link" href="#">Ανακοινώσεις</a></li>
 			<li class="nav-item"><a class="nav-link" href="../faq/">FAQ</a></li>
 			<li class="nav-item"><a class="nav-link" href="#">για τον ΟΑΣΑ</a></li>
@@ -42,10 +43,10 @@
  <!-- breadcrumbs -->
  <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="../index.php">Αρχική</a></li>
+    <li class="breadcrumb-item"><a href="in.html">Αρχική</a></li>
     <li class="breadcrumb-item active" aria-current="page">AMEA</li>
   </ol>
-</nav>   
+</nav>     
 
 <!-- ==============================================  
  -->
@@ -102,7 +103,7 @@
 	</footer>
 </body>
 
-<script>
+ <script>
 var coll = document.getElementsByClassName("collapsible");
 var i;
 

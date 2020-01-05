@@ -13,7 +13,7 @@ include '../db_connection/db_connection.php';
 $errors = array(); 
 
 // connect to the database
-$link = mysqli_connect('localhost', 'root', '', 'sdi1400107');
+// $link = mysqli_connect('localhost', 'root', '', 'sdi1400107');
 
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
