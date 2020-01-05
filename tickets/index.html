@@ -1,8 +1,126 @@
-<!DOCTYPE html>
-<html>
+<!-----
+layout: examples
+title: Pricing example
+extra_css: "pricing.css"
+include_js: false
+-->
+
 
 <head>
-    <meta http-equiv="refresh" content="0; url=tickets.html">
+  <title>OASA.gr</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 </head>
 
-</html>
+<body>
+<!--  ============= NAVIGATION BAR ================
+	 --><nav class="navbar navbar-inverse">
+	 	 <div class="container-fluid">
+	    	<div class="navbar-header">
+	     	 <a class="navbar-brand" href="../index.php">OASA logo</a>
+	   	 </div>
+	    <ul class="nav navbar-nav">
+			<li class="active"><a href="#">Home</a></li>
+	        <li><a href="#">Διαδρομή</a></li>
+	        <li><a href="#">Δρομολόγια</a></li>
+	        <li><a href="#">Εισιτήρια-κάρτες</a></li>
+	        <li><a href="#">ΑΜΕΑ</a></li>
+	        <li><a href="#">Ανακοινώσεις</a></li>
+	        <li><a href="#">FAQ</a></li>
+	        <li><a href="#">για τον ΟΑΣΑ</a></li>
+
+	   </ul>
+	    <ul class="nav navbar-nav navbar-right">
+	      <li><a href="../signup/signup.php"><span class="glyphicon glyphicon-user"></span> Εγγραφή</a></li>
+	      <li><a href="../login/login.php"><span class="glyphicon glyphicon-log-in"></span> Είσοδος</a></li>
+	    </ul>
+	  </div>
+	</nav>
+
+	 <!-- breadcrumbs -->
+	 <nav aria-label="breadcrumb">
+	  <ol class="breadcrumb">
+	    <li class="breadcrumb-item"><a href="../index.php">Αρχική Σελίδα</a></li>
+	    <li class="breadcrumb-item active" aria-current="page">Εισιτήρια/Κάρτες</li>
+	  </ol>
+	</nav>   
+
+<!--athena card-->
+<div class="container">
+
+    <div class="ticket">
+     <img src="athena.png" alt="athena_card" style="width:600px;height:200px;"/>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="buttons">
+      <a href="../ekdosi/ekdosi.html" class="btn btn-warning" role="button">ΕΚΔΟΣΗ</a>
+      <a href="../ekdosi/ekdosi.html" class="btn btn-warning" role="button">ΠΛΗΡΟΦΟΡΙΕΣ</a>
+    </div>
+
+    <!--================-->
+    <br>
+    <br>
+
+<div class="container">
+  <div class="card-deck mb-3 text-center">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <!--<h4 class="my-0 font-weight-normal">Free</h4>-->
+        <img src="20.jpg" alt="20" style="width:100px;height:150px;"/>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">1.40€ </h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>Για όλους</li>
+          <br>
+          <br>
+          <br>
+          </ul>
+        <button type="button" class="btn btn-lg btn-block btn-primary">Αγορά κανονικού εισιτηρίου</button>
+      </div>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+      	<img src="21.jpg" alt="21" style="width:100px;height:150px;"/>
+       <!-- <h4 class="my-0 font-weight-normal">Pro</h4> -->
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">0.70€ </h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>Φοιτητές</li>
+          <li>Ηλικιωμένοι</li>
+          <li>Στρατιωτικοί</li>
+          <br>
+        </ul>
+        <button type="button" class="btn btn-lg btn-block btn-primary">Αγορά μειωμένου εισιτηρίου</button>
+      </div>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <!--<h4 class="my-0 font-weight-normal">Enterprise</h4>-->
+        <img src="22.jpg" alt="22" style="width:100px;height:150px;"/>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">29€ <small class="text-muted">/ mo</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>Για όλους: Συνίσταται για εργαζόμενους/φοιτητές</li>
+          <li>Απαιτεί συνδρομή</li>
+          <br>
+        </ul>
+        <button type="button" class="btn btn-lg btn-block btn-primary">Αγορά μηνιαίου εισιτηρίου</button>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+</div>
