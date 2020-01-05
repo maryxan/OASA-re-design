@@ -8,11 +8,11 @@
 $errors = array(); 
 
 
-// $link = mysqli_connect('localhost', 'root', '', 'sdi1400107');
+$connink = mysqli_connect('localhost', 'root', '', 'sdi1400107');
 
 if (isset($_POST['login_user'])) {
-  $username = mysqli_real_escape_string($link, $_POST['username']);
-  $password = mysqli_real_escape_string($link, $_POST['password']);
+  $username = mysqli_real_escape_string($conn, $_POST['username']);
+  $password = mysqli_real_escape_string($conn, $_POST['password']);
 
   if (empty($username)) {
     array_push($errors, "Username is required");
@@ -24,7 +24,7 @@ if (isset($_POST['login_user'])) {
   if (count($errors) == 0) {
     //$password = md5($password);
     $query = "SELECT * FROM simpleuser WHERE username='$username' AND password='$password'";
-    $results = mysqli_query($link, $query);
+    $results = mysqli_query($conn, $query);
     $row = mysqli_fetch_array($results);
     $active = $row['active'];  
 

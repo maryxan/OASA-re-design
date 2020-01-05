@@ -4,9 +4,9 @@ $username = 'root';
 $password = '';
 $db = 'sdi1400107';
 
-$link = mysqli_connect($host,$username,$password,$db);
+$conn = mysqli_connect($host,$username,$password,$db);
 
-if($link === false){
+if($conn === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 

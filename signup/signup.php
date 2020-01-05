@@ -13,17 +13,17 @@ include '../db_connection/db_connection.php';
 $errors = array(); 
 
 // connect to the database
-// $link = mysqli_connect('localhost', 'root', '', 'sdi1400107');
+$connink = mysqli_connect('localhost', 'root', '', 'sdi1400107');
 
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
   // receive all input values from the form
-  $name = mysqli_real_escape_string($link, $_POST['name']);
-  $surname = mysqli_real_escape_string($link, $_POST['surname']);
-  $username = mysqli_real_escape_string($link, $_POST['username']);
-  $email = mysqli_real_escape_string($link, $_POST['email']);
-  $password_1 = mysqli_real_escape_string($link, $_POST['password_1']);
-  $password_2 = mysqli_real_escape_string($link, $_POST['password_2']);
+  $name = mysqli_real_escape_string($conn, $_POST['name']);
+  $surname = mysqli_real_escape_string($conn, $_POST['surname']);
+  $username = mysqli_real_escape_string($conn, $_POST['username']);
+  $email = mysqli_real_escape_string($conn, $_POST['email']);
+  $password_1 = mysqli_real_escape_string($conn, $_POST['password_1']);
+  $password_2 = mysqli_real_escape_string($conn, $_POST['password_2']);
 
   // form validation: ensure that the form is correctly filled ...
   // by adding (array_push()) corresponding error unto $errors array
@@ -39,7 +39,7 @@ if (isset($_POST['reg_user'])) {
   // first check the database to make sure 
   // a user does not already exist with the same username and/or email
   $user_check_query = "SELECT * FROM simpleuser WHERE username='$username' OR email='$email' LIMIT 1";
-  $result = mysqli_query($link, $user_check_query);
+  $result = mysqli_query($conn, $user_check_query);
   $user = mysqli_fetch_assoc($result);
   
   if ($user) { // if user exists
@@ -58,7 +58,7 @@ if (isset($_POST['reg_user'])) {
 
     $query = "INSERT INTO simpleuser (username, password, name, surname, email) 
           VALUES ('$username', '$password', '$name', '$surname', '$email')";
-    mysqli_query($link, $query);
+    mysqli_query($conn, $query);
     // $_SESSION['username'] = $username;
     $_SESSION['success'] = "You are now logged in";
     header('location:../profile/profile.php');
