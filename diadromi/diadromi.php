@@ -4,6 +4,8 @@
 	session_start();
 
 	?>
+  
+
 	<!DOCTYPE html>
 	<html lang="en">
 	<head>
@@ -55,23 +57,25 @@
 
 	<div class="container">
 	<h3>Eπιλέξτε αφετηρία και προορισμό</h3>  
-	<form class="form-inline" action="/action_page.php">
-		<label for="email">Από:</label>
-		<input type="email" id="email" placeholder="Επιλέξτε σημείο εκκίνισης" name="email">
-		<label for="pwd">Πρός:</label>
-		<input type="password" id="pwd" placeholder="Επιλέξτε προορισμό" name="pswd">
-		<button type="submit">Εύρεση διαδρομής</button>
+	<form class="form-inline" method="get" action="../diadromi/diadromi.php">
+		<label for="starting_point">Από:</label>
+		<input type="text" placeholder="Σημείο εκκίνησης" name="starting_point">
+		<label for="destination">Πρός:</label>
+		<input type="text" placeholder="Προορισμός" name="destination">
+		<button type="submit" name="find_route">Εύρεση διαδρομής</button>
 	</form>
 	</div>
-
 	<br/>
 	<br/>
 
 	<?php
+
+      if(isset($_GET['find_route'])){
+     
 		$query_for_routes = "select * 
 		from routes
-		where starting_point = '10η Καισαριανής' 
-		and destination = 'Λιμάνι Πειραιά'";
+		where starting_point = '".$_GET['starting_point']."' 
+		and destination = '".$_GET['destination']."'";
 
 		$result_routes = $conn->query($query_for_routes);
 		$routes_amount = $result_routes->num_rows;
@@ -134,7 +138,7 @@
 			echo $route_description;
 		}
 		
-
+     } 
 	?>
 
 	<br/>
