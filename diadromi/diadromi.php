@@ -70,125 +70,111 @@
 
 	<?php
 
-      if(isset($_GET['find_route'])){
+		if(isset($_GET['find_route'])){
      
-		$query_for_routes = "select * 
-		from routes
-		where starting_point = '".$_GET['starting_point']."' 
-		and destination = '".$_GET['destination']."'";
+			$query_for_routes = "select * 
+			from routes
+			where starting_point = '".$_GET['starting_point']."' 
+			and destination = '".$_GET['destination']."'";
 
-		$result_routes = $conn->query($query_for_routes);
-		$routes_amount = $result_routes->num_rows;
+			$result_routes = $conn->query($query_for_routes);
+			$routes_amount = $result_routes->num_rows;
 
-		
+			$accordion_list = "";
 
-		for ($i=0; $i < $routes_amount; $i++) {			
-			$result_routes-> data_seek($i);
-			$route_row = $result_routes->fetch_array(MYSQLI_ASSOC);
+			
 
-			$query_for_steps = "select 
-				r.id, 
-				s.step_number, 
-				s.start, 
-				s.end, 
-				s.duration,
-				s.medium_type, 
-				s.medium_name, 
-				s.in_between_stops,
-				r.duration as total_duration, 
-				r.price as total_price
-			from routes as r, steps as s
-			where r.id = s.route_id
-			and s.route_id = ".$route_row['id']."
-			order by total_duration asc, s.step_number asc";
+			for ($i=0; $i < $routes_amount; $i++) {			
+				$result_routes-> data_seek($i);
+				$route_row = $result_routes->fetch_array(MYSQLI_ASSOC);
 
-			$result_steps = $conn->query($query_for_steps);
-			$steps_amount = $result_steps->num_rows;
+				$query_for_steps = "select 
+					r.id, 
+					s.step_number, 
+					s.start, 
+					s.end, 
+					s.duration,
+					s.medium_type, 
+					s.medium_name, 
+					s.in_between_stops,
+					r.duration as total_duration, 
+					r.price as total_price
+				from routes as r, steps as s
+				where r.id = s.route_id
+				and s.route_id = ".$route_row['id']."
+				order by total_duration asc, s.step_number asc";
 
-			// echo '<h3>Route #'.$route_row['id'].'</h3>';
+				$result_steps = $conn->query($query_for_steps);
+				$steps_amount = $result_steps->num_rows;
 
-			$route_head = "";
-			$route_description = "";
+				// echo '<h3>Route #'.$route_row['id'].'</h3>';
 
-			for ($j=0; $j < $steps_amount; $j++) { 
-				$result_steps-> data_seek($j);
-				$step_row = $result_steps->fetch_array(MYSQLI_ASSOC);
+				$route_head = "";
+				$route_description = "";
 
-				if($route_head == ""){
-					$route_head = $step_row['medium_name'].'('.$step_row['medium_type'].')';
+				for ($j=0; $j < $steps_amount; $j++) { 
+					$result_steps-> data_seek($j);
+					$step_row = $result_steps->fetch_array(MYSQLI_ASSOC);
+
+					if($route_head == ""){
+						$route_head = $step_row['medium_name'].'('.$step_row['medium_type'].')';
+					}
+					else{
+						$route_head = $route_head.'->'.$step_row['medium_name'].'('.$step_row['medium_type'].')';		
+					}
+
+					$route_description = $route_description.'<li>'
+					.$step_row['medium_name']
+					.'('.$step_row['medium_type'].')'.' : '
+					.$step_row['start']
+					.'-'
+					.$step_row['end']
+					.' ( '
+					.$step_row['duration']
+					.')'.'</li>';
+
+					// echo '<p>Step #'.$step_row['step_number'].'</p>';
 				}
-				else{
-					$route_head = $route_head.'->'.$step_row['medium_name'].'('.$step_row['medium_type'].')';		
-				}
 
-				$route_description = '<p>'.$route_description
-				.$step_row['medium_name']
-				.'('.$step_row['medium_type'].')'.' : '
-				.$step_row['start']
-				.'-'
-				.$step_row['end']
-				.' ( '
-				.$step_row['duration']
-				.')'.'</p>'.'<br/>';
+				$route_head = '
+				<div class="card-header" id="heading'.$i.'">
+					<h2 class="mb-0">
+						<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse'.$i.'" aria-expanded="true" aria-controls="collapse'.$i.'">
+						'.$route_head.'
+						</button>
+					</h2>
+				</div>';
 
-				// echo '<p>Step #'.$step_row['step_number'].'</p>';
+				$route_description = '
+				<div id="collapse'.$i.'" class="collapse '.($i == 0?'show':'').'" aria-labelledby="heading'.$i.'" data-parent="#accordionExample">
+					<div class="card-body">
+						<ul>
+							'.$route_description.'
+						</ul>
+					</div>
+				</div>
+				';
+
+				$accordion_list = $accordion_list.'
+				<div class="card">
+				'.$route_head
+				.$route_description
+				.'</div>';
 			}
 
-			echo '<h3>'.$route_head.'</h3>';
-			echo $route_description;
-		}
-		
-     } 
+			$accordion = '
+			<div class="accordion" id="accordionExample">
+			'.$accordion_list.
+			'</div>';
+
+
+			echo $accordion;		
+		} 
 	?>
 
 	<br/>
 	<br/>
 
-	<div class="accordion" id="accordionExample">
-	<div class="card">
-	<div class="card-header" id="headingOne">
-		<h2 class="mb-0">
-		<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-			Collapsible Group Item #1
-		</button>
-		</h2>
-	</div>
-
-	<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-		<div class="card-body">
-		Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-		</div>
-	</div>
-	</div>
-	<div class="card">
-	<div class="card-header" id="headingTwo">
-		<h2 class="mb-0">
-		<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-			Collapsible Group Item #2
-		</button>
-		</h2>
-	</div>
-	<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-		<div class="card-body">
-		Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-		</div>
-	</div>
-	</div>
-	<div class="card">
-	<div class="card-header" id="headingThree">
-		<h2 class="mb-0">
-		<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-			Collapsible Group Item #3
-		</button>
-		</h2>
-	</div>
-	<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-		<div class="card-body">
-		Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-		</div>
-	</div>
-	</div>
-	</div>
 
 
 	<!-- FOOTER -->
