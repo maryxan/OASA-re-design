@@ -45,18 +45,16 @@ include 'login_logout_button.php';
 	</div>
 </nav>
 
-<div class="bg-img">
-	<form action="/action_page.php" class="container">
+<div class="bg-img">  
+	<form action="diadromi/diadromi.php" method="get" class="container">
 		<h1>Εύρεση διαδρομής</h1>
-
-		<label for="email"><b>Από</b></label>
-		<input type="text" placeholder="Επιλέξτε σημείο εκκίνισης" name="email" required>
-
-		<label for="psw"><b>Πρός</b></label>
-		<input type="password" placeholder="Επιλέξτε προορισμό" name="psw" required>
-
-		<button type="submit" class="btn">Εύρεση</button>
+		<label for="starting_point">Από:</label>
+    <input type="text" placeholder="Σημείο εκκίνησης" name="starting_point">
+    <label for="destination">Πρός:</label>
+    <input type="text" placeholder="Προορισμός" name="destination">
+    <button class="btn" type="submit" name="find_route">Εύρεση διαδρομής</button>
 	</form>
+  
 </div>
 
   

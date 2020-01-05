@@ -186,7 +186,11 @@
 				'.$accordion_list.
 				'</div>';
 
-
+				echo '
+					<div> 
+					<h3>Διαδρομές από '.$_GET['starting_point'].' προς το '.$_GET['destination'].':</h3>
+					</div>
+				';
 				echo $accordion;		
 			}
 		} 
