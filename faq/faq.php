@@ -55,11 +55,11 @@
 </nav>    
 
 
-<header class="cd-header flex flex-column flex-center">
+<!-- <header class="cd-header flex flex-column flex-center">
   <div class="text-component text-center">
     <h1>FAQ</h1>
   </div>
-</header>
+</header> -->
 
 <section class="cd-faq js-cd-faq container max-width-md margin-top-lg margin-bottom-lg">
 	<ul class="cd-faq__categories">
