@@ -1,7 +1,7 @@
 @import "../css/global.css";
 @import "../components/footer/footer.css";
 
-.collapsible {
+/*.collapsible {
     background-color: #777;
     color: white;
     cursor: pointer;
@@ -22,4 +22,22 @@
     display: none;
     overflow: hidden;
     background-color: #f1f1f1;
+  }*/
+
+ .btn {
+
+    background-color: grey;
+
+ } 
+
+.bg-img {
+    /* The image used */
+    background-image: url("../images/amea6.jpg");
+  
+    min-height: 450px;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
   }

@@ -13,18 +13,22 @@ include '../login_logout_button.php';
   <title>OASA.gr</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="amea.css">
+  <link rel="stylesheet" type="text/css" href="../amea/amea.css">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   <script src="amea.js"></script>
 
 </head>
+
 <body>
 
+<div class="content">
 <!--  ============= NAVIGATION BAR ================
  -->
 
@@ -55,41 +59,13 @@ include '../login_logout_button.php';
  <!-- breadcrumbs -->
  <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="index.php">Αρχική</a></li>
+    <li class="breadcrumb-item"><a href="../index.php">Αρχική</a></li>
     <li class="breadcrumb-item active" aria-current="page">AMEA</li>
   </ol>
 </nav>     
 
-<!-- ==============================================  
- -->
-
-	<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<h2>Στάσεις με προεξοχές</h2>
-				</div>
-				<div class="col-12">
-					<div id="custom-search-input">
-						<div class="input-group">
-							<input type="text" class="search-query form-control" placeholder="Search" />
-							<span class="input-group-btn">
-								<button type="submit">
-									<span class="glyphicon glyphicon-search" style="height:26px;width:20px;"></span>
-								</button>
-							</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-
-
-
-
-
-	<br> <br> <br>
-	<div style="background-image: url('1484992.jpg');">
+	<!-- <br> <br> <br>
+	<div style="background-image: url('1484992.jpg'); width:100%">
 
 		<br> <br> <br>
 		<button type="button" class="collapsible">Μάθετε περισσότερα</button>
@@ -97,13 +73,48 @@ include '../login_logout_button.php';
 			<p>Περιγραφή, Ενέργειες, Δράσεις...</p>
 		</div>
 
-	</div>
+		<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+		</div>
+ -->
 
-	<!-- FOOTER -->
-	<div id="app-footer"></div>
-</body>
+ <div class="bg-img">  
+	<div class="container">
+	  <div class="row searchFilter">
+	     <div class="col-sm-12" >
+	      <div class="input-group" style="margin-top: 240px;">
+	       <input id="table_filter" type="text" class="form-control" aria-label="Text input with segmented button dropdown" placeholder="Στάσεις, σταθμοί,περιοχές.." >
+	       <div class="input-group-btn" >
+	        <div class="input-group-btn search-panel" >
+	           <form action="#" method="get" id="searchForm" class="input-group">
+	                    
+	                        <select name="search_param" id="search_param" class="btn" data-toggle="dropdown">
+	                            <option value="all">'Ολα</option>
+	                            <option value="username">Στάσεις</option>
+	                            <option value="email">Σταθμοί</option>
+<!-- 	                            <option value="studentcode">Περιοχή</option>
+ -->   	                            <option value="studentcode">ΜΜΜ</option>
 
- <script>
+	                        </select>
+	                        <span class="input-group-btn">
+	                        <button id="searchBtn" type="button" class="btn btn-secondary btn-search" ><span class="glyphicon glyphicon-search" >&nbsp;</span> <span class="label-icon">Αναζήτηση</span></button>
+	                    </span>
+	                    
+	                </form>
+	        </div>
+	       </div>
+	      </div>
+	     </div>
+	  </div>
+	</div> 
+</div>
+
+
+ 
+
+</div>
+<div id="app-footer"></div>
+
+<script>
 var coll = document.getElementsByClassName("collapsible");
 var i;
 
@@ -119,4 +130,5 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 </script>
+</body> 
 </html>

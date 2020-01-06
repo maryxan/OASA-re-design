@@ -2,6 +2,7 @@
 
 	include '../db_connection/db_connection.php';
 	session_start();
+
 	include '../login_logout_button.php';
 	
 	include 'getMediumPair.php';
