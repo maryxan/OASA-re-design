@@ -27,11 +27,11 @@ include '../login_logout_button.php';
 
         <li><a href="../diadromi/diadromi.php">Διαδρομή</a></li>
         <li><a href="#">Δρομολόγια</a></li>
-        <li><a href="../tickets/tickets.php">Εισητήρια-κάρτες</a></li>
+        <li><a href="../tickets/tickets.php">Εισητήρια-Κάρτες</a></li>
         <li><a href="../amea/amea.php">ΑΜΕΑ</a></li>
         <li><a href="#">Ανακοινώσεις</a></li>
         <li><a href="../faq/faq.php">FAQ</a></li>
-        <li><a href="#">για τον ΟΑΣΑ</a></li>
+        <li><a href="#">Για τον ΟΑΣΑ</a></li>
 
    </ul>
     <ul class="nav navbar-nav navbar-right">
