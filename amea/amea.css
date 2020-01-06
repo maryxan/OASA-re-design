@@ -1,3 +1,6 @@
+@import "../css/global.css";
+@import "../components/footer/footer.css";
+
 .collapsible {
     background-color: #777;
     color: white;

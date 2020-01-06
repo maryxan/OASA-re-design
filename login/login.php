@@ -60,8 +60,10 @@ if (isset($_POST['login_user'])) {
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="login.js"></script>
 </head>
-<body>
+<body> 
+    <div class="content">
 
 <!--  ============= NAVIGATION BAR ================
  -->
@@ -132,5 +134,7 @@ if (isset($_POST['login_user'])) {
 
 </div>
 
+    </div>
+    <div id="app-footer"></div>
 </body>
 </html>

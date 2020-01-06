@@ -20,6 +20,7 @@ include '../login_logout_button.php';
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="amea.js"></script>
 
 </head>
 <body>
@@ -96,22 +97,10 @@ include '../login_logout_button.php';
 			<p>Περιγραφή, Ενέργειες, Δράσεις...</p>
 		</div>
 
-		<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
 	</div>
 
 	<!-- FOOTER -->
-	<footer class="footer" style="background-color: #ffffff;padding-top: 50px;">
-		<div class="footer-bottom">
-		<div class="container">
-			<div class="row">
-			<div class="col-md-12">
-				<!--Footer Bottom-->
-				<p class="text-center">&copy; Copyright 2019 - University of Athens Di.  All rights reserved.</p>
-			</div>
-			</div>
-		</div>
-		</div>
-	</footer>
+	<div id="app-footer"></div>
 </body>
 
  <script>

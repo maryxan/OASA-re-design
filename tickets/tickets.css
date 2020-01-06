@@ -1,3 +1,6 @@
+@import "../css/global.css";
+@import "../components/footer/footer.css";
+
 .ticket {
 	
 	display: flex;

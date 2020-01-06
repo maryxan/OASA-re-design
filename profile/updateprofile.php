@@ -20,7 +20,8 @@
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body> 
+    <div class="content">
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="../index.php">OASA logo</a>
@@ -245,6 +246,8 @@
 <!-- ====================================================================================================================
  -->
 
+    </div>
+    <div id="app-footer"></div>
 </body>
 <script type="text/javascript">
 

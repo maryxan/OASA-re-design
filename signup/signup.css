@@ -1,3 +1,6 @@
+@import "../css/global.css";
+@import "../components/footer/footer.css";
+
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box}
 

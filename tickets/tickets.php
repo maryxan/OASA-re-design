@@ -24,10 +24,11 @@ include_js: false
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
+  <script src="tickets.js"></script>
 </head>
 
-<body>
+<body> 
+    <div class="content">
 <!--  ============= NAVIGATION BAR ================
 	 -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -47,9 +48,10 @@ include_js: false
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="nav-item"><a class="nav-link" href="../signup/signup.php"><i class="fa fa-user fa-lg`" aria-hidden="true"></i> Εγγραφή</a></li>
-        <?php
-          echo login_logout_button();
-        ?>			</ul>
+				<?php
+					echo login_logout_button();
+				?>			
+			</ul>
 		</div>
 	</nav>
 
@@ -78,7 +80,7 @@ include_js: false
     <!--================-->
     <br>
     <br>
-
+</div>
 <div class="container">
   <div class="card-deck mb-3 text-center">
     <div class="card mb-4 shadow-sm">
@@ -129,10 +131,12 @@ include_js: false
       </div>
     </div>
   </div>
-
+</div>
   <br>
   <br>
   <br>
   <br>
 </div>
+<div id="app-footer"></div>
+</body>
 </html>
