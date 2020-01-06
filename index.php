@@ -50,7 +50,7 @@ include 'login_logout_button.php';
 		<h1>Εύρεση διαδρομής</h1>
 		<label for="starting_point">Από:</label>
     <input type="text" placeholder="Σημείο εκκίνησης" name="starting_point">
-    <label for="destination">Πρός:</label>
+    <label for="destination">Προς:</label>
     <input type="text" placeholder="Προορισμός" name="destination">
     <button class="btn" type="submit" name="find_route">Εύρεση διαδρομής</button>
 	</form>

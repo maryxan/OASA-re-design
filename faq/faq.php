@@ -1,9 +1,7 @@
 <?php
-
   session_start();
   include '../login_logout_button.php';
-
-	?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -127,7 +125,7 @@
 		<ul id="Λογαριασμός" class="cd-faq__group">
 			<li class="cd-faq__title"><h2>Λογαριασμός</h2></li>
 			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" href="#0"><span>Ξέχασα τον κωδικό πρόσβασής μου! Τι κάνω?</span></a>
+				<a class="cd-faq__trigger" href="#0"><span>Ξέχασα τον κωδικό Προςβασής μου! Τι κάνω?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
             <p>Ατυχήσατε!</p>

@@ -136,7 +136,7 @@ if (isset($_POST['reg_user'])) {
     <label for="email"><b>Email</b></label>
     <input type="text"  name="email" required>
 
-    <label for="psw"><b>Κωδικός πρόσβασης</b></label>
+    <label for="psw"><b>Κωδικός Προςβασης</b></label>
     <input type="password"  name="password_1" required>
 
     <label for="psw-repeat"><b>Επιβεβαίωση κωδικού</b></label>
