@@ -120,7 +120,7 @@ if (isset($_POST['reg_user'])) {
 <!-- ==============================================  
  -->
 <div class="container">
-  <form action="signup.php"  method="post" style="border:1px solid #ccc">
+  <form action="signup.php"  method="post">
   <?php include('errors.php'); ?>
 
   <div class="containerr">

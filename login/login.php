@@ -55,7 +55,7 @@ if (isset($_POST['login_user'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" type="text/css" href="login.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
@@ -115,16 +115,19 @@ if (isset($_POST['login_user'])) {
 
 
   <div class="containerr">
-    <label> Username </label>
+    <h1>Είσοδος</h1>
+    <hr>
+    <label>Username </label>
     <input type="text" placeholder="Enter Username" name="username" required>
 
-    <label>Password</label>
+    <label>Κωδικός</label>
     <input type="password" placeholder="Enter Password" name="password" required>
 
-    <button type="submit" name="login_user">Login</button><br>
+    <button class="bat" type="submit" name="login_user">Login</button><br>
     
   </div>
   <div class="containerr">
+    <hr>
     <p>Δεν έχεις λογαριασμό? <a href="../signup/signup.php">Εγγραφή 
   </div>
 </form>

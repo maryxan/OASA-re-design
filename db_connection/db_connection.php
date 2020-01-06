@@ -4,6 +4,7 @@ $username = 'root';
 $password = '';
 $db = 'sdi1400107';
 
+
 $conn = mysqli_connect($host,$username,$password,$db);
 
 if($conn === false){

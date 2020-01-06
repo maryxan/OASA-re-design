@@ -13,15 +13,18 @@ include '../login_logout_button.php';
   <title>OASA.gr</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="amea.css">
+  <link rel="stylesheet" type="text/css" href="../amea/amea.css">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
 </head>
+
 <body>
 
 <!--  ============= NAVIGATION BAR ================
@@ -54,41 +57,13 @@ include '../login_logout_button.php';
  <!-- breadcrumbs -->
  <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="index.php">Αρχική</a></li>
+    <li class="breadcrumb-item"><a href="../index.php">Αρχική</a></li>
     <li class="breadcrumb-item active" aria-current="page">AMEA</li>
   </ol>
 </nav>     
 
-<!-- ==============================================  
- -->
-
-	<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<h2>Στάσεις με προεξοχές</h2>
-				</div>
-				<div class="col-12">
-					<div id="custom-search-input">
-						<div class="input-group">
-							<input type="text" class="search-query form-control" placeholder="Search" />
-							<span class="input-group-btn">
-								<button type="submit">
-									<span class="glyphicon glyphicon-search" style="height:26px;width:20px;"></span>
-								</button>
-							</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-
-
-
-
-
-	<br> <br> <br>
-	<div style="background-image: url('1484992.jpg');">
+	<!-- <br> <br> <br>
+	<div style="background-image: url('1484992.jpg'); width:100%">
 
 		<br> <br> <br>
 		<button type="button" class="collapsible">Μάθετε περισσότερα</button>
@@ -97,24 +72,84 @@ include '../login_logout_button.php';
 		</div>
 
 		<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
-	</div>
+		</div>
+ -->
+
+ <div class="bg-img">  
+	<div class="container">
+	  <div class="row searchFilter">
+	     <div class="col-sm-12" >
+	      <div class="input-group" style="margin-top: 240px;">
+	       <input id="table_filter" type="text" class="form-control" aria-label="Text input with segmented button dropdown" placeholder="Στάσεις, σταθμοί,περιοχές.." >
+	       <div class="input-group-btn" >
+	        <div class="input-group-btn search-panel" >
+	           <form action="#" method="get" id="searchForm" class="input-group">
+	                    
+	                        <select name="search_param" id="search_param" class="btn" data-toggle="dropdown">
+	                            <option value="all">'Ολα</option>
+	                            <option value="username">Στάσεις</option>
+	                            <option value="email">Σταθμοί</option>
+<!-- 	                            <option value="studentcode">Περιοχή</option>
+ -->   	                            <option value="studentcode">ΜΜΜ</option>
+
+	                        </select>
+	                        <span class="input-group-btn">
+	                        <button id="searchBtn" type="button" class="btn btn-secondary btn-search" ><span class="glyphicon glyphicon-search" >&nbsp;</span> <span class="label-icon">Αναζήτηση</span></button>
+	                    </span>
+	                    
+	                </form>
+	        </div>
+	       </div>
+	      </div>
+	     </div>
+	  </div>
+	</div> 
+</div>
+
+
+ 
+
 
 	<!-- FOOTER -->
-	<footer class="footer" style="background-color: #ffffff;padding-top: 50px;">
-		<div class="footer-bottom">
-		<div class="container">
-			<div class="row">
-			<div class="col-md-12">
-				<!--Footer Bottom-->
-				<p class="text-center">&copy; Copyright 2019 - University of Athens Di.  All rights reserved.</p>
-			</div>
-			</div>
-		</div>
-		</div>
-	</footer>
-</body>
+	<br>
+	<footer class="site-footer">
+        <div class="containerr">
+        <div class="row" style="margin-left:20px;">
+          <div class="col-sm-12 col-md-6">
+            <h6>Επικοινωνία</h6>
+            <ul class="footer-links">
+              <li>Διευθυνση:Μετσόβου 15,Αθήνα 106 82</li>
+              <li>Τηλέφωνο:210-82.00.999</li>
+              <li>Φαξ:210-82.12.219</li>
+              <li>e-mail:oasa@oasa.gr</li>
+              <li>Τηλεφωνική Πληροφόρηση:11 185</li>
+            </ul>
+          </div>     
 
- <script>
+          
+
+        </div>
+        <hr>
+      <div class="containerr">
+        <div class="row" style="margin-left:20px;">
+          <div class="col-md-8 col-sm-6 col-xs-12" >
+            <p class="copyright-text">Copyright &copy;2020 - University of Athens. All rights reserved.
+            </p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="https://www.facebook.com/OASA.GR" target="_blank"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="instagram" href="https://www.instagram.com/OASA.GR/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+              <li><a class="youtube" href="https://www.youtube.com/channel/UC0XdkZnOHhRLc3NE9tm4NUQ" target="_blank"><i class="fa fa-youtube"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+</footer>
+
+<script>
 var coll = document.getElementsByClassName("collapsible");
 var i;
 
@@ -130,4 +165,5 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 </script>
+</body> 
 </html>
