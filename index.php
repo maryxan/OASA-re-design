@@ -31,11 +31,11 @@ include 'login_logout_button.php';
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item"><a class="nav-link" href="diadromi/diadromi.php">Διαδρομή</a></li>
 			<li class="nav-item"><a class="nav-link" href="#">Δρομολόγια</a></li>
-			<li class="nav-item"><a class="nav-link" href="tickets/tickets.php">Εισιτήρια-κάρτες</a></li>
+			<li class="nav-item"><a class="nav-link" href="tickets/tickets.php">Εισιτήρια-Κάρτες</a></li>
 			<li class="nav-item"><a class="nav-link" href="amea/amea.php">ΑΜΕΑ</a></li>
 			<li class="nav-item"><a class="nav-link" href="#">Ανακοινώσεις</a></li>
 			<li class="nav-item"><a class="nav-link" href="faq/faq.php">FAQ</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">για τον ΟΑΣΑ</a></li>
+			<li class="nav-item"><a class="nav-link" href="#">Για τον ΟΑΣΑ</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<li class="nav-item"><a class="nav-link" href="signup/signup.php"><i class="fa fa-user fa-lg`" aria-hidden="true"></i> Εγγραφή</a></li>
@@ -50,7 +50,7 @@ include 'login_logout_button.php';
 		<h1>Εύρεση διαδρομής</h1>
 		<label for="starting_point">Από:</label>
     <input type="text" placeholder="Σημείο εκκίνησης" name="starting_point">
-    <label for="destination">Πρός:</label>
+    <label for="destination">Προς:</label>
     <input type="text" placeholder="Προορισμός" name="destination">
     <button class="btn" type="submit" name="find_route">Εύρεση διαδρομής</button>
 	</form>

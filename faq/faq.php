@@ -1,9 +1,7 @@
 <?php
-
   session_start();
   include '../login_logout_button.php';
-
-	?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,11 +29,11 @@
 		<ul class="navbar-nav mr-auto">
 		<li class="nav-item"><a class="nav-link" href="../diadromi/diadromi.php">Διαδρομή</a></li>
 		<li class="nav-item"><a class="nav-link" href="#">Δρομολόγια</a></li>
-		<li class="nav-item"><a class="nav-link" href="../tickets/tickets.php">Εισιτήρια-κάρτες</a></li>
+		<li class="nav-item"><a class="nav-link" href="../tickets/tickets.php">Εισιτήρια-Κάρτες</a></li>
 		<li class="nav-item"><a class="nav-link" href="../amea/amea.php">ΑΜΕΑ</a></li>
 		<li class="nav-item"><a class="nav-link" href="#">Ανακοινώσεις</a></li>
 		<li class="nav-item active"><a class="nav-link" href="../faq/faq.php">FAQ</a></li>
-		<li class="nav-item"><a class="nav-link" href="#">για τον ΟΑΣΑ</a></li>
+		<li class="nav-item"><a class="nav-link" href="#">Για τον ΟΑΣΑ</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 		<li class="nav-item"><a class="nav-link" href="../signup/signup.php"><i class="fa fa-user fa-lg`" aria-hidden="true"></i> Εγγραφή</a></li>
@@ -127,7 +125,7 @@
 		<ul id="Λογαριασμός" class="cd-faq__group">
 			<li class="cd-faq__title"><h2>Λογαριασμός</h2></li>
 			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" href="#0"><span>Ξέχασα τον κωδικό πρόσβασής μου! Τι κάνω?</span></a>
+				<a class="cd-faq__trigger" href="#0"><span>Ξέχασα τον κωδικό Προςβασής μου! Τι κάνω?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
             <p>Ατυχήσατε!</p>
