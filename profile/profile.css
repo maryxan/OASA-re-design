@@ -1,2 +1,8 @@
 @import "../css/global.css";
 @import "../components/footer/footer.css";
+
+
+.content{
+
+	margin-bottom: 200px;
+}

@@ -75,7 +75,7 @@ include '../login_logout_button.php';
 </nav> 
 
 <!--  <h2><a href="../logout/logout.php">Logout</a></h2>
- --> <h2><a href="../profile/updateprofile.php">Επεξεργασία</a></h2>
+ --> <!-- <h2><a href="../profile/updateprofile.php">Επεξεργασία</a></h2> -->
  
 
 
