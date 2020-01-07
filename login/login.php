@@ -37,6 +37,9 @@ if (isset($_POST['login_user'])) {
     if (mysqli_num_rows($results) == 1) {
       $_SESSION['login_user'] = true;
       $_SESSION["name"] = $row["name"];
+      $_SESSION["surname"] = $row["surname"];
+      $_SESSION["username"] = $row["username"];
+      $_SESSION["email"] = $row["email"];
       header('location:../profile/profile.php');
     }else {
       array_push($errors, "Wrong username/password combination");

@@ -26,22 +26,11 @@ include '../signup_profile_button.php';
 <body> 
     <div class="content">
 
-
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<head>
+<!-- <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
+</head> -->
 
 <!--  ============= NAVIGATION BAR ================
  -->
@@ -62,10 +51,8 @@ include '../signup_profile_button.php';
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<?php
-          echo signup_profile_button();
-        ?>
-				 <?php
-		          echo login_logout_button();
+                    echo signup_profile_button();
+		            echo login_logout_button();
 		        ?>
 			</ul>
 		</div>
@@ -92,63 +79,56 @@ include '../signup_profile_button.php';
     	<div class="col-sm-2"><a href="/users" class="pull-right"></a></div>
     </div>
     <div class="row">
-  		<div class="col-sm-3"><!--left col-->
+  		<!-- <div class="col-sm-3">
               
 
-      <div class="text-center">
-        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
-        <h6>Upload a different photo...</h6>
-        <input type="file" class="text-center center-block file-upload">
-      </div></hr><br>
+            <div class="text-center">
+                <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
+                <h6>Upload a different photo...</h6>
+                <input type="file" class="text-center center-block file-upload">
+            </div></hr><br>
    
-        </div><!--/col-3-->
-    	<div class="col-sm-9">
+        </div> -->
+    	<div class="col">
             <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#home">Στοιχεία</a></li>
-                <li><a data-toggle="tab" href="#messages">Αγαπημένα</a></li>
-              </ul>
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#home">Στοιχεία</a></li>
+            <li  class="nav-item"><a class="nav-link" data-toggle="tab" href="#messages">Αγαπημένα</a></li>
+            </ul>
 
               
           <div class="tab-content">
             <div class="tab-pane active" id="home">
-                <hr>
-                  <form class="form" action="../login/login.php" method="get">
-                      <div class="form-group">
-                          
+                <br>
+                  <form>
+                      <div class="form-row">                          
                           <div class="col-xs-6">
                               <label for="name"><h4>Όνομα</h4></label>
-                              <input type="text" class="form-control" name="name" <?php if (isset($_GET['name'])) echo 'value = "'.$_GET['name'].'"' ?>>
+                              <input type="text" class="form-control" name="name" <?php if (isset($_SESSION['name'])) echo 'value = "'.$_SESSION['name'].'"' ?>>
+                          </div>
+                          <div class="col-xs-6">
+                              <label for="username"><h4>Username</h4></label>
+                              <input type="username" class="form-control" name="username" <?php if (isset($_SESSION['username'])) echo 'value = "'.$_SESSION['username'].'"' ?>>
                           </div>
                       </div>
-                      <div class="form-group">
+                      <div class="form-row">
                                        
                           <div class="col-xs-6">
                             <label for="surname"><h4>Επώνυμο</h4></label>
-                              <input type="text" class="form-control" name="surname"<?php if (isset($_GET['surname'])) echo 'value = "'.$_GET['surname'].'"' ?>>
+                              <input type="text" class="form-control" name="surname"<?php if (isset($_SESSION['surname'])) echo 'value = "'.$_SESSION['surname'].'"' ?>>
                           </div>
-                      </div>
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                              <label for="username"><h4>Username</h4></label>
-                              <input type="username" class="form-control" name="username" <?php if (isset($_GET['username'])) echo 'value = "'.$_GET['username'].'"' ?>>
-                          </div>
-                      </div>
-                      <div class="form-group">
+                      
                           
                           <div class="col-xs-6">
                               <label for="email"><h4>Email</h4></label>
-                              <input type="email" class="form-control" name="email" <?php if (isset($_GET['email'])) echo 'value = "'.$_GET['email'].'"' ?>>
+                              <input type="email" class="form-control" name="email" <?php if (isset($_SESSION['email'])) echo 'value = "'.$_SESSION['email'].'"' ?>>
                           </div>
-                      </div>
-                      <div class="form-group">
-                          
+                      </div>        
+                      <div class="form-row">                         
                           <div class="col-xs-6">
-                              <label for="email"><h4>Περιοχή</h4></label>
-                              <input type="email" class="form-control" id="location">
+                              <label for="location"><h4>Περιοχή</h4></label>
+                              <input type="text" class="form-control" id="location">
                           </div>
-                      </div>
-         
+                      </div> 
                       <div class="form-group">
                            <div class="col-xs-12">
                                 <br>
