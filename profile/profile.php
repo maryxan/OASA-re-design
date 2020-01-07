@@ -3,6 +3,8 @@
 include '../db_connection/db_connection.php';
 session_start();
 include '../login_logout_button.php';
+include '../signup_profile_button.php';
+
 
 ?>
 
@@ -59,7 +61,9 @@ include '../login_logout_button.php';
 				<li class="nav-item"><a class="nav-link" href="#">Για τον ΟΑΣΑ</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li class="nav-item"><a class="nav-link" href="../signup/signup.php"><i class="fa fa-user fa-lg`" aria-hidden="true"></i> Εγγραφή</a></li>
+				<?php
+          echo signup_profile_button();
+        ?>
 				 <?php
 		          echo login_logout_button();
 		        ?>
@@ -108,33 +112,40 @@ include '../login_logout_button.php';
           <div class="tab-content">
             <div class="tab-pane active" id="home">
                 <hr>
-                  <form class="form" action="##" method="post" id="registrationForm">
+                  <form class="form" action="../login/login.php" method="get">
                       <div class="form-group">
                           
                           <div class="col-xs-6">
-                              <label for="first_name"><h4>Όνομα</h4></label>
-                              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
+                              <label for="name"><h4>Όνομα</h4></label>
+                              <input type="text" class="form-control" name="name" <?php if (isset($_GET['name'])) echo 'value = "'.$_GET['name'].'"' ?>>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                                       
+                          <div class="col-xs-6">
+                            <label for="surname"><h4>Επώνυμο</h4></label>
+                              <input type="text" class="form-control" name="surname"<?php if (isset($_GET['surname'])) echo 'value = "'.$_GET['surname'].'"' ?>>
                           </div>
                       </div>
                       <div class="form-group">
                           
                           <div class="col-xs-6">
-                            <label for="last_name"><h4>Επώνυμο</h4></label>
-                              <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
+                              <label for="username"><h4>Username</h4></label>
+                              <input type="username" class="form-control" name="username" <?php if (isset($_GET['username'])) echo 'value = "'.$_GET['username'].'"' ?>>
                           </div>
                       </div>
                       <div class="form-group">
                           
                           <div class="col-xs-6">
                               <label for="email"><h4>Email</h4></label>
-                              <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
+                              <input type="email" class="form-control" name="email" <?php if (isset($_GET['email'])) echo 'value = "'.$_GET['email'].'"' ?>>
                           </div>
                       </div>
                       <div class="form-group">
                           
                           <div class="col-xs-6">
                               <label for="email"><h4>Περιοχή</h4></label>
-                              <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location">
+                              <input type="email" class="form-control" id="location">
                           </div>
                       </div>
          

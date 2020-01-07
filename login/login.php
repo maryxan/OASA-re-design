@@ -1,6 +1,8 @@
 <?php
 
   include 'db_connection.php';
+  include '../signup_profile_button.php';
+
   session_start();
   if(isset($_SESSION["login_user"]) && $_SESSION["login_user"] === true){
     header("location:../profile/profile.php");
@@ -34,6 +36,7 @@ if (isset($_POST['login_user'])) {
 
     if (mysqli_num_rows($results) == 1) {
       $_SESSION['login_user'] = true;
+      $_SESSION["name"] = $row["name"];
       header('location:../profile/profile.php');
     }else {
       array_push($errors, "Wrong username/password combination");
@@ -83,7 +86,9 @@ if (isset($_POST['login_user'])) {
 				<li class="nav-item"><a class="nav-link" href="#">Για τον ΟΑΣΑ</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li class="nav-item"><a class="nav-link" href="../signup/signup.php"><i class="fa fa-user fa-lg`" aria-hidden="true"></i> Εγγραφή</a></li>
+				<?php
+          echo signup_profile_button();
+        ?>
         <?php 
           if(isset(($_SESSION['login_user'])) && ($_SESSION['login_user']) == true) {
 

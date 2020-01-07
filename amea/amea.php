@@ -3,6 +3,8 @@
 include '../db_connection/db_connection.php';
 session_start();
 include '../login_logout_button.php';
+include '../signup_profile_button.php';
+
 
 ?>
 
@@ -48,7 +50,9 @@ include '../login_logout_button.php';
 			<li class="nav-item"><a class="nav-link" href="#">Για τον ΟΑΣΑ</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
-			<li class="nav-item"><a class="nav-link" href="../signup/signup.php"><i class="fa fa-user fa-lg`" aria-hidden="true"></i> Εγγραφή</a></li>
+				<?php
+					echo signup_profile_button();
+				?>
 		        <?php
 		          echo login_logout_button();
 		        ?>
