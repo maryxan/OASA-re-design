@@ -75,7 +75,7 @@ include '../signup_profile_button.php';
 <hr>
 <div class="container bootstrap snippet">
     <div class="row">
-  		<div class="col-sm-10"><h1>User name</h1></div>
+  		<div class="col-sm-10"><h1>Καλως ήρθες <?php if (isset($_SESSION['surname'])) echo ' "'.$_SESSION['username'].'"'?></h1></div>
     	<div class="col-sm-2"><a href="/users" class="pull-right"></a></div>
     </div>
     <div class="row">
@@ -103,24 +103,24 @@ include '../signup_profile_button.php';
                       <div class="form-row">                          
                           <div class="col-xs-6">
                               <label for="name"><h4>Όνομα</h4></label>
-                              <input type="text" class="form-control" name="name" <?php if (isset($_SESSION['name'])) echo 'value = "'.$_SESSION['name'].'"' ?>>
+                              <input readonly type="text" class="form-control" name="name" <?php if (isset($_SESSION['name'])) echo 'value = "'.$_SESSION['name'].'"' ?>>
                           </div>
                           <div class="col-xs-6">
                               <label for="username"><h4>Username</h4></label>
-                              <input type="username" class="form-control" name="username" <?php if (isset($_SESSION['username'])) echo 'value = "'.$_SESSION['username'].'"' ?>>
+                              <input readonly type="username" class="form-control" name="username" <?php if (isset($_SESSION['username'])) echo 'value = "'.$_SESSION['username'].'"' ?>>
                           </div>
                       </div>
                       <div class="form-row">
                                        
                           <div class="col-xs-6">
                             <label for="surname"><h4>Επώνυμο</h4></label>
-                              <input type="text" class="form-control" name="surname"<?php if (isset($_SESSION['surname'])) echo 'value = "'.$_SESSION['surname'].'"' ?>>
+                              <input readonly type="text" class="form-control" name="surname"<?php if (isset($_SESSION['surname'])) echo 'value = "'.$_SESSION['surname'].'"' ?>>
                           </div>
                       
                           
                           <div class="col-xs-6">
                               <label for="email"><h4>Email</h4></label>
-                              <input type="email" class="form-control" name="email" <?php if (isset($_SESSION['email'])) echo 'value = "'.$_SESSION['email'].'"' ?>>
+                              <input readonly type="email" class="form-control" name="email" <?php if (isset($_SESSION['email'])) echo 'value = "'.$_SESSION['email'].'"' ?>>
                           </div>
                       </div>        
                       <div class="form-row">                         
