@@ -151,6 +151,10 @@ if (isset($_POST['reg_user'])) {
     <hr>
     <label for="username"><b>Όνομα χρήστη</b></label>
     <input type="text"  name="username" required>
+
+    <input type="checkbox" class="form-check-input" name="reduced_ticket" style="margin-left:3px;" >
+    <label class="form-check-label" for="reduced_ticket" style="margin-left: 20px;">Δικαιούμαι μειωμένο κόμιστρο *</label>
+
     
     <p>Η καταχώριση της εγγραφής σας συνεπάγεται ότι αποδέχεστε αυτόματα τους <a href="#" style="color:dodgerblue">Όρους Χρήσης</a>.</p>
 
@@ -160,7 +164,8 @@ if (isset($_POST['reg_user'])) {
   </div>
   <div class="containerr">
       <p>
-      Είσαι ήδη μέλος? <a href="../login/login.php">Σύνδεση</a>
+      Είσαι ήδη μέλος? <a href="../login/login.php">Σύνδεση</a><br>
+      * Απευθύνεται σε φοιτητές , ΑΜΕΑ και ανέργους.
     </p>
   </div>
 </form>

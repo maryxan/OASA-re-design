@@ -64,79 +64,20 @@ include '../signup_profile_button.php';
  <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="../index.php">Αρχική</a></li>
-    <li class="breadcrumb-item active" aria-current="page">AMEA</li>
+    <li class="breadcrumb-item"><a href="../amea/amea.php">ΑΜΕΑ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Πληροφορίες</li>
   </ol>
 </nav>     
 
-	<!-- <br> <br> <br>
-	<div style="background-image: url('1484992.jpg'); width:100%">
-
-		<br> <br> <br>
-		<button type="button" class="collapsible">Μάθετε περισσότερα</button>
-		<div class="content">
-			<p>Περιγραφή, Ενέργειες, Δράσεις...</p>
-		</div>
-
-		<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
-		</div>
- -->
-
- <div class="content">
- 	<button type="button" class="btn btn-outline-info btn-lg"><a href="../amea/info.php">Πληροφορίες</a></button>
- </div>
  <br>
  <div class="bg-img">  
-	<div class="container">
-	  <div class="row searchFilter">
-	     <div class="col-sm-12" >
-	      <div class="input-group" style="margin-top: 200px;">
-	       <input id="table_filter" type="text" class="form-control" aria-label="Text input with segmented button dropdown" placeholder="Στάσεις, σταθμοί,περιοχές.." >
-	       <div class="input-group-btn" >
-	        <div class="input-group-btn search-panel" >
-	           <form action="#" method="get" id="searchForm" class="input-group">
-	                    
-	                        <select name="search_param" id="search_param" class="btn btn-outline-info" data-toggle="dropdown">
-	                            <option value="all">'Ολα</option>
-	                            <option value="username">Στάσεις</option>
-	                            <option value="email">Σταθμοί</option>
-	                            <option value="studentcode">Περιοχή</option>
-<!--    	                            <option value="studentcode">ΜΜΜ</option>
- -->
-	                        </select>
-	                        <span class="input-group-btn">
-	                        <button id="searchBtn" type="button" class="btn btn-outline-info" ><span class="glyphicon glyphicon-search" >&nbsp;</span> <span class="label-icon">Αναζήτηση</span></button>
-	                    </span>
-	                    
-	                </form>
-	        </div>
-	       </div>
-	      </div>
-	     </div>
-	  </div>
+	<div class="col-md-4">
+		ΑΑΑΑ
 	</div> 
 </div>
-
-
- 
-
 </div>
+
 <div id="app-footer"></div>
 
-<script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-}
-</script>
 </body> 
 </html>

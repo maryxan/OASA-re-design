@@ -14,7 +14,7 @@
 $errors = array(); 
 
 
-$connink = mysqli_connect('localhost', 'root', '', 'sdi1400107');
+$conn = mysqli_connect('localhost', 'root', '', 'sdi1400107');
 
 if (isset($_POST['login_user'])) {
   $username = mysqli_real_escape_string($conn, $_POST['username']);

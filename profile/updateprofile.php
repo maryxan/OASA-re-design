@@ -45,8 +45,9 @@ include '../signup_profile_button.php';
   if (count($errors) == 0) {
 
     $query = "UPDATE simpleuser
-              SET name = '$name', surname = '$surname', username = '$username', email= '$email'
-              WHERE username = '$username'";
+              -- SET name = '$name', surname = '$surname', username = '$username', email= '$email'
+                SET name = 'changed'
+              WHERE username = 'maryxan'";
     mysqli_query($conn, $query);
     header('location:../profile/profile.php');
    }

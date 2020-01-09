@@ -24,20 +24,20 @@
     background-color: #f1f1f1;
   }*/
 
- .btn {
+ /*.btn {
 
     background-color: grey;
 
- } 
+ } */
 
 .bg-img {
     /* The image used */
-    background-image: url("../images/amea6.jpg");
+    background-image: url("../images/cpy.jpg");
   
     min-height: 450px;
     /* Center and scale the image nicely */
-    background-position: center;
+    background-position: start;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     position: relative;
   }

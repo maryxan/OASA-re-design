@@ -72,7 +72,6 @@ include '../signup_profile_button.php';
 
 <!-- ================================================= PROFILE =============================================================================
  -->
-<hr>
 <div class="container bootstrap snippet">
     <div class="row">
   		<div class="col-sm-10"><h1>Καλως ήρθες <?php if (isset($_SESSION['surname'])) echo ' "'.$_SESSION['username'].'"'?></h1></div>
