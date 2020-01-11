@@ -223,7 +223,9 @@ include '../signup_profile_button.php';
     </div><!--/row-->
 
     </div>
-    <div id="app-footer"></div>
+    <?php
+include "../components/footer/footer.php";
+?>
 </body>
 
 <script type="text/javascript">

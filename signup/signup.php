@@ -171,6 +171,8 @@ if (isset($_POST['reg_user'])) {
 </form>
 </div>
     </div>
-    <div id="app-footer"></div>
+    <?php
+include "../components/footer/footer.php";
+?>
 </body>
 </html>
