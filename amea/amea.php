@@ -81,42 +81,109 @@ include '../signup_profile_button.php';
 		</div>
  -->
 
- <div class="content">
- 	<button type="button" class="btn btn-outline-info btn-lg"><a href="../amea/info.php">Πληροφορίες</a></button>
- </div>
- <br>
- <div class="bg-img">  
-	<div class="container">
-	  <div class="row searchFilter">
-	     <div class="col-sm-12" >
-	      <div class="input-group" style="margin-top: 200px;">
-	       <input id="table_filter" type="text" class="form-control" aria-label="Text input with segmented button dropdown" placeholder="Στάσεις, σταθμοί,περιοχές.." >
-	       <div class="input-group-btn" >
-	        <div class="input-group-btn search-panel" >
-	           <form action="#" method="get" id="searchForm" class="input-group">
-	                    
-	                        <select name="search_param" id="search_param" class="btn btn-outline-info" data-toggle="dropdown">
-	                            <option value="all">'Ολα</option>
-	                            <option value="username">Στάσεις</option>
-	                            <option value="email">Σταθμοί</option>
-	                            <option value="studentcode">Περιοχή</option>
-<!--    	                            <option value="studentcode">ΜΜΜ</option>
- -->
-	                        </select>
-	                        <span class="input-group-btn">
-	                        <button id="searchBtn" type="button" class="btn btn-outline-info" ><span class="glyphicon glyphicon-search" >&nbsp;</span> <span class="label-icon">Αναζήτηση</span></button>
-	                    </span>
-	                    
-	                </form>
-	        </div>
-	       </div>
-	      </div>
-	     </div>
-	  </div>
-	</div> 
-</div>
+	<div class="content">
+		<button type="button" class="btn btn-outline-info btn-lg"><a href="../amea/info.php">Πληροφορίες</a></button>
+	</div>
+	<br>
+	<div class="bg-img">  
+	
+		<div class="container table-container">        
+			<table class="table">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col-sm">Στάση/Σταθμός</th>
+						<th scope="col-sm">Οδός</th>
+						<th scope="col-sm">Περιοχή</th>
+					</tr>
+				</thead>
+				<tbody>
+				<?php
 
+					if (isset($_GET['pageno'])) {
+						$pageno = $_GET['pageno'];
+					} else {
+						$pageno = 1;
+					}
+					$no_of_records_per_page = 10;
+					$offset = ($pageno-1) * $no_of_records_per_page;
 
+					$total_pages_sql = "SELECT COUNT(*) FROM amea_stations";
+					$result = mysqli_query($conn,$total_pages_sql);
+					$total_rows = mysqli_fetch_array($result)[0];
+					$total_pages = ceil($total_rows / $no_of_records_per_page);
+		
+					$query = "select * from amea_stations limit $offset, $no_of_records_per_page ";
+					$result = $conn->query($query);
+					$amount = $result->num_rows;
+
+					$table_rows = "";
+					for ($i=0; $i < $amount; $i++) { 
+						$result->data_seek($i);
+						$row = $result->fetch_array(MYSQLI_ASSOC);
+
+						$table_rows = $table_rows
+						."<tr>"
+						."<td>"
+						.$row['station']
+						."</td>
+						"
+						."<td>"
+						.$row['street']
+						."</td>
+						"
+						."<td>"
+						.$row['district']
+						."</td>
+						"."</tr>
+						"
+						;
+					}
+
+					echo $table_rows;
+
+					
+				?>
+				</tbody>
+			</table>
+		</div> 
+		<div class="container d-flex justify-content-center">
+			<nav>
+				<ul class="pagination">
+					<li class="page-item">
+						<a class="page-link" href="?pageno=1">First</a>
+					</li>
+					<li class="page-item <?php if($pageno <= 1){ echo 'disabled'; } ?>">
+						<a class="page-link" href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>">Prev</a>
+					</li>
+
+					<?php
+						for ($i=1; $i <= $total_pages; $i++) { 
+							if( $i == $pageno){
+								echo '<li class="page-item active">
+								<a class="page-link" href="?pageno='.$i.'">'.$i .'</a>
+								</li>
+								';
+							}
+							else{
+								echo '<li class="page-item">
+								<a class="page-link" href="?pageno='.$i.'">'.$i .'</a>
+								</li>
+								';
+							}
+						}
+					?>
+
+					<li class="page-item <?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
+						<a class="page-link" href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>">Next</a>
+					</li>
+					<li class="page-item">
+						<a class="page-link" href="?pageno=<?php echo $total_pages; ?>">Last</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+	</div>
  
 
 </div>
