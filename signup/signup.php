@@ -6,11 +6,6 @@ include '../login_logout_button.php';
 include '../signup_profile_button.php';
 
 ?>
-<!-- // initializing variables
-// $name = "";
-// $surname = "";
-// $username = "";
-// $email    = ""; -->
 
 <?php
 $errors = array(); 
@@ -27,6 +22,14 @@ if (isset($_POST['reg_user'])) {
   $email = mysqli_real_escape_string($conn, $_POST['email']);
   $password_1 = mysqli_real_escape_string($conn, $_POST['password_1']);
   $password_2 = mysqli_real_escape_string($conn, $_POST['password_2']);
+
+  if(isset($_POST['reduced_ticket'])){
+    //$stok is checked and value = 1
+    $reduced_ticket = 1;
+    }else{
+    //$stok is nog checked and value=0
+    $reduced_ticket=0;
+}
 
   // form validation: ensure that the form is correctly filled ...
   // by adding (array_push()) corresponding error unto $errors array
@@ -59,12 +62,22 @@ if (isset($_POST['reg_user'])) {
   if (count($errors) == 0) {
     $password = md5($password_1);//encrypt the password before saving in the database
 
-    $query = "INSERT INTO simpleuser (username, password, name, surname, email) 
-          VALUES ('$username', '$password', '$name', '$surname', '$email')";
+    $query = "INSERT INTO simpleuser (username, password, name, surname, email,reduced_ticket) 
+          VALUES ('$username', '$password', '$name', '$surname', '$email' , '$reduced_ticket')";
     mysqli_query($conn, $query);
+    
     // $_SESSION['username'] = $username;
-    $_SESSION['success'] = "You are now logged in";
+    $_SESSION['reg_user'] = true;
+    $_SESSION['login_user'] = true;
+    $_SESSION["name"] = $row["name"];
+    $_SESSION["surname"] = $row["surname"];
+    $_SESSION["username"] = $row["username"];
+    $_SESSION["email"] = $row["email"];
+    $_SESSION["reduced_ticket"] = $row["reduced_ticket"];
+
+    
     header('location:../profile/profile.php');
+    
    }
 }
 ?>
@@ -125,6 +138,7 @@ if (isset($_POST['reg_user'])) {
 </nav> 
 <!-- ==============================================  
  -->
+
 <div class="container">
   <form action="signup.php"  method="post">
   <?php include('errors.php'); ?>
@@ -142,7 +156,7 @@ if (isset($_POST['reg_user'])) {
     <label for="email"><b>Email</b></label>
     <input type="text"  name="email" required>
 
-    <label for="psw"><b>Κωδικός Προςβασης</b></label>
+    <label for="psw"><b>Κωδικός Πρόσβασης</b></label>
     <input type="password"  name="password_1" required>
 
     <label for="psw-repeat"><b>Επιβεβαίωση κωδικού</b></label>
@@ -152,7 +166,7 @@ if (isset($_POST['reg_user'])) {
     <label for="username"><b>Όνομα χρήστη</b></label>
     <input type="text"  name="username" required>
 
-    <input type="checkbox" class="form-check-input" name="reduced_ticket" style="margin-left:3px;" >
+    <input type="checkbox" class="form-check-input" value = 1 name="reduced_ticket" style="margin-left:3px;" >
     <label class="form-check-label" for="reduced_ticket" style="margin-left: 20px;">Δικαιούμαι μειωμένο κόμιστρο *</label>
 
     

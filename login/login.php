@@ -138,7 +138,10 @@ if (isset($_POST['login_user'])) {
   </div>
   <div class="containerr">
     <hr>
-    <p>Δεν έχεις λογαριασμό? <a href="../signup/signup.php">Εγγραφή</a> </p> 
+
+    <p>Δεν έχεις λογαριασμό? <a href="../signup/signup.php">Εγγραφή</a></p> 
+
+  
   </div>
 </form>
 

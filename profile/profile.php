@@ -72,6 +72,19 @@ include '../signup_profile_button.php';
 
 <!-- ================================================= PROFILE =============================================================================
  -->
+<?php
+
+if(isset(($_SESSION['reg_user'])) && ($_SESSION['reg_user']) == true)
+{
+    echo '
+    <div class="container">
+    <div class="alert alert-success alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Εγγραφήκατε επιτυχώς!</strong>
+  </div>
+</div>';
+}
+ ?>
 <div class="container bootstrap snippet">
     <div class="row">
   		<div class="col-sm-10"><h1>Καλως ήρθες <?php if (isset($_SESSION['surname'])) echo ' "'.$_SESSION['username'].'"'?></h1></div>
