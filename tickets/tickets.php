@@ -111,7 +111,7 @@ if(isset($_GET["action"]))
   </nav>   
 
 
-  <div class="bg-img"/>  
+  <div class="bg-img">  
   <!-- <form class="cnt">
     <button class="btn" type="submit" name="find_route"></button>
     <button class="btn" type="submit" name="find_route"></button>
@@ -180,8 +180,8 @@ if(isset($_GET["action"]))
       
     <?php
     if(!empty($_SESSION["shopping_cart"])){
-      $total = 0;
-      ?>
+      $total_price = 0;
+      echo '
         <div style="clear:both"></div>
       <br />
       <h3>Λεπτομέριες αγοράς</h3>
@@ -194,29 +194,27 @@ if(isset($_GET["action"]))
       <th width="15%">Σύνολο</th>
       <th width="5%"></th>
       </tr>
-
-      <?php
-      foreach($_SESSION["shopping_cart"] as $keys => $values)
-    {
-    ?>
-      <tr>
-      <td><?php echo $values["name"]; ?></td>
-      <td><?php echo $values["quantity"]; ?></td>
-      <td> <?php echo $values["price"]; ?>€</td>
-      <td> <?php echo number_format($values["quantity"] * $values["price"], 2);?>€</td>
-      <td><a href="../tickets/tickets.php?action=delete&id= <?php echo $values["id"]; ?>"><span class="text-danger">Αφαίρεση</span></a></td>
-
-    </tr>
-    <?php
-      $total = $total + ($values["quantity"] * $values["price"]);
-    }
-    ?>
+      ';
+      foreach($_SESSION["shopping_cart"] as $keys => $values){
+        echo '
+        <tr>
+        <td>'.$values["name"].'</td>
+        <td>'.$values["quantity"].'</td>
+        <td>'.$values["price"].'€</td>
+        <td>'.number_format($values["quantity"] * $values["price"], 2).'€</td>
+        <td><a href="../tickets/tickets.php?action=delete&id= '.$values["id"].'"><span class="text-danger">Αφαίρεση</span></a></td>
+      </tr>
+      ';
+        $total_price = $total_price + ($values["quantity"] * $values["price"]);
+      }
+      echo '
       <tr>
       <td colspan="3" align="right">Συνολικό ποσό</td>
-      <td align="right"><?php echo number_format($total, 2); ?>€</td>
+      <td align="right">'.number_format($total_price, 2).'€</td>
       <td><button onclick="myFunction()" class="btn btn-success" >Αγορά</button></td> 
       </tr>
-    <?php
+      ';
+      $_SESSION['total_price'] = $total_price;
     }
     ?>
     
@@ -234,8 +232,9 @@ include "../components/footer/footer.php";
   <script>
     
       function myFunction() {
-      confirm("Επιθυμείτε να συνεχίσετε με την αγορά;");  
-      var myWindow = window.open("ticket_print.php", "MsgWindow", "width=500,height=500");
+      if(confirm("Επιθυμείτε να συνεχίσετε με την αγορά;")){
+        var myWindow = window.open("ticket_print.php", "MsgWindow", "width=500,height=500");
+      }
     }
 
      var acc = document.getElementsByClassName("accordion");
