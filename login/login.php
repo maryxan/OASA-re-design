@@ -28,7 +28,7 @@ if (isset($_POST['login_user'])) {
   }
 
   if (count($errors) == 0) {
-    //$password = md5($password);
+    $password = md5($password);
     $query = "SELECT * FROM simpleuser WHERE username='$username' AND password='$password'";
     $results = mysqli_query($conn, $query);
     $row = mysqli_fetch_array($results);
