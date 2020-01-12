@@ -14,24 +14,15 @@ include '../signup_profile_button.php';
     <title>OASA.gr</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="profile.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="profile.js"></script>
 </head>
 <body> 
     <div class="content">
-
-<!-- <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head> -->
-
 <!--  ============= NAVIGATION BAR ================
  -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -65,12 +56,10 @@ include '../signup_profile_button.php';
   </ol>
 </nav> 
 
-<!--  <h2><a href="../logout/logout.php">Logout</a></h2>
- --> <!-- <h2><a href="../profile/updateprofile.php">Επεξεργασία</a></h2> -->
- 
 
 
-<!-- ================================================= PROFILE =============================================================================
+
+<!-- ================================================= PROFILE =========================================================
  -->
 <?php
 
@@ -87,20 +76,11 @@ if(isset(($_SESSION['reg_user'])) && ($_SESSION['reg_user']) == true)
  ?>
 <div class="container bootstrap snippet">
     <div class="row">
-  		<div class="col-sm-10"><h1>Καλως ήρθες <?php if (isset($_SESSION['surname'])) echo ' "'.$_SESSION['username'].'"'?></h1></div>
+  		<div class="col-sm-10"><h1>Καλως ήρθες <?php if (isset($_SESSION['username'])) echo ' "'.$_SESSION['username'].'"'?></h1></div>
     	<div class="col-sm-2"><a href="/users" class="pull-right"></a></div>
     </div>
     <div class="row">
-  		<!-- <div class="col-sm-3">
-              
-
-            <div class="text-center">
-                <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
-                <h6>Upload a different photo...</h6>
-                <input type="file" class="text-center center-block file-upload">
-            </div></hr><br>
-   
-        </div> -->
+  		
     	<div class="col">
             <ul class="nav nav-tabs">
             <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#home">Στοιχεία</a></li>
@@ -119,7 +99,7 @@ if(isset(($_SESSION['reg_user'])) && ($_SESSION['reg_user']) == true)
                           </div>
                           <div class="col-xs-6">
                               <label for="username"><h4>Username</h4></label>
-                              <input readonly type="username" class="form-control" name="username" <?php if (isset($_SESSION['username'])) echo 'value = "'.$_SESSION['username'].'"' ?>>
+                              <input readonly type="username" class="form-control" name="username" <?php if (isset($_SESSION['username']) || isset($_SESSION['new_username'])) echo 'value = "'.$_SESSION['username'].'"' ?>>
                           </div>
                       </div>
                       <div class="form-row">
@@ -240,29 +220,4 @@ if(isset(($_SESSION['reg_user'])) && ($_SESSION['reg_user']) == true)
 include "../components/footer/footer.php";
 ?>
 </body>
-
-<script type="text/javascript">
-
-	$(document).ready(function() {
-
-    
-    var readURL = function(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('.avatar').attr('src', e.target.result);
-            }
-    
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-    
-
-    $(".file-upload").on('change', function(){
-        readURL(this);
-    });
-});
-
-</script>
 </html>

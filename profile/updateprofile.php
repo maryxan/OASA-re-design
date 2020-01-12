@@ -11,12 +11,10 @@ include '../signup_profile_button.php';
   $errors = array(); 
   if(isset($_POST['update_button']))  {
 
-  echo "hihihi";
   $name = mysqli_real_escape_string($conn, $_POST['name']);
   $surname = mysqli_real_escape_string($conn, $_POST['surname']);
   $username = mysqli_real_escape_string($conn, $_POST['username']);
   $email = mysqli_real_escape_string($conn, $_POST['email']);
-  // $password_1 = mysqli_real_escape_string($conn, $_POST['password_1']);
 
 
    // form validation: ensure that the form is correctly filled ...
@@ -26,31 +24,48 @@ include '../signup_profile_button.php';
   if (empty($username)) { array_push($errors, "Username is required"); }
   if (empty($email)) { array_push($errors, "Email is required"); }
 
-  //check if email or username are taken
-  $user_check_query = "SELECT * FROM simpleuser WHERE username='$username' OR email='$email' LIMIT 1";
-  $result = mysqli_query($conn, $user_check_query);
-  $user = mysqli_fetch_assoc($result);
+
+  if($username == $_SESSION["username"]){
+    echo "same!";
+
+  }else {
+    echo "not same!";
+  } 
+  // // check if email or username are taken
+  // $user_check_query = "SELECT * FROM simpleuser WHERE username= '".$_SESSION['username']."' OR email='".$_SESSION['email']."' LIMIT 1";
+  // $result = mysqli_query($conn, $user_check_query);
+  // $user = mysqli_fetch_assoc($result);
   
-  if ($user) { // if user exists
-    if ($user['username'] === $username) {
-      array_push($errors, "Username already exists");
-    }
+  // if ($user) { // if user exists
+  //   if ($user['username'] === $username) {
+  //     array_push($errors, "Username already exists");
+  //   }
 
-    if ($user['email'] === $email) {
-      array_push($errors, "email already exists");
-    }
-  }
+  //   if ($user['email'] === $email) {
+  //     array_push($errors, "email already exists");
+  //   }
+  // }
 
-  // update user if no errors
-  if (count($errors) == 0) {
+  // // update user if no errors
+  // if (count($errors) == 0) {
 
     $query = "UPDATE simpleuser
-              -- SET name = '$name', surname = '$surname', username = '$username', email= '$email'
-                SET name = 'changed'
-              WHERE username = 'maryxan'";
-    mysqli_query($conn, $query);
+              SET name = '$name', surname = '$surname', username = '$username', email= '$email'
+              WHERE username = '".$_SESSION['username']."'";
+    $query_run = mysqli_query($conn, $query);
+
+
+    if($query_run){
+    $_SESSION['new_name'] = $name;
+    $_SESSION['new_surname'] = $surname;
+    $_SESSION['new_username'] = $username;
+    $_SESSION['new_email'] = $email;
+
+
     header('location:../profile/profile.php');
-   }
+
+    }
+   // }
 
 
   }

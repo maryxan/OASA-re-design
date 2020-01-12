@@ -11,6 +11,7 @@ body, html {
 }
   
 
+
 .bg-img {
     /* The image used */
     background-image: url("images/oasa2.jpg");
@@ -66,9 +67,16 @@ input[type=text], input[type=password] {
 ul {list-style-type: none;}
 body {font-family: Verdana, sans-serif;}
 
+
+
+.calendar{
+
+  margin-left: 40px;
+}
+
 .month {
   padding: 70px 25px;
-  width: 100%;
+  width: 400px;
   background: #004d40;
   text-align: center;
 }
@@ -96,6 +104,7 @@ body {font-family: Verdana, sans-serif;}
 }
 
 .weekdays {
+  width: 400px;
   margin: 0;
   padding: 10px 0;
   background-color: #ddd;
@@ -103,12 +112,13 @@ body {font-family: Verdana, sans-serif;}
 
 .weekdays li {
   display: inline-block;
-  width: 13.6%;
+  width: 12%;
   color: #666;
   text-align: center;
 }
 
 .days {
+  width: 400px;
   padding: 10px 0;
   background: #eee;
   margin: 0;
@@ -117,7 +127,7 @@ body {font-family: Verdana, sans-serif;}
 .days li {
   list-style-type: none;
   display: inline-block;
-  width: 13.6%;
+  width: 14.8%;
   text-align: center;
   margin-bottom: 5px;
   font-size:12px;

@@ -85,8 +85,10 @@ include 'login_logout_button.php';
 <br>
 <br>
 
-<h1>Απεργίες : </h1>
 
+
+<div class="calendar">
+<h1>Απεργίες : </h1>
 <div class="month">      
   <ul>
     <li class="prev">&#10094;</li>
@@ -141,7 +143,7 @@ include 'login_logout_button.php';
   <li>30</li>
   <li><span class="active">31</span></li>
 </ul>
-
+</div>
   
   <br> <br> <br> <br> <br> <br> <br>
 
