@@ -87,8 +87,8 @@ include '../signup_profile_button.php';
 	<br>
 	<div class="bg-img">  
 	
-		<div class="container table-container">        
-			<table class="table">
+		<div class="container table-container"> 
+			<table class="table" id="table">
 				<thead class="thead-dark">
 					<tr>
 						<th scope="col-sm">Στάση/Σταθμός</th>
@@ -150,23 +150,23 @@ include '../signup_profile_button.php';
 			<nav>
 				<ul class="pagination">
 					<li class="page-item">
-						<a class="page-link" href="?pageno=1">First</a>
+						<a class="page-link" href="?pageno=1#table">First</a>
 					</li>
 					<li class="page-item <?php if($pageno <= 1){ echo 'disabled'; } ?>">
-						<a class="page-link" href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>">Prev</a>
+						<a class="page-link" href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>#table">Prev</a>
 					</li>
 
 					<?php
 						for ($i=1; $i <= $total_pages; $i++) { 
 							if( $i == $pageno){
 								echo '<li class="page-item active">
-								<a class="page-link" href="?pageno='.$i.'">'.$i .'</a>
+								<a class="page-link" href="?pageno='.$i.'#table">'.$i .'</a>
 								</li>
 								';
 							}
 							else{
 								echo '<li class="page-item">
-								<a class="page-link" href="?pageno='.$i.'">'.$i .'</a>
+								<a class="page-link" href="?pageno='.$i.'#table">'.$i .'</a>
 								</li>
 								';
 							}
@@ -174,10 +174,10 @@ include '../signup_profile_button.php';
 					?>
 
 					<li class="page-item <?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
-						<a class="page-link" href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>">Next</a>
+						<a class="page-link" href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>#table">Next</a>
 					</li>
 					<li class="page-item">
-						<a class="page-link" href="?pageno=<?php echo $total_pages; ?>">Last</a>
+						<a class="page-link" href="?pageno=<?php echo $total_pages; ?>#table">Last</a>
 					</li>
 				</ul>
 			</nav>
@@ -187,7 +187,9 @@ include '../signup_profile_button.php';
  
 
 </div>
-<div id="app-footer"></div>
+<?php
+include "../components/footer/footer.php";
+?>
 
 <script>
 var coll = document.getElementsByClassName("collapsible");

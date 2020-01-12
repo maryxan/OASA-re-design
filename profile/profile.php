@@ -236,7 +236,9 @@ if(isset(($_SESSION['reg_user'])) && ($_SESSION['reg_user']) == true)
     </div><!--/row-->
 
     </div>
-    <div id="app-footer"></div>
+    <?php
+include "../components/footer/footer.php";
+?>
 </body>
 
 <script type="text/javascript">

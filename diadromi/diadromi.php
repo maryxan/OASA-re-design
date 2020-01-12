@@ -210,7 +210,9 @@
 
 	</div>	
 	</div>
-	<div id="app-footer"></div>
+	<?php
+include "../components/footer/footer.php";
+?>
 </body>
 
 	</html>

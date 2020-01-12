@@ -37,7 +37,7 @@ include 'login_logout_button.php';
 			<li class="nav-item"><a class="nav-link" href="amea/amea.php">ΑΜΕΑ</a></li>
 			<li class="nav-item"><a class="nav-link" href="#">Ανακοινώσεις</a></li>
 			<li class="nav-item"><a class="nav-link" href="faq/faq.php">FAQ</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">Για τον ΟΑΣΑ</a></li>
+			<li class="nav-item"><a class="nav-link" href="GiatnOASA/giatnoasa.php">Για τον ΟΑΣΑ</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<?php 
@@ -79,13 +79,92 @@ include 'login_logout_button.php';
   
 </div>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h1>Απεργίες : </h1>
+
+<div class="month">      
+  <ul>
+    <li class="prev">&#10094;</li>
+    <li class="next">&#10095;</li>
+    <li>
+      Ιανουάριος<br>
+      <span style="font-size:18px">2020</span>
+    </li>
+  </ul>
+</div>
+
+<ul class="weekdays">
+  <li>We</li>
+  <li>Th</li>
+  <li>Fr</li>
+  <li>Sa</li>
+  <li>Su</li>
+  <li>Mo</li>
+  <li>Tu</li>
+</ul>
+
+<ul class="days">  
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+  <li>6</li>
+  <li>7</li>
+  <li>8</li>
+  <li>9</li>
+  <li><span class="active">10</span></li>
+  <li>11</li>
+  <li>12</li>
+  <li>13</li>
+  <li>14</li>
+  <li>15</li>
+  <li>16</li>
+  <li>17</li>
+  <li>18</li>
+  <li>19</li>
+  <li><span class="active">20</span></li>
+  <li>21</li>
+  <li>22</li>
+  <li>23</li>
+  <li>24</li>
+  <li>25</li>
+  <li>26</li>
+  <li>27</li>
+  <li>28</li>
+  <li>29</li>
+  <li>30</li>
+  <li><span class="active">31</span></li>
+</ul>
+
   
+  <br> <br> <br> <br> <br> <br> <br>
+
+<h2>Άρθρα και Σχετικά</h2>
+<div class="row">
+  <div class="column">
+    <img src="images/strike.jpg" alt="Snow" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="images/athensbus.jpg" alt="Forest" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="images/old.jpg" alt="Mountains" style="width:100%">
+  </div>
+</div>
 
 </div>
 
 <!-- FOOTER -->
  
-<div id="app-footer"></div>
+<?php
+	include "components/footer/footer.php";
+?>
        
 </body>
 </html>

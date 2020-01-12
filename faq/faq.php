@@ -19,11 +19,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-	<script>
-		$(function(){
-			$("#app-footer").load("../components/footer/footer.html"); 
-		});
-	</script>
 </head>
 <body>
 <div class="content">
@@ -207,7 +202,9 @@
   <div class="cd-faq__overlay" aria-hidden="true"></div>
 </section> <!-- cd-faq -->
 </div>
-<div id="app-footer"></div>
+<?php
+include "../components/footer/footer.php";
+?>
 <script src="assets/js/util.js"></script> <!-- util functions included in the CodyHouse framework -->
 <script src="assets/js/main.js"></script> 
 </body>
