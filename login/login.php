@@ -128,10 +128,10 @@ if (isset($_POST['login_user'])) {
     <h1>Είσοδος</h1>
     <hr>
     <label>Username </label>
-    <input type="text" placeholder="Enter Username" name="username" required>
+    <input type="text" placeholder="Username" name="username" required>
 
     <label>Κωδικός</label>
-    <input type="password" placeholder="Enter Password" name="password" required>
+    <input type="password" placeholder="Κωδικός πρόσβασης" name="password" required>
 
     <button class="bat" type="submit" name="login_user">Login</button><br>
     
