@@ -30,7 +30,7 @@
 
  } */
 
-.bg-img {
+body {
     /* The image used */
     background-image: url("../images/cpy.jpg");
   
@@ -39,10 +39,18 @@
     background-position: start;
     background-repeat: no-repeat;
     background-size: contain;
-    position: relative;
+    background-position: relative;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
 
   table {
     table-layout:fixed;
     background-color: rgb(214, 239, 255);
+    max-width: 1000px;
+}
+
+.table-container {
+  max-width: 1500px;
+  min-height: 1000px;
 }
