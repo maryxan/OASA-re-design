@@ -19,4 +19,23 @@
 	display: flex;
 	justify-content: space-between;
 }
-
+.bg-img {
+    /* The image used */
+    background-image: url("../images/athena.png");
+  
+    min-height: 300px;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    position: relative;
+}
+ 
+.cnt {
+    position: absolute;
+    right: 0;
+    margin: 50px;
+    max-width: 300px;
+    padding: 16px;
+    background-color: white;
+}  

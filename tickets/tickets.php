@@ -23,7 +23,7 @@ if(isset($_POST["add_to_cart"]))
     }
     else
     {
-    echo '<script>alert("Item Already Added")</script>';
+    echo '<script>alert("Το προιόν έχει ήδη προστεθεί")</script>';
     }
   }
   else
@@ -47,7 +47,6 @@ if(isset($_GET["action"]))
     if($values["id"] == $_GET["id"])
     {
     unset($_SESSION["shopping_cart"][$keys]);
-    // echo '<script>alert("Item Removed")</script>';
     echo '<script>window.location="../tickets/tickets.php"</script>';
     }
     }
@@ -74,7 +73,7 @@ if(isset($_GET["action"]))
   
    
   <body>
-     <div class="content">
+  <div class="content">
 <!--  ============= NAVIGATION BAR ================
    -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -111,20 +110,37 @@ if(isset($_GET["action"]))
     </ol>
   </nav>   
 
-  <div class="container">
-    <div class="buttons">
+
+  <div class="bg-img"/>  
+  <!-- <form class="cnt">
+    <button class="btn" type="submit" name="find_route"></button>
+    <button class="btn" type="submit" name="find_route"></button>
+    <div class="buttons" style="margin-top: 250px; margin-left: 600px;">
       <a href="../ekdosi/ekdosi.php" class="btn btn-warning" role="button">ΠΛΗΡΟΦΟΡΙΕΣ</a>
     </div>
 
+  </form> -->
+  
+  <!-- </div> -->
+</div>
+
     <!--================-->
  <br><br>
+ <div class="container">
+    <div class="buttons">
+      <a href="../ekdosi/ekdosi.php" class="btn btn-warning" role="button">ΠΛΗΡΟΦΟΡΙΕΣ</a>
+    </div>
+ <hr>
  <div class="cont">
       
     <?php
     $query = "SELECT * FROM ticket ORDER BY id ASC";
     $result = mysqli_query($conn, $query);
     if(mysqli_num_rows($result) > 0){
-    while($row = mysqli_fetch_array($result)){
+       
+
+    while($row = mysqli_fetch_array($result)){  
+
     ?>
       <form method="post" action="../tickets/tickets.php?action=add&id= <?php echo $row["id"]; ?>">
       <div class="col-md-4">
@@ -139,7 +155,7 @@ if(isset($_GET["action"]))
     
       <br>
       <h5>Ποσότητα</h5>
-      <input type="number" name="quantity" value="1" class="form-control" />
+      <input type="number" min="1" name="quantity" value="1" class="form-control" />
    
       <input type="hidden" name="name" value="<?php echo $row["name"]; ?>" />
    
@@ -153,6 +169,8 @@ if(isset($_GET["action"]))
     </form>
 
     <?php
+    // $_SESSION["name"] = $row["name"];
+    // $_SESSION["price"] = $row["price"];
     }
     }
     ?>  
@@ -214,7 +232,6 @@ if(isset($_GET["action"]))
       function myFunction() {
       confirm("Επιθυμείτε να συνεχίσετε με την αγορά;");  
       var myWindow = window.open("ticket_print.php", "MsgWindow", "width=500,height=500");
-      // myWindow.document.write("../tickets/");
     }
   </script>
 </html>
