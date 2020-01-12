@@ -1,0 +1,26 @@
+signup:
+ - [ ] error prevention
+ - [ ] feedback upon success/failure
+login:
+ - [ ]
+edit profile:
+  - [ ] fix update query
+purchase:
+ - [ ] 
+tickets:
+ - [ ] put images inside a folder
+home page:
+  - [ ] put tickets on it
+  - [ ] shrink calendar
+  - [ ] beautify it
+other:
+  - [ ] put logo in app
+  - [ ] remove "Δρομολόγια" from navbar
+  - [ ] remove "Για τον ΟΑΣΑ" from navbar
+  - [ ] put "Για τον ΟΑΣΑ" in the footer
+amea:
+  - [ ] general info on top
+about OASA:
+ - [ ] put carousel
+  
+  
