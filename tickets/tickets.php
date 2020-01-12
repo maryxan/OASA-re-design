@@ -125,12 +125,14 @@ if(isset($_GET["action"]))
 </div>
 
     <!--================-->
- <br><br>
+ 
  <div class="container">
-    <div class="buttons">
-      <a href="../ekdosi/ekdosi.php" class="btn btn-warning" role="button">ΠΛΗΡΟΦΟΡΙΕΣ</a>
+    <button class="accordion">Πληροφορίες</button>
+    <div class="panel">
+      <p>AthenCard</p>
     </div>
  <hr>
+ <br> <br> <br> <br> <br>
  <div class="cont">
       
     <?php
@@ -235,5 +237,24 @@ include "../components/footer/footer.php";
       confirm("Επιθυμείτε να συνεχίσετε με την αγορά;");  
       var myWindow = window.open("ticket_print.php", "MsgWindow", "width=500,height=500");
     }
+
+     var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+    this.classList.toggle("active");
+    /* Toggle between hiding and showing the active panel */
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+
   </script>
 </html>
