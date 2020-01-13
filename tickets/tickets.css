@@ -42,7 +42,7 @@
 
 
 .accordion {
-  background-color: #eee;
+  background-color: lightsteelblue;
   color: #444;
   cursor: pointer;
   padding: 18px;
@@ -59,17 +59,17 @@
 
 
 .accordion:hover {
-  background-color: #ccc;
+  background-color: darkgray;
 }
 
-accordion:active {
-	background-color: #ccc;
+.accordion:active {
+	background-color: darkgray;
 }
 
 /* Style the accordion panel. Note: hidden by default */
 .panel {
   padding: 0 18px;
-  background-color: white;
+  background-color: lightgray;
   display: none;
   overflow: hidden;
 }
