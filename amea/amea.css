@@ -54,3 +54,37 @@ body {
   max-width: 1500px;
   min-height: 1000px;
 }
+
+
+.accordion {
+  background-color: lightsteelblue;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+
+  font-family: "Verdana";
+  font-size: 18px;
+  font-weight: Bold;
+}
+
+
+.accordion:hover {
+  background-color: darkgray;
+}
+
+.accordion:active {
+	background-color: darkgray;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  background-color: lightgray;
+  display: none;
+  overflow: hidden;
+}

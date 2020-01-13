@@ -194,6 +194,35 @@
 	</div>
 	<br> -->
 	<!-- <div class="bg-img">   -->
+		<div class="container mb-5">
+			<button class="accordion">Πληροφορίες</button>
+			<div class="panel">
+				<ul class="list-unstyled mt-3">
+					<li>
+						<h4>Στάσεις/Σταθμοί εξυπηρέτησης ατόμων με αναπηρία</h4>
+						<hr>
+						<p> Παρακάτω υπάρχει ένας <a href="#table">πίνακας στάσεων και σταθμών</a> που απευθύνονται προς άτομα με αναπηρία. </p>
+						<p>Οι προσφερόμενες στάσεις λεωφορείου είναι στάσεις με προεξοχές.</p>
+						<p>Οι προσφερόμενοι σταθμοί ΜΕΤΡΟ και ΗΣΑΠ είναι αυτοί που έχουν ανελκυστήρα σε λειτουργία αυτήν τη στιγμή.</p>
+						<br>
+					</li>
+					<li>
+						<h4>Νέα τηλ. γραμμή αποκλειστικής εξυπηρέτησης ατόμων με αναπηρία</h4>
+						<hr>
+						<p>Για την άμεση και αποκλειστική εξυπηρέτηση των ατόμων με αναπηρία ο ΟΑΣΑ έχει θέση σε λειτουργία νέα τηλεφωνική γραμμή 210 82 00 887 που λειτουργεί από 06:30 - 22:30 τις καθημερινές και από 07:30 - 22:30 τα Σ/Κ.</p>
+						<br>
+					</li>
+					<li>
+						<h4>Ειδικά οχήματα για τη μεταφορά ατόμων με αναπηρία</h4>
+						<hr>
+						<p>Η υπηρεσία της Ο.ΣΥ. Α.Ε διαθέτει τρία (3) ειδικά οχήματα που διαθέτουν μικρό αριθμό (3 - 7) θέσεων για επιβάτες, θέσεις (3 - 4) για αναπηρικά αμαξίδια και μία θέση συνοδού.</p>
+						<p>Η χρήση της υπηρεσίας αυτής, για την μετακίνηση ατόμων με αναπηρία θα γίνεται απαραίτητα με ραντεβού και με την προϋπόθεση ότι θα υπάρχει διαθέσιμο όχημα.</p>
+						<p>Για ραντεβού οι ενδιαφερόμενοι θα καλούν το τηλέφωνο 210 42 70 748, από Δευτέρα - Παρασκευή από 07:30 - 14:00</p>
+						<br>
+					</li>
+				</ul>
+			</div>
+		</div>
 	
 		<div class="container table-container"> 
 			<div class="row">
@@ -285,17 +314,20 @@ include "../components/footer/footer.php";
 ?>
 
 <script>
-var coll = document.getElementsByClassName("collapsible");
+var acc = document.getElementsByClassName("accordion");
 var i;
 
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
     this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
+    /* Toggle between hiding and showing the active panel */
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
     } else {
-      content.style.display = "block";
+      panel.style.display = "block";
     }
   });
 }
