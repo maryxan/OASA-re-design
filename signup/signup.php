@@ -187,7 +187,7 @@ if (isset($_POST['reg_user'])) {
 
 
     <br><br>
-    <input type="checkbox" onclick="myFunction()" class="form-check-input" value = 1 name="reduced_ticket" style="margin-left:3px;" >
+    <input type="checkbox" class="form-check-input" value = 1 name="reduced_ticket" style="margin-left:3px;" >
     <label class="form-check-label" for="reduced_ticket" style="margin-left: 20px;">Δικαιούμαι μειωμένο κόμιστρο *</label>
 
     
@@ -209,183 +209,166 @@ if (isset($_POST['reg_user'])) {
 </div>
     </div>
     <?php
-include "../components/footer/footer.php";
-?>
+      include "../components/footer/footer.php";
+   ?>
 </body>
+<script>
+   $(function() {
 
- <script>
-
-    
-      function myFunction() {
-
-        <?php 
-
-
-          echo '<label for="code"><b>Αριθμός πάσου/καρτας ανεργειας:</b></label>
-                <input type="text" name="code">'; 
+$("#fname_error_message").hide();
+$("#sname_error_message").hide();
+$("#email_error_message").hide();
+$("#password_error_message").hide();
+$("#retype_password_error_message").hide();
+$("#username_error_message").hide();
 
 
-         ?>
-      }
+var error_fname = false;
+var error_sname = false;
+var error_email = false;
+var error_password = false;
+var error_retype_password = false;
+var error_username = false;
 
-  </script>
-  <script type="text/javascript">
-      $(function() {
+$("#form_fname").focusout(function(){
+   check_fname();
+});
+$("#form_sname").focusout(function() {
+   check_sname();
+});
+$("#form_email").focusout(function() {
+   check_email();
+});
+$("#form_password").focusout(function() {
+   check_password();
+});
+$("#form_retype_password").focusout(function() {
+   check_retype_password();
+});
+ $("#form_username").focusout(function() {
+   check_username();
+});
 
-         $("#fname_error_message").hide();
-         $("#sname_error_message").hide();
-         $("#email_error_message").hide();
-         $("#password_error_message").hide();
-         $("#retype_password_error_message").hide();
-         $("#username_error_message").hide();
+function check_fname() {
+   var pattern = /^[a-zA-Zα-ωΑ-Ωάέήίύώόϊϋΐΰ]*$/;
+   var fname = $("#form_fname").val();
+   if (pattern.test(fname) && fname !== '') {
+      $("#fname_error_message").hide();
+      $("#form_fname").css("border-bottom","2px solid #34F458");
+   } else {
+      $("#fname_error_message").html('<div class="alert alert-danger" role="alert">'+
+      'Το όνομα πρέπει να περιέχει μόνο χαρακτήρες'+
+      '</div>');
+      $("#fname_error_message").show();
+      $("#form_fname").css("border-bottom","2px solid #F90A0A");
+      error_fname = true;
+   }
+}
 
+function check_sname() {
+   var pattern = /^[a-zA-Zα-ωΑ-Ωάέήίύώόϊϋΐΰ]*$/;
+   var sname = $("#form_sname").val()
+   if (pattern.test(sname) && sname !== '') {
+      $("#sname_error_message").hide();
+      $("#form_sname").css("border-bottom","2px solid #34F458");
+   } else {
+      $("#sname_error_message").html(
+      '<div class="alert alert-danger" role="alert">'+
+      'Το επώνυμο πρέπει να περιέχει μόνο χαρακτήρες'+
+      '</div>');
+      $("#sname_error_message").show();
+      $("#form_sname").css("border-bottom","2px solid #F90A0A");
+      error_fname = true;
+   }
+}
 
-         var error_fname = false;
-         var error_sname = false;
-         var error_email = false;
-         var error_password = false;
-         var error_retype_password = false;
-         var error_username = false;
+function check_password() {
+   var password_length = $("#form_password").val().length;
+   if (password_length < 6) {
+      $("#password_error_message").html('<div class="alert alert-danger" role="alert">'+
+      'Ο κωδικός πρέπει να έχει μήκος τουλάχιστον 8 χαρακτήρων'+
+      '</div>');
+      $("#password_error_message").show();
+      $("#form_password").css("border-bottom","2px solid #F90A0A");
+      error_password = true;
+   } else {
+      $("#password_error_message").hide();
+      $("#form_password").css("border-bottom","2px solid #34F458");
+   }
+}
 
-         $("#form_fname").focusout(function(){
-            check_fname();
-         });
-         $("#form_sname").focusout(function() {
-            check_sname();
-         });
-         $("#form_email").focusout(function() {
-            check_email();
-         });
-         $("#form_password").focusout(function() {
-            check_password();
-         });
-         $("#form_retype_password").focusout(function() {
-            check_retype_password();
-         });
-          $("#form_username").focusout(function() {
-            check_username();
-         });
+function check_retype_password() {
+   var password = $("#form_password").val();
+   var retype_password = $("#form_retype_password").val();
+   if (password !== retype_password) {
+      $("#retype_password_error_message").html('<div class="alert alert-danger" role="alert">'+
+      'Οι κωδικοί δεν ταιριάζουν'+
+      '</div>');
+      $("#retype_password_error_message").show();
+      $("#form_retype_password").css("border-bottom","2px solid #F90A0A");
+      error_retype_password = true;
+   } else {
+      $("#retype_password_error_message").hide();
+      $("#form_retype_password").css("border-bottom","2px solid #34F458");
+   }
+}
 
-         function check_fname() {
-            var pattern = /^[a-zA-Zα-ωΑ-Ωάέήίύώόϊϋΐΰ]*$/;
-            var fname = $("#form_fname").val();
-            if (pattern.test(fname) && fname !== '') {
-               $("#fname_error_message").hide();
-               $("#form_fname").css("border-bottom","2px solid #34F458");
-            } else {
-               $("#fname_error_message").html('<div class="alert alert-danger" role="alert">'+
-               'Το όνομα πρέπει να περιέχει μόνο χαρακτήρες'+
-               '</div>');
-               $("#fname_error_message").show();
-               $("#form_fname").css("border-bottom","2px solid #F90A0A");
-               error_fname = true;
-            }
-         }
+function check_email() {
+   var pattern = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+   var email = $("#form_email").val();
+   if (pattern.test(email) && email !== '') {
+      $("#email_error_message").hide();
+      $("#form_email").css("border-bottom","2px solid #34F458");
+   } else {
+      $("#email_error_message").html('<div class="alert alert-danger" role="alert">'+
+      'Το email δεν έιναι έγκυρο'+
+      '</div>');
+      $("#email_error_message").show();
+      $("#form_email").css("border-bottom","2px solid #F90A0A");
+      error_email = true;
+   }
+}
+function check_username() {
+   var pattern = /^[a-zA-Z_0-9]*$/;
+   var fname = $("#form_username").val();
+   if (pattern.test(fname) && fname !== '') {
+      $("#username_error_message").hide();
+      $("#form_username").css("border-bottom","2px solid #34F458");
+   } else {
+      $("#username_error_message").html('<div class="alert alert-danger" role="alert">'+
+      'Το όνομα πρέπει να περιέχει μόνο λατινικούς χαρακτήρες, κάτω παύλα ή/και νούμερα'+
+      '</div>');
+      $("#username_error_message").show();
+      $("#form_username").css("border-bottom","2px solid #F90A0A");
+      error_username = true;
+   }
+}
 
-         function check_sname() {
-            var pattern = /^[a-zA-Zα-ωΑ-Ωάέήίύώόϊϋΐΰ]*$/;
-            var sname = $("#form_sname").val()
-            if (pattern.test(sname) && sname !== '') {
-               $("#sname_error_message").hide();
-               $("#form_sname").css("border-bottom","2px solid #34F458");
-            } else {
-               $("#sname_error_message").html(
-               '<div class="alert alert-danger" role="alert">'+
-               'Το επώνυμο πρέπει να περιέχει μόνο χαρακτήρες'+
-               '</div>');
-               $("#sname_error_message").show();
-               $("#form_sname").css("border-bottom","2px solid #F90A0A");
-               error_fname = true;
-            }
-         }
+$("#registration_form").submit(function() {
+   error_fname = false;
+   error_sname = false;
+   error_email = false;
+   error_password = false;
+   error_retype_password = false;
+   error_username = false;
 
-         function check_password() {
-            var password_length = $("#form_password").val().length;
-            if (password_length < 6) {
-               $("#password_error_message").html('<div class="alert alert-danger" role="alert">'+
-               'Ο κωδικός πρέπει να έχει μήκος τουλάχιστον 8 χαρακτήρων'+
-               '</div>');
-               $("#password_error_message").show();
-               $("#form_password").css("border-bottom","2px solid #F90A0A");
-               error_password = true;
-            } else {
-               $("#password_error_message").hide();
-               $("#form_password").css("border-bottom","2px solid #34F458");
-            }
-         }
+   check_fname();
+   check_sname();
+   check_email();
+   check_password();
+   check_retype_password();
+   check_username();
 
-         function check_retype_password() {
-            var password = $("#form_password").val();
-            var retype_password = $("#form_retype_password").val();
-            if (password !== retype_password) {
-               $("#retype_password_error_message").html('<div class="alert alert-danger" role="alert">'+
-               'Οι κωδικοί δεν ταιριάζουν'+
-               '</div>');
-               $("#retype_password_error_message").show();
-               $("#form_retype_password").css("border-bottom","2px solid #F90A0A");
-               error_retype_password = true;
-            } else {
-               $("#retype_password_error_message").hide();
-               $("#form_retype_password").css("border-bottom","2px solid #34F458");
-            }
-         }
-
-         function check_email() {
-            var pattern = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-            var email = $("#form_email").val();
-            if (pattern.test(email) && email !== '') {
-               $("#email_error_message").hide();
-               $("#form_email").css("border-bottom","2px solid #34F458");
-            } else {
-               $("#email_error_message").html('<div class="alert alert-danger" role="alert">'+
-               'Το email δεν έιναι έγκυρο'+
-               '</div>');
-               $("#email_error_message").show();
-               $("#form_email").css("border-bottom","2px solid #F90A0A");
-               error_email = true;
-            }
-         }
-         function check_username() {
-            var pattern = /^[a-zA-Z_0-9]*$/;
-            var fname = $("#form_username").val();
-            if (pattern.test(fname) && fname !== '') {
-               $("#username_error_message").hide();
-               $("#form_username").css("border-bottom","2px solid #34F458");
-            } else {
-               $("#username_error_message").html('<div class="alert alert-danger" role="alert">'+
-               'Το όνομα πρέπει να περιέχει μόνο λατινικούς χαρακτήρες, κάτω παύλα ή/και νούμερα'+
-               '</div>');
-               $("#username_error_message").show();
-               $("#form_username").css("border-bottom","2px solid #F90A0A");
-               error_username = true;
-            }
-         }
-
-         $("#registration_form").submit(function() {
-            error_fname = false;
-            error_sname = false;
-            error_email = false;
-            error_password = false;
-            error_retype_password = false;
-            error_username = false;
-
-            check_fname();
-            check_sname();
-            check_email();
-            check_password();
-            check_retype_password();
-            check_username();
-
-            // if (error_fname === false && error_sname === false && error_email === false && error_password === false && error_retype_password === false) {
-            //    alert("Registration Successfull");
-            //    return true;
-            // } else {
-            //    alert("Please Fill the form Correctly");
-            //    return false;
-            // }
+   // if (error_fname === false && error_sname === false && error_email === false && error_password === false && error_retype_password === false) {
+   //    alert("Registration Successfull");
+   //    return true;
+   // } else {
+   //    alert("Please Fill the form Correctly");
+   //    return false;
+   // }
 
 
-         });
-      });
-   </script>    
+});
+});
+</script>
 </html>

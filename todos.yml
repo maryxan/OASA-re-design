@@ -1,3 +1,6 @@
+index:
+ - [ ] announcements/strikes info next to calendar
+ - [ ] athena card
 signup:
  - [x] error prevention
  - [x] feedback upon success/failure
@@ -6,8 +9,6 @@ login:
  - [ ] 
 edit profile:
   - [x] fix update query
-purchase:
- - [ ] 
 tickets:
  - [ ] put images inside a folder
 home page:
@@ -16,12 +17,15 @@ home page:
   - [ ] beautify it
 other:
   - [ ] put logo in app
-  - [ ] remove "Δρομολόγια" from navbar
   - [ ] remove "Για τον ΟΑΣΑ" from navbar
   - [ ] put "Για τον ΟΑΣΑ" in the footer
 amea:
   - [ ] general info on top
 about OASA:
  - [ ] put carousel
+diadromi:
+  - [ ] add route price
+dromologia:
+  - [ ] do
   
   
