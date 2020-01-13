@@ -1,6 +1,9 @@
 index:
- - [ ] announcements/strikes info next to calendar
- - [ ] athena card
+  - [ ] announcements/strikes info next to calendar
+  - [ ] athena card
+  - [ ] put tickets on it
+  - [x] shrink calendar
+  - [ ] beautify it
 signup:
  - [x] error prevention
  - [x] feedback upon success/failure
@@ -11,10 +14,6 @@ edit profile:
   - [x] fix update query
 tickets:
  - [ ] put images inside a folder
-home page:
-  - [ ] put tickets on it
-  - [ ] shrink calendar
-  - [ ] beautify it
 other:
   - [ ] put logo in app
   - [ ] remove "Για τον ΟΑΣΑ" from navbar

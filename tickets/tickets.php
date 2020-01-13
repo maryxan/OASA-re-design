@@ -148,7 +148,7 @@ if(isset($_GET["action"]))
       <div class="col-md-4">
       <div class="card-deck mb-3 text-center">
       <div style="border:2px solid #5cb85c; background-color:whitesmoke; border-radius:5px; padding:16px;" align="center">
-      <img src="../tickets/<?php echo $row["image"]; ?>" class="img-responsive" style="width:300px;" /><br />
+      <img src="../tickets/<?php echo "../images/".$row["image"]; ?>" class="img-responsive" style="width:300px;" /><br />
       <hr>
       <h4 class="text-info"><?php echo $row["name"]; ?></h4>
    

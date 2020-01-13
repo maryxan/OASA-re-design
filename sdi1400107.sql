@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 13, 2020 at 07:55 PM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.0
+-- Generation Time: Jan 13, 2020 at 09:37 PM
+-- Server version: 10.4.10-MariaDB
+-- PHP Version: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -136,6 +136,8 @@ CREATE TABLE `simpleuser` (
 --
 
 INSERT INTO `simpleuser` (`username`, `password`, `name`, `surname`, `email`, `reduced_ticket`) VALUES
+('gmitr', '96e79218965eb72c92a549dd5a330112', 'Γεώργιος', 'Μητράκης', 'whateverq@aev.as', 1),
+('loutsos', 'e3ceb5881a0a1fdaad01296d7554868d', 'Ιωάννης', 'Μήταρου', 'mamniahs@ca.as', 1),
 ('maryxan', 'e10adc3949ba59abbe56e057f20f883e', 'mary', 'Xanthopoulou', 'maryxan96@hotmail.com', 0);
 
 -- --------------------------------------------------------
@@ -205,9 +207,9 @@ CREATE TABLE `ticket` (
 --
 
 INSERT INTO `ticket` (`id`, `name`, `code`, `price`, `image`) VALUES
-(1, 'Ενιαίο', 'st', 1.40, '4.jpg'),
-(2, 'Μειωμένο', 'red', 0.60, '4.jpg'),
-(3, 'Μηνιαία κάρτα', 'mc', 30.00, '6.jpg');
+(1, 'Ενιαίο', 'st', 1.40, 'ticket.jpg'),
+(2, 'Μειωμένο', 'red', 0.60, 'ticket.jpg'),
+(3, 'Μηνιαία κάρτα', 'mc', 30.00, 'card.jpg');
 
 --
 -- Indexes for dumped tables
