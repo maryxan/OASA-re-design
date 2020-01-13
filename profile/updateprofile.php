@@ -25,12 +25,12 @@ include '../signup_profile_button.php';
   if (empty($email)) { array_push($errors, "Email is required"); }
 
 
-  if($username == $_SESSION["username"]){
-    echo "same!";
+  // if($username == $_SESSION["username"]){
+  //   echo "same!";
 
-  }else {
-    echo "not same!";
-  } 
+  // }else {
+  //   echo "not same!";
+  // } 
   // // check if email or username are taken
   // $user_check_query = "SELECT * FROM simpleuser WHERE username= '".$_SESSION['username']."' OR email='".$_SESSION['email']."' LIMIT 1";
   // $result = mysqli_query($conn, $user_check_query);
@@ -58,7 +58,7 @@ include '../signup_profile_button.php';
     if($query_run){
     $_SESSION['new_name'] = $name;
     $_SESSION['new_surname'] = $surname;
-    $_SESSION['new_username'] = $username;
+    $_SESSION['new_username'] =  $username;
     $_SESSION['new_email'] = $email;
 
 
@@ -86,6 +86,8 @@ include '../signup_profile_button.php';
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="profile.js"></script>
+    <link rel="stylesheet" href="profile.css">
+
 </head>
 <body> 
     <div class="content">
@@ -130,7 +132,7 @@ include '../signup_profile_button.php';
   </ol>
 </nav> 
 
-<!-- ================================================= PROFILE =============================================================================
+<!-- ========================================== PROFILE UPDATE ============================================================
  -->
 <hr>
 <div class="container bootstrap snippet">
@@ -138,7 +140,7 @@ include '../signup_profile_button.php';
     <div class="row">
       <div class="col">
             <ul class="nav nav-tabs">
-            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#home">Στοιχεία</a></li>
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#home">Τα στοιχεία μου</a></li>
             <li  class="nav-item"><a class="nav-link" data-toggle="tab" href="#messages">Αγαπημένα</a></li>
             </ul>
 
@@ -276,29 +278,4 @@ include '../signup_profile_button.php';
 include "../components/footer/footer.php";
 ?>
 </body>
-
-<script type="text/javascript">
-
-  $(document).ready(function() {
-
-    
-    var readURL = function(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('.avatar').attr('src', e.target.result);
-            }
-    
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-    
-
-    $(".file-upload").on('change', function(){
-        readURL(this);
-    });
-});
-
-</script>
 </html>

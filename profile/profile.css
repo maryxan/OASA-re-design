@@ -6,3 +6,15 @@
 
 	margin-bottom: 200px;
 }
+
+
+.btn{
+
+  background-color:grey;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 40%;
+}

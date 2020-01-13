@@ -76,14 +76,14 @@ if(isset(($_SESSION['reg_user'])) && ($_SESSION['reg_user']) == true)
  ?>
 <div class="container bootstrap snippet">
     <div class="row">
-  		<div class="col-sm-10"><h1>Καλως ήρθες <?php if (isset($_SESSION['username'])) echo ' "'.$_SESSION['username'].'"'?></h1></div>
+  		<div class="col-sm-10"><h1>Καλως ήρθες, <?php if (isset($_SESSION['username'])) echo ' '.$_SESSION['username'].''?>!</h1></div>
     	<div class="col-sm-2"><a href="/users" class="pull-right"></a></div>
     </div>
     <div class="row">
   		
     	<div class="col">
             <ul class="nav nav-tabs">
-            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#home">Στοιχεία</a></li>
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#home">Τα στοιχεία μου</a></li>
             <li  class="nav-item"><a class="nav-link" data-toggle="tab" href="#messages">Αγαπημένα</a></li>
             </ul>
 
@@ -91,7 +91,7 @@ if(isset(($_SESSION['reg_user'])) && ($_SESSION['reg_user']) == true)
           <div class="tab-content">
             <div class="tab-pane active" id="home">
                 <br>
-                  <form>
+                  <form action="updateprofile.php">
                       <div class="form-row">                          
                           <div class="col-xs-6">
                               <label for="name"><h4>Όνομα</h4></label>
@@ -124,7 +124,7 @@ if(isset(($_SESSION['reg_user'])) && ($_SESSION['reg_user']) == true)
                       <div class="form-group">
                            <div class="col-xs-12">
                                 <br>
-									<button><a href="../profile/updateprofile.php">Επεξεργασία στοιχείων</a></button>
+									<button class="btn">Επεξεργασία στοιχείων</button>
                             </div>
                       </div>
               	</form>

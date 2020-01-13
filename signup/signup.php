@@ -148,26 +148,43 @@ if (isset($_POST['reg_user'])) {
     <hr>
 
     <label for="name"><b>Όνομα</b></label>
-    <input type="text" name="name" required>
+    <input type="text" id="form_fname" name="name" required>
+    <span class="error_form" id="fname_error_message"></span>
+    <br>
+
 
     <label for="surname"><b>Επώνυμο</b></label>
-    <input type="text" name="surname" required>
+    <input type="text" id="form_sname" name="surname" required>
+    <span class="error_form" id="sname_error_message"></span>
+    <br>
 
     <label for="email"><b>Email</b></label>
-    <input type="text"  name="email" required>
+    <input type="text"  id="form_email" name="email" required>
+    <span class="error_form" id="email_error_message"></span>
+    <br>
 
     <label for="psw"><b>Κωδικός Πρόσβασης</b></label>
-    <input type="password"  name="password_1" required>
+    <input type="password" id="form_password" name="password_1" required>
+    <span class="error_form" id="password_error_message"></span>
+    <br>
 
     <label for="psw-repeat"><b>Επιβεβαίωση κωδικού</b></label>
-    <input type="password" name="password_2" required>
+    <input type="password" id="form_retype_password" name="password_2" required>
+    <span class="error_form" id="retype_password_error_message"></span>
+    <br>
 
     <hr>
     <label for="username"><b>Όνομα χρήστη</b></label>
-    <input type="text"  name="username" required>
+    <input type="text"  id="form_username" name="username" required>
+    <span class="error_form" id="username_error_message"></span>
+    <br>
 
-    <input type="checkbox" class="form-check-input" value = 1 name="reduced_ticket" style="margin-left:3px;" >
+
+    <br><br>
+    <input type="checkbox" onclick="myFunction()" class="form-check-input" value = 1 name="reduced_ticket" style="margin-left:3px;" >
     <label class="form-check-label" for="reduced_ticket" style="margin-left: 20px;">Δικαιούμαι μειωμένο κόμιστρο *</label>
+
+    
 
     
     <p>Η καταχώριση της εγγραφής σας συνεπάγεται ότι αποδέχεστε αυτόματα τους <a href="#" style="color:dodgerblue">Όρους Χρήσης</a>.</p>
@@ -189,4 +206,167 @@ if (isset($_POST['reg_user'])) {
 include "../components/footer/footer.php";
 ?>
 </body>
+
+ <script>
+
+    
+      function myFunction() {
+
+        <?php 
+
+
+          echo '<label for="code"><b>Αριθμός πάσου/καρτας ανεργειας:</b></label>
+                <input type="text" name="code">'; 
+
+
+         ?>
+      }
+
+  </script>
+  <script type="text/javascript">
+      $(function() {
+
+         $("#fname_error_message").hide();
+         $("#sname_error_message").hide();
+         $("#email_error_message").hide();
+         $("#password_error_message").hide();
+         $("#retype_password_error_message").hide();
+         $("#username_error_message").hide();
+
+
+         var error_fname = false;
+         var error_sname = false;
+         var error_email = false;
+         var error_password = false;
+         var error_retype_password = false;
+         var error_username = false;
+
+         $("#form_fname").focusout(function(){
+            check_fname();
+         });
+         $("#form_sname").focusout(function() {
+            check_sname();
+         });
+         $("#form_email").focusout(function() {
+            check_email();
+         });
+         $("#form_password").focusout(function() {
+            check_password();
+         });
+         $("#form_retype_password").focusout(function() {
+            check_retype_password();
+         });
+          $("#form_username").focusout(function() {
+            check_username();
+         });
+
+         function check_fname() {
+            var pattern = /^[a-zA-Z]*$/;
+            var fname = $("#form_fname").val();
+            if (pattern.test(fname) && fname !== '') {
+               $("#fname_error_message").hide();
+               $("#form_fname").css("border-bottom","2px solid #34F458");
+            } else {
+               $("#fname_error_message").html("Το όνομα πρέπει να περιέχει μόνο χαρακτήρες");
+               $("#fname_error_message").show();
+               $("#form_fname").css("border-bottom","2px solid #F90A0A");
+               error_fname = true;
+            }
+         }
+
+         function check_sname() {
+            var pattern = /^[a-zA-Z]*$/;
+            var sname = $("#form_sname").val()
+            if (pattern.test(sname) && sname !== '') {
+               $("#sname_error_message").hide();
+               $("#form_sname").css("border-bottom","2px solid #34F458");
+            } else {
+               $("#sname_error_message").html("Το επώνυμο πρέπει να περιέχει μόνο χαρακτήρες");
+               $("#sname_error_message").show();
+               $("#form_sname").css("border-bottom","2px solid #F90A0A");
+               error_fname = true;
+            }
+         }
+
+         function check_password() {
+            var password_length = $("#form_password").val().length;
+            if (password_length < 6) {
+               $("#password_error_message").html("Ο κωδικός πρέπει να έχει μήκος τουλάχιστον 8 χαρακτήρων");
+               $("#password_error_message").show();
+               $("#form_password").css("border-bottom","2px solid #F90A0A");
+               error_password = true;
+            } else {
+               $("#password_error_message").hide();
+               $("#form_password").css("border-bottom","2px solid #34F458");
+            }
+         }
+
+         function check_retype_password() {
+            var password = $("#form_password").val();
+            var retype_password = $("#form_retype_password").val();
+            if (password !== retype_password) {
+               $("#retype_password_error_message").html("Οι κωδικοί δεν ταιριάζουν");
+               $("#retype_password_error_message").show();
+               $("#form_retype_password").css("border-bottom","2px solid #F90A0A");
+               error_retype_password = true;
+            } else {
+               $("#retype_password_error_message").hide();
+               $("#form_retype_password").css("border-bottom","2px solid #34F458");
+            }
+         }
+
+         function check_email() {
+            var pattern = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+            var email = $("#form_email").val();
+            if (pattern.test(email) && email !== '') {
+               $("#email_error_message").hide();
+               $("#form_email").css("border-bottom","2px solid #34F458");
+            } else {
+               $("#email_error_message").html("Invalid Email");
+               $("#email_error_message").show();
+               $("#form_email").css("border-bottom","2px solid #F90A0A");
+               error_email = true;
+            }
+         }
+         function check_username() {
+            var pattern = /^[a-zA-Z]*$/;
+            var fname = $("#form_username").val();
+            if (pattern.test(fname) && fname !== '') {
+               $("#username_error_message").hide();
+               $("#form_username").css("border-bottom","2px solid #34F458");
+            } else {
+               $("#username_error_message").html("Το όνομα πρέπει να περιέχει μόνο χαρακτήρες");
+               $("#username_error_message").show();
+               $("#form_username").css("border-bottom","2px solid #F90A0A");
+               error_username = true;
+            }
+         }
+
+         $("#registration_form").submit(function() {
+            error_fname = false;
+            error_sname = false;
+            error_email = false;
+            error_password = false;
+            error_retype_password = false;
+            error_username = false;
+
+            check_fname();
+            check_sname();
+            check_email();
+            check_password();
+            check_retype_password();
+            check_username();
+
+            // if (error_fname === false && error_sname === false && error_email === false && error_password === false && error_retype_password === false) {
+            //    alert("Registration Successfull");
+            //    return true;
+            // } else {
+            //    alert("Please Fill the form Correctly");
+            //    return false;
+            // }
+
+
+         });
+      });
+   </script>    
 </html>
