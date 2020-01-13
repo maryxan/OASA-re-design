@@ -99,7 +99,7 @@ if(isset(($_SESSION['reg_user'])) && ($_SESSION['reg_user']) == true)
                           </div>
                           <div class="col-xs-6">
                               <label for="username"><h4>Username</h4></label>
-                              <input readonly type="username" class="form-control" name="username" <?php if (isset($_SESSION['username']) || isset($_SESSION['new_username'])) echo 'value = "'.$_SESSION['username'].'"' ?>>
+                              <input readonly type="username" class="form-control" name="username" <?php if (isset($_SESSION['username'])) echo 'value = "'.$_SESSION['username'].'"' ?>>
                           </div>
                       </div>
                       <div class="form-row">

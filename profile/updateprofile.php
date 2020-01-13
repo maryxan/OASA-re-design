@@ -56,10 +56,10 @@ include '../signup_profile_button.php';
 
 
     if($query_run){
-    $_SESSION['new_name'] = $name;
-    $_SESSION['new_surname'] = $surname;
-    $_SESSION['new_username'] =  $username;
-    $_SESSION['new_email'] = $email;
+    $_SESSION['name'] = $name;
+    $_SESSION['surname'] = $surname;
+    $_SESSION['username'] =  $username;
+    $_SESSION['email'] = $email;
 
 
     header('location:../profile/profile.php');

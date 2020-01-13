@@ -64,6 +64,7 @@ if (isset($_POST['reg_user'])) {
 
     $query = "INSERT INTO simpleuser (username, password, name, surname, email,reduced_ticket) 
           VALUES ('$username', '$password', '$name', '$surname', '$email' , '$reduced_ticket')";
+    
     mysqli_query($conn, $query);
     
     // $_SESSION['username'] = $username;
