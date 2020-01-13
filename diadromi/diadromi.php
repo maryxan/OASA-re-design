@@ -171,7 +171,7 @@
 							<h2 class="mb-0">
 								<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse'.$i.'" aria-expanded="true" aria-controls="collapse'.$i.'">
 								<span>'. $_GET['starting_point'].' -> '.$route_head.' -> '.$_GET['destination'].'</span>
-								<span class="ml-4">('.$route_row['duration'].')</span>
+								<span class="ml-4">('.$route_row['duration'].' , '.$route_row['price'].' € )</span>
 								</button>
 							</h2>
 						</div>';

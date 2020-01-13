@@ -13,9 +13,9 @@ login:
 edit profile:
   - [x] fix update query
 tickets:
- - [ ] put images inside a folder
+ - [x] put images inside a folder
 other:
-  - [ ] put logo in app
+  - [ ] put logo in navbar
   - [ ] remove "Για τον ΟΑΣΑ" from navbar
   - [ ] put "Για τον ΟΑΣΑ" in the footer
 amea:
