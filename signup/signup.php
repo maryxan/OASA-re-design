@@ -16,12 +16,12 @@ $connink = mysqli_connect('localhost', 'root', '', 'sdi1400107');
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
   // receive all input values from the form
-  $name = mysqli_real_escape_string($conn, $_POST['name']);
-  $surname = mysqli_real_escape_string($conn, $_POST['surname']);
-  $username = mysqli_real_escape_string($conn, $_POST['username']);
-  $email = mysqli_real_escape_string($conn, $_POST['email']);
-  $password_1 = mysqli_real_escape_string($conn, $_POST['password_1']);
-  $password_2 = mysqli_real_escape_string($conn, $_POST['password_2']);
+  $name =  $_POST['name'] = mysqli_real_escape_string($conn, $_POST['name']);
+  $surname =  $_POST['surname'] = mysqli_real_escape_string($conn, $_POST['surname']);
+  $username = $_POST['username'] = mysqli_real_escape_string($conn, $_POST['username']);
+  $email = $_POST['email'] = mysqli_real_escape_string($conn, $_POST['email']);
+  $password_1 = $_POST['password_1'] = mysqli_real_escape_string($conn, $_POST['password_1']);
+  $password_2 = $_POST['password_2'] = mysqli_real_escape_string($conn, $_POST['password_2']);
 
   if(isset($_POST['reduced_ticket'])){
     //$stok is checked and value = 1
@@ -154,34 +154,34 @@ if (isset($_POST['reg_user'])) {
     <hr>
 
     <label for="name"><b>Όνομα</b></label>
-    <input type="text" id="form_fname" name="name" required>
+    <input type="text" id="form_fname" name="name" required <?php if(isset($_POST['name'])) echo 'value="'.$_POST['name'].'"' ?> >
     <span class="error_form" id="fname_error_message"></span>
     <br>
 
 
     <label for="surname"><b>Επώνυμο</b></label>
-    <input type="text" id="form_sname" name="surname" required>
+    <input type="text" id="form_sname" name="surname" required <?php if(isset($_POST['surname'])) echo 'value="'.$_POST['surname'].'"' ?> >
     <span class="error_form" id="sname_error_message"></span>
     <br>
 
     <label for="email"><b>Email</b></label>
-    <input type="text"  id="form_email" name="email" required>
+    <input type="text"  id="form_email" name="email" required <?php if(isset($_POST['email'])) echo 'value="'.$_POST['email'].'"' ?> >
     <span class="error_form" id="email_error_message"></span>
     <br>
 
     <label for="psw"><b>Κωδικός Πρόσβασης</b></label>
-    <input type="password" id="form_password" name="password_1" required>
+    <input type="password" id="form_password" name="password_1" required <?php if(isset($_POST['password_1'])) echo 'value="'.$_POST['password_1'].'"' ?> >
     <span class="error_form" id="password_error_message"></span>
     <br>
 
     <label for="psw-repeat"><b>Επιβεβαίωση κωδικού</b></label>
-    <input type="password" id="form_retype_password" name="password_2" required>
+    <input type="password" id="form_retype_password" name="password_2" required <?php if(isset($_POST['password_2'])) echo 'value="'.$_POST['password_2'].'"' ?> >
     <span class="error_form" id="retype_password_error_message"></span>
     <br>
 
     <hr>
     <label for="username"><b>Όνομα χρήστη</b></label>
-    <input type="text"  id="form_username" name="username" required>
+    <input type="text"  id="form_username" name="username" required <?php if(isset($_POST['username'])) echo 'value="'.$_POST['username'].'"' ?> >
     <span class="error_form" id="username_error_message"></span>
     <br>
 
@@ -267,7 +267,7 @@ include "../components/footer/footer.php";
          });
 
          function check_fname() {
-            var pattern = /^[a-zA-Z]*$/;
+            var pattern = /^[a-zA-Zα-ωΑ-Ωαέήίύώόϊϋΐΰ]*$/;
             var fname = $("#form_fname").val();
             if (pattern.test(fname) && fname !== '') {
                $("#fname_error_message").hide();
@@ -283,7 +283,7 @@ include "../components/footer/footer.php";
          }
 
          function check_sname() {
-            var pattern = /^[a-zA-Z]*$/;
+            var pattern = /^[a-zA-Zα-ωΑ-Ωαέήίύώόϊϋΐΰ]*$/;
             var sname = $("#form_sname").val()
             if (pattern.test(sname) && sname !== '') {
                $("#sname_error_message").hide();
@@ -346,14 +346,14 @@ include "../components/footer/footer.php";
             }
          }
          function check_username() {
-            var pattern = /^[a-zA-Z]*$/;
+            var pattern = /^[a-zA-Z_0-9]*$/;
             var fname = $("#form_username").val();
             if (pattern.test(fname) && fname !== '') {
                $("#username_error_message").hide();
                $("#form_username").css("border-bottom","2px solid #34F458");
             } else {
                $("#username_error_message").html('<div class="alert alert-danger" role="alert">'+
-               'Το όνομα πρέπει να περιέχει μόνο χαρακτήρες'+
+               'Το όνομα πρέπει να περιέχει μόνο λατινικούς χαρακτήρες, κάτω παύλα ή/και νούμερα'+
                '</div>');
                $("#username_error_message").show();
                $("#form_username").css("border-bottom","2px solid #F90A0A");
