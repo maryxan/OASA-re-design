@@ -50,35 +50,40 @@ if (isset($_POST['reg_user'])) {
   
   if ($user) { // if user exists
     if ($user['username'] === $username) {
-      array_push($errors, "Username already exists");
+      array_push($errors, "Το όνομα χρήστη υπάρχει ήδη");
     }
 
     if ($user['email'] === $email) {
-      array_push($errors, "email already exists");
+      array_push($errors, "Το email χρησιμοποιείται από άλλον χρήστη");
     }
   }
 
   // Finally, register user if there are no errors in the form
-  if (count($errors) == 0) {
-    $password = md5($password_1);//encrypt the password before saving in the database
+   if (count($errors) == 0) {
+      $password = md5($password_1);//encrypt the password before saving in the database
 
-    $query = "INSERT INTO simpleuser (username, password, name, surname, email,reduced_ticket) 
-          VALUES ('$username', '$password', '$name', '$surname', '$email' , '$reduced_ticket')";
-    
-    mysqli_query($conn, $query);
-    
-    // $_SESSION['username'] = $username;
-    $_SESSION['reg_user'] = true;
-    $_SESSION['login_user'] = true;
-    $_SESSION["name"] = $row["name"];
-    $_SESSION["surname"] = $row["surname"];
-    $_SESSION["username"] = $row["username"];
-    $_SESSION["email"] = $row["email"];
-    $_SESSION["reduced_ticket"] = $row["reduced_ticket"];
+      $query = "INSERT INTO simpleuser (username, password, name, surname, email,reduced_ticket) 
+            VALUES ('$username', '$password', '$name', '$surname', '$email' , '$reduced_ticket')";
 
-    
-    header('location:../profile/profile.php');
-    
+      if(mysqli_query($conn, $query)){
+         
+         // $_SESSION['username'] = $username;
+         $_SESSION['reg_user'] = true;
+         $_SESSION['login_user'] = true;
+         
+         $_SESSION["name"] = $name;
+         $_SESSION["surname"] = $surname;
+         $_SESSION["username"] = $username;
+         $_SESSION["email"] = $email;
+         $_SESSION["reduced_ticket"] = $reduced_ticket;
+         
+         
+         header('location:../profile/profile.php');
+      }
+      else{
+         array_push($errors, "Signup failed. Please try again later.");
+      }
+
    }
 }
 ?>
@@ -268,7 +273,9 @@ include "../components/footer/footer.php";
                $("#fname_error_message").hide();
                $("#form_fname").css("border-bottom","2px solid #34F458");
             } else {
-               $("#fname_error_message").html("Το όνομα πρέπει να περιέχει μόνο χαρακτήρες");
+               $("#fname_error_message").html('<div class="alert alert-danger" role="alert">'+
+               'Το όνομα πρέπει να περιέχει μόνο χαρακτήρες'+
+               '</div>');
                $("#fname_error_message").show();
                $("#form_fname").css("border-bottom","2px solid #F90A0A");
                error_fname = true;
@@ -282,7 +289,10 @@ include "../components/footer/footer.php";
                $("#sname_error_message").hide();
                $("#form_sname").css("border-bottom","2px solid #34F458");
             } else {
-               $("#sname_error_message").html("Το επώνυμο πρέπει να περιέχει μόνο χαρακτήρες");
+               $("#sname_error_message").html(
+               '<div class="alert alert-danger" role="alert">'+
+               'Το επώνυμο πρέπει να περιέχει μόνο χαρακτήρες'+
+               '</div>');
                $("#sname_error_message").show();
                $("#form_sname").css("border-bottom","2px solid #F90A0A");
                error_fname = true;
@@ -292,7 +302,9 @@ include "../components/footer/footer.php";
          function check_password() {
             var password_length = $("#form_password").val().length;
             if (password_length < 6) {
-               $("#password_error_message").html("Ο κωδικός πρέπει να έχει μήκος τουλάχιστον 8 χαρακτήρων");
+               $("#password_error_message").html('<div class="alert alert-danger" role="alert">'+
+               'Ο κωδικός πρέπει να έχει μήκος τουλάχιστον 8 χαρακτήρων'+
+               '</div>');
                $("#password_error_message").show();
                $("#form_password").css("border-bottom","2px solid #F90A0A");
                error_password = true;
@@ -306,7 +318,9 @@ include "../components/footer/footer.php";
             var password = $("#form_password").val();
             var retype_password = $("#form_retype_password").val();
             if (password !== retype_password) {
-               $("#retype_password_error_message").html("Οι κωδικοί δεν ταιριάζουν");
+               $("#retype_password_error_message").html('<div class="alert alert-danger" role="alert">'+
+               'Οι κωδικοί δεν ταιριάζουν'+
+               '</div>');
                $("#retype_password_error_message").show();
                $("#form_retype_password").css("border-bottom","2px solid #F90A0A");
                error_retype_password = true;
@@ -323,7 +337,9 @@ include "../components/footer/footer.php";
                $("#email_error_message").hide();
                $("#form_email").css("border-bottom","2px solid #34F458");
             } else {
-               $("#email_error_message").html("Invalid Email");
+               $("#email_error_message").html('<div class="alert alert-danger" role="alert">'+
+               'Το email δεν έιναι έγκυρο'+
+               '</div>');
                $("#email_error_message").show();
                $("#form_email").css("border-bottom","2px solid #F90A0A");
                error_email = true;
@@ -336,7 +352,9 @@ include "../components/footer/footer.php";
                $("#username_error_message").hide();
                $("#form_username").css("border-bottom","2px solid #34F458");
             } else {
-               $("#username_error_message").html("Το όνομα πρέπει να περιέχει μόνο χαρακτήρες");
+               $("#username_error_message").html('<div class="alert alert-danger" role="alert">'+
+               'Το όνομα πρέπει να περιέχει μόνο χαρακτήρες'+
+               '</div>');
                $("#username_error_message").show();
                $("#form_username").css("border-bottom","2px solid #F90A0A");
                error_username = true;

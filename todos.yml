@@ -1,10 +1,11 @@
 signup:
- - [ ] error prevention
- - [ ] feedback upon success/failure
+ - [x] error prevention
+ - [x] feedback upon success/failure
+ - [ ] disable submit button upon error (?)
 login:
- - [ ]
+ - [ ] 
 edit profile:
-  - [ ] fix update query
+  - [x] fix update query
 purchase:
  - [ ] 
 tickets:
