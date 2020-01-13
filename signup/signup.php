@@ -170,12 +170,12 @@ if (isset($_POST['reg_user'])) {
     <br>
 
     <label for="psw"><b>Κωδικός Πρόσβασης</b></label>
-    <input type="password" id="form_password" name="password_1" required <?php if(isset($_POST['password_1'])) echo 'value="'.$_POST['password_1'].'"' ?> >
+    <input type="password" id="form_password" name="password_1" required >
     <span class="error_form" id="password_error_message"></span>
     <br>
 
     <label for="psw-repeat"><b>Επιβεβαίωση κωδικού</b></label>
-    <input type="password" id="form_retype_password" name="password_2" required <?php if(isset($_POST['password_2'])) echo 'value="'.$_POST['password_2'].'"' ?> >
+    <input type="password" id="form_retype_password" name="password_2" required >
     <span class="error_form" id="retype_password_error_message"></span>
     <br>
 
@@ -267,7 +267,7 @@ include "../components/footer/footer.php";
          });
 
          function check_fname() {
-            var pattern = /^[a-zA-Zα-ωΑ-Ωαέήίύώόϊϋΐΰ]*$/;
+            var pattern = /^[a-zA-Zα-ωΑ-Ωάέήίύώόϊϋΐΰ]*$/;
             var fname = $("#form_fname").val();
             if (pattern.test(fname) && fname !== '') {
                $("#fname_error_message").hide();
@@ -283,7 +283,7 @@ include "../components/footer/footer.php";
          }
 
          function check_sname() {
-            var pattern = /^[a-zA-Zα-ωΑ-Ωαέήίύώόϊϋΐΰ]*$/;
+            var pattern = /^[a-zA-Zα-ωΑ-Ωάέήίύώόϊϋΐΰ]*$/;
             var sname = $("#form_sname").val()
             if (pattern.test(sname) && sname !== '') {
                $("#sname_error_message").hide();
