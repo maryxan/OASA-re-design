@@ -174,13 +174,7 @@ include '../signup_profile_button.php';
                               <label for="email"><h4>Email</h4></label>
                               <input  type="email" class="form-control" name="email" <?php if (isset($_SESSION['email'])) echo 'value = "'.$_SESSION['email'].'"' ?>>
                           </div>
-                      </div>        
-                      <div class="form-row">                         
-                          <div class="col-xs-6">
-                              <label for="location"><h4>Περιοχή</h4></label>
-                              <input type="text" class="form-control" id="location">
-                          </div>
-                      </div> 
+                      </div>   
                       <div class="form-group">
                            <div class="col-xs-12">
                                 <br>
