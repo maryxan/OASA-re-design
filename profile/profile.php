@@ -63,15 +63,25 @@ include '../signup_profile_button.php';
  -->
 <?php
 
-if(isset(($_SESSION['reg_user'])) && ($_SESSION['reg_user']) == true)
-{
+if(isset(($_SESSION['reg_user'])) && ($_SESSION['reg_user']) == true){
     echo '
     <div class="container">
-    <div class="alert alert-success alert-dismissible">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <strong>Εγγραφήκατε επιτυχώς!</strong>
-  </div>
-</div>';
+        <div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Εγγραφήκατε επιτυχώς!</strong>
+        </div>
+    </div>';
+    unset($_SESSION['reg_user']);
+}
+else if(isset(($_SESSION['upd_user'])) && ($_SESSION['upd_user']) == true){
+    echo '
+    <div class="container">
+        <div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Τα στοιχεία άλλαξαν επιτυχώς!</strong>
+        </div>
+    </div>';
+    unset($_SESSION['upd_user']);
 }
  ?>
 <div class="container bootstrap snippet">

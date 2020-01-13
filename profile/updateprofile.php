@@ -61,6 +61,8 @@ include '../signup_profile_button.php';
     $_SESSION['username'] =  $username;
     $_SESSION['email'] = $email;
 
+    $_SESSION['upd_user'] = true;
+
 
     header('location:../profile/profile.php');
 
