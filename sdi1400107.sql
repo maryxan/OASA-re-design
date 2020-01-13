@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 11, 2020 at 09:49 PM
--- Server version: 10.4.10-MariaDB
--- PHP Version: 7.3.12
+-- Generation Time: Jan 13, 2020 at 07:55 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -124,26 +124,19 @@ INSERT INTO `routes` (`id`, `starting_point`, `destination`, `duration`, `price`
 
 CREATE TABLE `simpleuser` (
   `username` varchar(32) NOT NULL,
-  `password` int(32) NOT NULL,
+  `password` varchar(256) NOT NULL,
   `name` varchar(32) NOT NULL,
   `surname` varchar(32) NOT NULL,
-  `email` varchar(32) NOT NULL
+  `email` varchar(32) NOT NULL,
+  `reduced_ticket` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `simpleuser`
 --
 
-INSERT INTO `simpleuser` (`username`, `password`, `name`, `surname`, `email`) VALUES
-('aaas', 6512, 'mar', 'xan', 'aa@aadd.gr'),
-('asasa', 6512, 'mar', 'ee', 's@a.com'),
-('dddd', 6512, 'mar', 'rr', 'rrrrrr@ff'),
-('gmitr', 1234, '', '', ''),
-('lala', 6512, 'kk', 'kk', 'aa@aa'),
-('leftxant', 0, 'q', 'qq', 'ahs@hotmail.com'),
-('mariamar', 202, 'maria', 'xan', 'mar@hotmai.com'),
-('maryxan', 12345, 'Mary', 'Xan', 'maryx@gmail.com'),
-('mitarakis', 202, 'ioannis', 'mitrou', 'i@aa.gr');
+INSERT INTO `simpleuser` (`username`, `password`, `name`, `surname`, `email`, `reduced_ticket`) VALUES
+('maryxan', 'e10adc3949ba59abbe56e057f20f883e', 'mary', 'Xanthopoulou', 'maryxan96@hotmail.com', 0);
 
 -- --------------------------------------------------------
 
@@ -216,40 +209,9 @@ INSERT INTO `ticket` (`id`, `name`, `code`, `price`, `image`) VALUES
 (2, 'Μειωμένο', 'red', 0.60, '4.jpg'),
 (3, 'Μηνιαία κάρτα', 'mc', 30.00, '6.jpg');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `user`
---
-
-CREATE TABLE `user` (
-  `username` varchar(32) NOT NULL,
-  `password` int(32) NOT NULL,
-  `name` varchar(32) NOT NULL,
-  `surname` int(32) NOT NULL,
-  `email` varchar(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`username`, `password`, `name`, `surname`, `email`) VALUES
-('maryxan', 1234, '', 0, ''),
-('maryxan', 1234, '', 0, ''),
-('simpleuser', 12345, '', 0, ''),
-('', 0, '', 0, ''),
-('simpleuser', 12345, '', 0, '');
-
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `amea_stations`
---
-ALTER TABLE `amea_stations`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `routes`
@@ -270,14 +232,15 @@ ALTER TABLE `steps`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Indexes for table `ticket`
 --
+ALTER TABLE `ticket`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `code` (`code`);
 
 --
--- AUTO_INCREMENT for table `amea_stations`
+-- AUTO_INCREMENT for dumped tables
 --
-ALTER TABLE `amea_stations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `routes`
@@ -290,6 +253,12 @@ ALTER TABLE `routes`
 --
 ALTER TABLE `steps`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT for table `ticket`
+--
+ALTER TABLE `ticket`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
