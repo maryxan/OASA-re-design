@@ -1,5 +1,6 @@
 @import "css/global.css";
 @import "components/footer/footer.css";
+@import url(https://fonts.googleapis.com/css?family=Bitter);
 
 body, html {
     height: 100%;
@@ -10,7 +11,19 @@ body, html {
     box-sizing: border-box;
 }
   
+.font{
 
+  font-family: 'Bitter';
+  font-style: italic;
+}
+.center_row{
+
+background-color: #F8F8FF;
+
+}
+.red {
+    background-color: orange
+}
 
 .bg-img {
     /* The image used */
@@ -28,7 +41,7 @@ body, html {
 .container {
     position: absolute;
     left: 0;
-    margin: 50px;
+    margin: 60px;
     max-width: 300px;
     padding: 16px;
     background-color: white;

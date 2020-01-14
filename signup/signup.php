@@ -187,7 +187,7 @@ if (isset($_POST['reg_user'])) {
 
     <br><br>
     <input type="checkbox" class="form-check-input" value = 1 name="reduced_ticket" style="margin-left:3px;" >
-    <label class="form-check-label" for="reduced_ticket" style="margin-left: 20px;">Δικαιούμαι μειωμένο κόμιστρο *</label>
+    <label class="form-check-label" for="reduced_ticket" style="margin-left: 20px;">Δικαιούμαι μειωμένο κόμιστρο (Απευθύνεται σε φοιτητές , ΑΜΕΑ και ανέργους).</label>
 
     
 
@@ -200,8 +200,7 @@ if (isset($_POST['reg_user'])) {
   </div>
   <div class="containerr">
       <p>
-      Είσαι ήδη μέλος? <a href="../login/login.php">Σύνδεση</a><br>
-      * Απευθύνεται σε φοιτητές , ΑΜΕΑ και ανέργους.
+      Είσαι ήδη μέλος? <a href="../login/login.php">Σύνδεση</a><br> 
     </p>
   </div>
 </form>
