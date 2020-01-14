@@ -117,17 +117,17 @@
 		<ul id="Λογαριασμός" class="cd-faq__group">
 			<li class="cd-faq__title"><h2>Λογαριασμός</h2></li>
 			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" href="#0"><span>Ξέχασα τον κωδικό Προςβασής μου! Τι κάνω?</span></a>
+				<a class="cd-faq__trigger" href="#0"><span>Πως μπορώ να κάνω εγγραφή στον ιστοχώρο?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
-            <p>Ατυχήσατε!</p>
+            <p>Μέσω της <a href="../signup/signup.php">σελίδας</a> εγγραφής!</p>
           </div>
 				</div>
 			</li>
 
 
 			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" href="#0"><span>Γιατί χρειάζομαι καν έναν λογαριασμό? </span></a>
+				<a class="cd-faq__trigger" href="#0"><span>Γιατί χρειάζομαι λογαριασμό? </span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
             <p>Ένας λογαριασμός βοηθάει για να θυμόμαστε κάποιες προτιμήσεις σας και την προσωρινή αποθήκευση κάποιων δεδομένων.</p>
