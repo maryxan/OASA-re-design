@@ -150,19 +150,43 @@ include 'login_logout_button.php';
 
             </div>
 
-            <div class="col-xs-6 col-md-3">
-              <h2>Ανακοινώσεις : </h2> <br>
+            <div class="col-xs-6 col-md-3" style="margin-left: 60px;">
+              <h2>Aνακοινώσεις: </h2> <br>
+              <!-- <h2>Ανακοινώσεις : </h2> <br>
               <div class="card" style="width: 30rem;">
-              <div class="card-header">
-                Τα τελευταία νέα
-              </div>
+              
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">Cras justo odio</li>
                 <li class="list-group-item">Dapibus ac facilisis in</li>
                 <li class="list-group-item">Vestibulum at eros</li>
               </ul>
-            </div>
-                
+            </div> -->
+                  <div class="list-group" style="width: 400px;">
+                  <a  class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">Μερική προσωρινή τροποποίηση της λεωφορειακής γραμμής 101 λόγω έργων στο Δήμο Αλίμου.</h5>
+                      <small class="text-muted">3 ώρες πρίν</small>
+                    </div>
+                    <p class="mb-1">Τροποποίηση της λεωφορειακής γραμμής 101 ΑΛΙΜΟΣ - ΕΛΛΗΝΙΚΟ λόγω έργων επί της λεωφόρου Κυθηρίων στο Δήμο Αλίμου,</p>
+                    <small>από την Παρασκευή 17.01.2020 και για χρονικό διάστημα 45 ημερών .</small>
+                  </a>
+                  <a  class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">Διακοπή δρομολογίων του τραμ την Κυριακή 19/01/20<h5>
+                      <small class="text-muted">2 μέρες πριν</small>
+                    </div>
+                    <p class="mb-1">Λόγω της διεξαγωγής του «4ου αγώνα δρόμου Ιστορικής Μνήμης» στην περιοχή της Νέας Σμύρνης (επί της Ελευθερίου Βενιζέλου), θα υπάρξει διακοπή της κυκλοφορίας του Τραμ στο τμήμα «Παναγίτσα- Σύνταγμα».</p>
+                    <small class="text-muted">από 07:00 έως 14:00.</small>
+                  </a>
+                  <a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">Μεταβολές λεωφορειακών γραμμών λόγω έντονων καιρικών φαινομένων.</h5>
+                      <small class="text-muted">4 μέρες πριν</small>
+                    </div>
+                    <p class="mb-1">Ο ΟΑΣΑ ανακοινώνει ότι λόγω της χιονόπτωσης και των έντονων καιρικών φαινομένων και ανάλογα με τις επικρατούσες συνθήκες, θα υπάρχουν μεταβολές/τροποποιήσεις στο δίκτυο των λεωφορειακών γραμμών.</p>
+                    <small class="text-muted">Για περισσότερες πληροφορίες μπορείτε να καλείτε και στο πληροφοριακό κέντρο του ΟΑΣΑ 11185.</small>
+                  </a>
+                </div>
             </div>
 
   </div> 
