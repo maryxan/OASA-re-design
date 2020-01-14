@@ -88,7 +88,7 @@
 				<a class="cd-faq__trigger" href="#0"><span>Πού μπορώ να βγάλω εισιτήριο?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
-            <p>Σε περίπτερα, σταθμούς προαστειακού, ΗΣΑΠ, μετρό, καθώς και διαδικτυακά μέσω της συγκεκριμένης σελίδας : <!--href --></p>
+            <p>Σε περίπτερα, σταθμούς προαστειακού, ΗΣΑΠ, μετρό, καθώς και διαδικτυακά μέσω της <a href="../tickets/tickets.php">συγκεκριμένης σελίδας</a></p>
           </div>
 				</div> <!-- cd-faq__content -->
 			</li>
@@ -101,7 +101,7 @@
 				<a class="cd-faq__trigger" href="#0"><span>Πώς μπορώ να βρω τη διαδρομή για μία συγκεκριμένη στάση?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
-            <p>Ο συγκεκριμένος ιστοχώρος παρέχει αυτή τη δυνατότητα με διαδραστικό τρόπο σε αυτή την συγκεριμένη σελίδα : <!--href --></p>
+            <p>Ο συγκεκριμένος ιστοχώρος παρέχει αυτή τη δυνατότητα με διαδραστικό τρόπο σε αυτή τη <a href="../diadromi/diadromi.php">σελίδα </a> <!--href --></p>
           </div>
 				</div> <!-- cd-faq__content -->
 			</li>
@@ -110,19 +110,11 @@
 				<a class="cd-faq__trigger" href="#0"><span>Πώς μπορώ να μάθω αν έχει απεργία σήμερα ένα μέσο??</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
-            <p>Πηγαίνοντας σε αυτή τη σελίδα : <!--href--> </p>
+            <p>Πηγαίνοντας στην Αρχική Σελίδα. </p>
           </div>
 				</div> <!-- cd-faq__content -->
 			</li>
 
-			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" href="#0"><span>How do I link to a file or folder?</span></a>
-				<div class="cd-faq__content">
-          <div class="text-component">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis, reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit, magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
-          </div>
-				</div> <!-- cd-faq__content -->
-			</li>
 		</ul> <!-- cd-faq__group -->
 
 		<ul id="Λογαριασμός" class="cd-faq__group">
@@ -136,23 +128,6 @@
 				</div>
 			</li>
 
-			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" href="#0"><span>Πώς διαγράφω το λογαριασμό μου?</span></a>
-				<div class="cd-faq__content">
-          <div class="text-component">
-            <p>Και πάλι ατυχήσατε!</p>
-          </div>
-				</div>
-			</li>
-
-			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" href="#0"><span>Πώς αλλάζω τις ρυθμίσεις του λογαριασμού μου?</span></a>
-				<div class="cd-faq__content">
-          <div class="text-component">
-            <p>Να το πω τρίτη φορά?</p>
-          </div>
-				</div> <!-- cd-faq__content -->
-			</li>
 
 			<li class="cd-faq__item">
 				<a class="cd-faq__trigger" href="#0"><span>Γιατί χρειάζομαι καν έναν λογαριασμό? </span></a>
@@ -170,7 +145,7 @@
 				<a class="cd-faq__trigger" href="#0"><span>Πώς μπορώ να βρω ποιες στάσεις έχουν υποστήριξη για ΑΜΕΑ?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
-            <p>Μέσα από αυτή τη σελίδα : <!--href--> </p>
+            <p>Μέσα από αυτή τη <a href="../amea/amea.php">σελίδα</a> </p>
           </div>
 				</div> <!-- cd-faq__content -->
 			</li>
