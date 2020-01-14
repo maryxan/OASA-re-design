@@ -109,8 +109,8 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">			
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active"><a class="nav-link" href="../diadromi/diadromi.php">Διαδρομή</a></li>
-				<li class="nav-item"><a class="nav-link" href="../dromologia/dromologia.php">Δρομολόγια</a></li>
+				<li class="nav-item"><a class="nav-link" href="../diadromi/diadromi.php">Διαδρομή</a></li>
+				<li class="nav-item active"><a class="nav-link" href="../dromologia/dromologia.php">Δρομολόγια</a></li>
 				<li class="nav-item"><a class="nav-link" href="../tickets/tickets.php">Εισιτήρια-Κάρτες</a></li>
 				<li class="nav-item"><a class="nav-link" href="../amea/amea.php">ΑΜΕΑ</a></li>
 				<li class="nav-item"><a class="nav-link" href="../faq/faq.php">FAQ</a></li>
