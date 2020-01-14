@@ -33,10 +33,9 @@ include '../signup_profile_button.php';
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">			
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item"><a class="nav-link" href="../diadromi/diadromi.php">Διαδρομή</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Δρομολόγια</a></li>
+				<li class="nav-item"><a class="nav-link" href="../dromologia/dromologia.php">Δρομολόγια</a></li>
 				<li class="nav-item"><a class="nav-link" href="../tickets/tickets.php">Εισιτήρια-Κάρτες</a></li>
 				<li class="nav-item"><a class="nav-link" href="../amea/amea.php">ΑΜΕΑ</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Ανακοινώσεις</a></li>
 				<li class="nav-item"><a class="nav-link" href="../faq/faq.php">FAQ</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">

@@ -13,11 +13,9 @@
 	<script>document.getElementsByTagName("html")[0].className += " js";</script>
 	<link rel="stylesheet" href="assets/css/style.css">
 	<title>FAQ</title>
-	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
@@ -30,10 +28,9 @@
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">			
 		<ul class="navbar-nav mr-auto">
 		<li class="nav-item"><a class="nav-link" href="../diadromi/diadromi.php">Διαδρομή</a></li>
-		<li class="nav-item"><a class="nav-link" href="#">Δρομολόγια</a></li>
+		<li class="nav-item"><a class="nav-link" href="../dromologia/dromologia.php">Δρομολόγια</a></li>
 		<li class="nav-item"><a class="nav-link" href="../tickets/tickets.php">Εισιτήρια-Κάρτες</a></li>
 		<li class="nav-item"><a class="nav-link" href="../amea/amea.php">ΑΜΕΑ</a></li>
-		<li class="nav-item"><a class="nav-link" href="#">Ανακοινώσεις</a></li>
 		<li class="nav-item active"><a class="nav-link" href="../faq/faq.php">FAQ</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
@@ -120,17 +117,17 @@
 		<ul id="Λογαριασμός" class="cd-faq__group">
 			<li class="cd-faq__title"><h2>Λογαριασμός</h2></li>
 			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" href="#0"><span>Ξέχασα τον κωδικό Προςβασής μου! Τι κάνω?</span></a>
+				<a class="cd-faq__trigger" href="#0"><span>Πως μπορώ να κάνω εγγραφή στον ιστοχώρο?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
-            <p>Ατυχήσατε!</p>
+            <p>Μέσω της <a href="../signup/signup.php">σελίδας</a> εγγραφής!</p>
           </div>
 				</div>
 			</li>
 
 
 			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" href="#0"><span>Γιατί χρειάζομαι καν έναν λογαριασμό? </span></a>
+				<a class="cd-faq__trigger" href="#0"><span>Γιατί χρειάζομαι λογαριασμό? </span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
             <p>Ένας λογαριασμός βοηθάει για να θυμόμαστε κάποιες προτιμήσεις σας και την προσωρινή αποθήκευση κάποιων δεδομένων.</p>
