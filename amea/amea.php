@@ -123,13 +123,11 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="../amea/amea.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	<script src="amea.js"></script>
@@ -150,10 +148,9 @@
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">			
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item"><a class="nav-link" href="../diadromi/diadromi.php">Διαδρομή</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">Δρομολόγια</a></li>
+			<li class="nav-item"><a class="nav-link" href="../dromologia/dromologia.php">Δρομολόγια</a></li>
 			<li class="nav-item"><a class="nav-link" href="../tickets/tickets.php">Εισιτήρια-Κάρτες</a></li>
 			<li class="nav-item active"><a class="nav-link" href="../amea/amea.php">ΑΜΕΑ</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">Ανακοινώσεις</a></li>
 			<li class="nav-item"><a class="nav-link" href="../faq/">FAQ</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
@@ -175,28 +172,13 @@
   </ol>
 </nav>     
 
-	<!-- <br> <br> <br>
-	<div style="background-image: url('1484992.jpg'); width:100%">
-
-		<br> <br> <br>
-		<button type="button" class="collapsible">Μάθετε περισσότερα</button>
-		<div class="content">
-			<p>Περιγραφή, Ενέργειες, Δράσεις...</p>
-		</div>
-
-		<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
-		</div>
- -->
-
-	<!-- <div class="content">
-		<button type="button" class="btn btn-outline-info btn-lg"><a href="../amea/info.php">Πληροφορίες</a></button>
-	</div>
-	<br> -->
-	<!-- <div class="bg-img">   -->
 		<div class="container mb-5">
 			<button class="accordion">Πληροφορίες</button>
 			<div class="panel">
 				<ul class="list-unstyled mt-3">
+					<div class="d-flex justify-content-end">
+			         <a href="../faq/faq.php">Συχνές ερωτήσεις</a>
+			         </div>
 					<li>
 						<h4>Στάσεις/Σταθμοί εξυπηρέτησης ατόμων με αναπηρία</h4>
 						<hr>

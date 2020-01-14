@@ -84,10 +84,9 @@ if(isset($_GET["action"]))
     <div class="collapse navbar-collapse" id="navbarSupportedContent">      
       <ul class="navbar-nav mr-auto">
         <li class="nav-item"><a class="nav-link" href="../diadromi/diadromi.php">Διαδρομή</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Δρομολόγια</a></li>
+        <li class="nav-item"><a class="nav-link" href="../dromologia/dromologia.php">Δρομολόγια</a></li>
         <li class="nav-item active"><a class="nav-link" href="../tickets/tickets.php">Εισιτήρια-Κάρτες</a></li>
         <li class="nav-item"><a class="nav-link" href="../amea/amea.php">ΑΜΕΑ</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Ανακοινώσεις</a></li>
         <li class="nav-item"><a class="nav-link" href="../faq/faq.php">FAQ</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -111,38 +110,20 @@ if(isset($_GET["action"]))
 
 
   <div class="bg-img">  
-  <!-- <form class="cnt">
-    <button class="btn" type="submit" name="find_route"></button>
-    <button class="btn" type="submit" name="find_route"></button>
-    <div class="buttons" style="margin-top: 250px; margin-left: 600px;">
-      <a href="../ekdosi/ekdosi.php" class="btn btn-warning" role="button">ΠΛΗΡΟΦΟΡΙΕΣ</a>
-    </div>
-
-  </form> -->
   
-  <!-- </div> -->
 </div>
 
     <!--================-->
  
  <div class="container">
-    <!-- <button class="accordion">Πληροφορίες</button>
-    <div class="panel">
-
-      <h3>Ισχυής των εισητηρίων</h3>
-      <ul class = "list-unstyled">
-         <li> <p>To ενιαίο εισιτήριο 90 των λεπτών ισχύει σε όλα τα μέσα αρμοδιότητας ΟΑΣΑ: Λεωφορεία, Τρόλλεϋ, Τραμ, Ηλεκτρικό Σιδηρόδρομο, Μετρό (μέχρι Κορωπί) και στην ΤΡΑΙΝΟΣΕ (στο τμήμα του Προαστιακού Μαγούλα-Πειραιάς-Κορωπί). Δεν ισχύει στις λεωφορειακές γραμμές EXPRESS του Αεροδρομίου, στη γραμμή Χ80 και στο Μετρό στο τμήμα Κορωπί-Αεροδρόμιο.</p></li>
-         <li>Τα εισιτήρια ισχύουν για 90 λεπτά από την πρώτη επικύρωσή τους, ανεξάρτητα από τις ενδιάμεσες επιβιβάσεις/επικυρώσεις.</li>
-         <li>Item 3</li>
-         <li>Item 4</li>
-      </ul>
-     
-       
-    </div> -->
+    
     <div class="container mb-5">
       <button class="accordion">Πληροφορίες</button>
       <div class="panel">
         <ul class="list-unstyled mt-3">
+          <div class="d-flex justify-content-end">
+          <a href="../faq/faq.php">Συχνές ερωτήσεις</a>
+          </div>
           <li>
             <h4>Εισιτήρια</h4>
             <hr>
@@ -208,8 +189,6 @@ if(isset($_GET["action"]))
     </form>
 
     <?php
-    // $_SESSION["name"] = $row["name"];
-    // $_SESSION["price"] = $row["price"];
     }
     }
     ?>  
