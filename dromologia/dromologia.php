@@ -5,8 +5,82 @@
 
 	include '../login_logout_button.php';
 	include '../signup_profile_button.php';
+	include '../diadromi/getIcon.php';
 
-	?>
+	$query_for_vehicle_routes = "SELECT * FROM vehicle_routes";
+
+	$result_vehicle_routes = $conn->query($query_for_vehicle_routes);
+	$vehicle_routes_amount = $result_vehicle_routes->num_rows;
+
+	$accordion_list = "";
+
+	for ($i=0; $i < $vehicle_routes_amount; $i++) {
+		$result_vehicle_routes-> data_seek($i);
+		$route_row = $result_vehicle_routes->fetch_array(MYSQLI_ASSOC);
+
+		$query_for_vehicle_stations = "SELECT r.*, s.*
+			FROM vehicle_routes AS r, vehicle_stations AS s
+			WHERE r.vehicle_id = s.vehicle_id
+			AND s.vehicle_id = '".$route_row['vehicle_id']."'
+			ORDER BY s.arrival_asc" ; 
+
+		$result_stations = $conn->query($query_for_vehicle_stations);
+		$stations_amount = $result_stations->num_rows;
+
+
+		$route_head = getIcon($route_row['medium_type']).' <strong>'.$route_row['vehicle_id'].'</strong> : '.$route_row['description'];
+		$route_description = "";
+
+		for ($j=0; $j < $stations_amount; $j++) { 
+			$result_stations-> data_seek($j);
+			$station_row = $result_stations->fetch_array(MYSQLI_ASSOC);
+
+			// if($route_head == ""){
+			// 	$route_head = getMediumPair($station_row['medium_type'], $station_row['medium_name']);
+			// }
+			// else{
+			// 	$route_head = $route_head.' -> '.getMediumPair($station_row['medium_type'], $step_row['medium_name']);
+			// }
+
+			$route_description = $route_description.'<li class="list-group-item">'
+			.$station_row['name']
+			.' ('
+			.$station_row['arrival_asc']
+			.')'.'</li>';
+
+		}
+		$route_head = '
+		<div class="card-header" id="heading'.$i.'">
+			<h2 class="mb-0">
+				<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse'.$i.'" aria-expanded="true" aria-controls="collapse'.$i.'">
+				<span>'.$route_head.'</span>
+				</button>
+			</h2>
+		</div>';
+
+		$route_description = '
+		<div id="collapse'.$i.'" class="collapse" aria-labelledby="heading'.$i.'" data-parent="#accordionExample">
+			<div class="card-body">
+				<ul class="list-group list-group-flush">
+					'.$route_description.'
+				</ul>
+			</div>
+		</div>
+		';
+
+		$accordion_list = $accordion_list.'
+		<div class="card">
+		'.$route_head
+		.$route_description
+		.'</div>';
+	}
+
+	$accordion = '
+	<div class="accordion" id="accordionExample">
+	'.$accordion_list.
+	'</div>';
+
+?>
   
 
 	<!DOCTYPE html>
@@ -63,56 +137,12 @@
 	</ol>
 	</nav>  
 
-<div class="container">
-<div class="accordion" id="accordionExample">
-  <div class="card">
-    <div class="card-header" id="headingOne">
-      <h2 class="mb-0">
-        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Collapsible Group Item #1
-        </button>
-      </h2>
-    </div>
+	<div class="container">
 
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-      <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-header" id="headingTwo">
-      <h2 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Collapsible Group Item #2
-        </button>
-      </h2>
-    </div>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-      <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-header" id="headingThree">
-      <h2 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Collapsible Group Item #3
-        </button>
-      </h2>
-    </div>
-    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-      <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-
-
-
+		<?php
+		echo $accordion;
+		?>
+	</div>
 
 	</div>
 	<?php
