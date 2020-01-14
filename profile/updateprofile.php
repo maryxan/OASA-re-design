@@ -115,7 +115,6 @@ include '../signup_profile_button.php';
         <li class="nav-item"><a class="nav-link" href="../amea/amea.php">ΑΜΕΑ</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Ανακοινώσεις</a></li>
         <li class="nav-item"><a class="nav-link" href="../faq/faq.php">FAQ</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Για τον ΟΑΣΑ</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <?php
@@ -155,24 +154,31 @@ include '../signup_profile_button.php';
                       <div class="form-row">                          
                           <div class="col-xs-6">
                               <label for="name"><h4>Όνομα</h4></label>
-                              <input  type="text" class="form-control" name="name" <?php if (isset($_SESSION['name'])) echo 'value = "'.$_SESSION['name'].'"' ?>>
+                              <input  type="text" class="form-control" name="name" id="form_fname" <?php if (isset($_SESSION['name'])) echo 'value = "'.$_SESSION['name'].'"' ?>>
+                              <span class="error_form" id="fname_error_message"></span><br>
                           </div>
                           <div class="col-xs-6">
                               <label for="username"><h4>Username</h4></label>
-                              <input  type="username" class="form-control" name="username" <?php if (isset($_SESSION['username'])) echo 'value = "'.$_SESSION['username'].'"' ?>>
+                              <input  type="username" class="form-control" name="username" id="form_username"<?php if (isset($_SESSION['username'])) echo 'value = "'.$_SESSION['username'].'"' ?>>
+                              <span class="error_form" id="username_error_message"></span><br>
+
                           </div>
                       </div>
                       <div class="form-row">
                                        
                           <div class="col-xs-6">
                             <label for="surname"><h4>Επώνυμο</h4></label>
-                              <input  type="text" class="form-control" name="surname"<?php if (isset($_SESSION['surname'])) echo 'value = "'.$_SESSION['surname'].'"' ?>>
+                              <input  type="text" class="form-control" name="surname" id="form_sname"<?php if (isset($_SESSION['surname'])) echo 'value = "'.$_SESSION['surname'].'"' ?>>
+                               <span class="error_form" id="sname_error_message"></span><br>
+
                           </div>
                       
                           
                           <div class="col-xs-6">
                               <label for="email"><h4>Email</h4></label>
-                              <input  type="email" class="form-control" name="email" <?php if (isset($_SESSION['email'])) echo 'value = "'.$_SESSION['email'].'"' ?>>
+                              <input  type="email" class="form-control" name="email" id="form_email"<?php if (isset($_SESSION['email'])) echo 'value = "'.$_SESSION['email'].'"' ?>>                              
+                              <span class="error_form" id="email_error_message"></span><br>
+
                           </div>
                       </div>   
                       <div class="form-group">
@@ -190,79 +196,12 @@ include '../signup_profile_button.php';
 <!--             ==================================================== kartela agapimena =============================================== 
  -->             
 
-        <div class="tab-pane" id="messages">
+                <div class="tab-pane" id="messages">
                
-               <h2></h2>
-               
-               <hr>
-                  <!-- <form class="form" action="##" method="post" id="registrationForm">
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                              <label for="first_name"><h4>First name</h4></label>
-                              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                            <label for="last_name"><h4>Last name</h4></label>
-                              <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
-                          </div>
-                      </div>
-          
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                              <label for="phone"><h4>Phone</h4></label>
-                              <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
-                          </div>
-                      </div>
-          
-                      <div class="form-group">
-                          <div class="col-xs-6">
-                             <label for="mobile"><h4>Mobile</h4></label>
-                              <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                              <label for="email"><h4>Email</h4></label>
-                              <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                              <label for="email"><h4>Location</h4></label>
-                              <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location">
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                              <label for="password"><h4>Password</h4></label>
-                              <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                            <label for="password2"><h4>Verify</h4></label>
-                              <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
-                          </div>
-                      </div>
-                      <div class="form-group">
-                           <div class="col-xs-12">
-                                <br>
-                                <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
-                                <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
-                            </div>
-                      </div>
-                </form> -->
-               
-             </div><!--/tab-pane-->
+                   
+                   <hr>
+                  
+                </div><!--/tab-pane-->
               </div><!--/tab-pane-->
           </div><!--/tab-content-->
 
@@ -274,4 +213,109 @@ include '../signup_profile_button.php';
 include "../components/footer/footer.php";
 ?>
 </body>
+<script>
+   $(function() {
+
+$("#fname_error_message").hide();
+$("#sname_error_message").hide();
+$("#email_error_message").hide();
+$("#username_error_message").hide();
+
+
+var error_fname = false;
+var error_sname = false;
+var error_email = false;
+var error_username = false;
+
+$("#form_fname").focusout(function(){
+   check_fname();
+});
+$("#form_sname").focusout(function() {
+   check_sname();
+});
+$("#form_email").focusout(function() {
+   check_email();
+});
+ $("#form_username").focusout(function() {
+   check_username();
+});
+
+function check_fname() {
+   var pattern = /^[a-zA-Zα-ωΑ-Ωάέήίύώόϊϋΐΰ]*$/;
+   var fname = $("#form_fname").val();
+   if (pattern.test(fname) && fname !== '') {
+      $("#fname_error_message").hide();
+      $("#form_fname").css("border-bottom","2px solid #34F458");
+   } else {
+      $("#fname_error_message").html('<div class="alert alert-danger" role="alert">'+
+      'Το όνομα πρέπει να περιέχει μόνο χαρακτήρες'+
+      '</div>');
+      $("#fname_error_message").show();
+      $("#form_fname").css("border-bottom","2px solid #F90A0A");
+      error_fname = true;
+   }
+}
+
+function check_sname() {
+   var pattern = /^[a-zA-Zα-ωΑ-Ωάέήίύώόϊϋΐΰ]*$/;
+   var sname = $("#form_sname").val()
+   if (pattern.test(sname) && sname !== '') {
+      $("#sname_error_message").hide();
+      $("#form_sname").css("border-bottom","2px solid #34F458");
+   } else {
+      $("#sname_error_message").html(
+      '<div class="alert alert-danger" role="alert">'+
+      'Το επώνυμο πρέπει να περιέχει μόνο χαρακτήρες'+
+      '</div>');
+      $("#sname_error_message").show();
+      $("#form_sname").css("border-bottom","2px solid #F90A0A");
+      error_fname = true;
+   }
+}
+
+function check_email() {
+   var pattern = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+   var email = $("#form_email").val();
+   if (pattern.test(email) && email !== '') {
+      $("#email_error_message").hide();
+      $("#form_email").css("border-bottom","2px solid #34F458");
+   } else {
+      $("#email_error_message").html('<div class="alert alert-danger" role="alert">'+
+      'Το email δεν έιναι έγκυρο'+
+      '</div>');
+      $("#email_error_message").show();
+      $("#form_email").css("border-bottom","2px solid #F90A0A");
+      error_email = true;
+   }
+}
+function check_username() {
+   var pattern = /^[a-zA-Z_0-9]*$/;
+   var fname = $("#form_username").val();
+   if (pattern.test(fname) && fname !== '') {
+      $("#username_error_message").hide();
+      $("#form_username").css("border-bottom","2px solid #34F458");
+   } else {
+      $("#username_error_message").html('<div class="alert alert-danger" role="alert">'+
+      'Το όνομα πρέπει να περιέχει μόνο λατινικούς χαρακτήρες, κάτω παύλα ή/και νούμερα'+
+      '</div>');
+      $("#username_error_message").show();
+      $("#form_username").css("border-bottom","2px solid #F90A0A");
+      error_username = true;
+   }
+}
+
+$("#registration_form").submit(function() {
+   error_fname = false;
+   error_sname = false;
+   error_email = false;
+   error_username = false;
+
+   check_fname();
+   check_sname();
+   check_email();
+   check_username();
+
+});
+});
+</script>
 </html>

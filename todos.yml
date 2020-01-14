@@ -1,4 +1,4 @@
-index:
+﻿index:
   - [ ] announcements/strikes info next to calendar
   - [ ] athena card
   - [ ] put tickets on it
@@ -16,14 +16,14 @@ tickets:
  - [x] put images inside a folder
 other:
   - [ ] put logo in navbar
-  - [ ] remove "Για τον ΟΑΣΑ" from navbar
-  - [ ] put "Για τον ΟΑΣΑ" in the footer
+  - [x] remove "Για τον ΟΑΣΑ" from navbar
+  - [x] put "Για τον ΟΑΣΑ" in the footer
 amea:
   - [x] general info on top
 about OASA:
  - [ ] put carousel
 diadromi:
-  - [ ] add route price
+  - [x] add route price
 dromologia:
   - [ ] do
   

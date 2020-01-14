@@ -155,7 +155,6 @@
 			<li class="nav-item active"><a class="nav-link" href="../amea/amea.php">ΑΜΕΑ</a></li>
 			<li class="nav-item"><a class="nav-link" href="#">Ανακοινώσεις</a></li>
 			<li class="nav-item"><a class="nav-link" href="../faq/">FAQ</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">Για τον ΟΑΣΑ</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 				<?php
