@@ -27,7 +27,7 @@ include 'login_logout_button.php';
  -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	<a class="navbar-brand" href="index.php">
-   <img src="images/logcopy2.png" style="height:50px; width: 80px;" alt="">
+   <img src="images/logo1.png" style="height:50px; width: 100px;" alt="">
   </a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 14, 2020 at 10:09 PM
--- Server version: 10.4.10-MariaDB
--- PHP Version: 7.3.12
+-- Generation Time: Jan 15, 2020 at 06:48 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -136,8 +136,8 @@ CREATE TABLE `simpleuser` (
 --
 
 INSERT INTO `simpleuser` (`username`, `password`, `name`, `surname`, `email`, `reduced_ticket`) VALUES
-('gmitr', '96e79218965eb72c92a549dd5a330112', 'Γεώργιος', 'Μητράκης', 'whateverq@aev.as', 1),
-('loutsos', 'e3ceb5881a0a1fdaad01296d7554868d', 'Ιωάννης', 'Μήταρου', 'mamniahs@ca.as', 1),
+('gmitr', 'e10adc3949ba59abbe56e057f20f883e', 'George', 'Mitrakis', 'georgem@gmail.com', 1),
+('johnmi', 'ee2695e368de2b5327fce30e2d839731', 'John', 'Mitrou', 'johnm@gmail.com', 1),
 ('maryxan', 'e10adc3949ba59abbe56e057f20f883e', 'mary', 'Xanthopoulou', 'maryxan96@hotmail.com', 0);
 
 -- --------------------------------------------------------
@@ -199,6 +199,7 @@ CREATE TABLE `ticket` (
   `name` varchar(250) NOT NULL,
   `code` varchar(100) NOT NULL,
   `price` double(9,2) NOT NULL,
+  `reduced_price` varchar(256) NOT NULL,
   `image` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -206,10 +207,10 @@ CREATE TABLE `ticket` (
 -- Dumping data for table `ticket`
 --
 
-INSERT INTO `ticket` (`id`, `name`, `code`, `price`, `image`) VALUES
-(1, 'Ενιαίο', 'st', 1.40, 'ticket.jpg'),
-(2, 'Μειωμένο', 'red', 0.60, 'ticket.jpg'),
-(3, 'Μηνιαία κάρτα', 'mc', 30.00, 'card.jpg');
+INSERT INTO `ticket` (`id`, `name`, `code`, `price`, `reduced_price`, `image`) VALUES
+(1, 'Ενιαίο', 'st', 1.40, '', 'ticket.jpg'),
+(2, 'Μειωμένο', 'red', 0.60, '', 'ticket.jpg'),
+(3, 'Μηνιαία κάρτα', 'mc', 30.00, '15.00', 'card.jpg');
 
 -- --------------------------------------------------------
 
@@ -280,6 +281,33 @@ INSERT INTO `vehicle_stations` (`id`, `name`, `vehicle_id`, `station_number`, `a
 (24, 'ΣΤ.ΜΟΝΑΣΤΗΡΑΚΙ', 'M1', 2, '18:12', '19:50'),
 (25, 'ΣΤ.ΑΓ.ΝΙΚΟΛΑΟΥ', 'M1', 3, '18:22', '19:40'),
 (26, 'ΣΤ.ΠΕΡΙΣΣΟΥ', 'M1', 4, '18:40', '19:22'),
+(27, 'ΣΤ.ΚΗΦΙΣΙΑΣ', 'M1', 5, '18:50', '19:12'),
+(1, 'ΠΑΝΕΠΙΣΤΗΜΙΟΥΠΟΛΗ', '250', 1, '18:00', '19:00'),
+(2, 'ΕΥΦΡΟΝΙΟΥ', '250', 2, '18:12', '18:48'),
+(3, 'ΕΥΑΓΓΕΛΙΣΜΟΣ', '250', 3, '18:24', '18:36'),
+(4, '	ΠΥΛΗ ΚΑΙΣΑΡΙΑΝΗΣ', '250', 4, '18:36', '18:24'),
+(5, 'ΠΑΝΕΠΙΣΤΗΜΙΟΥΠΟΛΗ', '250', 5, '18:48', '18:12'),
+(6, 'ΠΟΛΥΓΩΝΟ', '140', 1, '18:00', '19:00'),
+(7, 'ΓΗΡΟΚΟΜΕΙΟ', '140', 2, '18:12', '18:48'),
+(8, '	ΕΘΝΙΚΗ ΓΛΥΠΤΟΘΗΚΗ', '140', 3, '18:24', '18:36'),
+(9, '	ΦΟΙΤΗΤ.ΕΣΤΙΑ', '140', 4, '18:36', '18:24'),
+(10, '	ΑΓ.ΚΩΝΣΤΑΝΤΙΝΟΣ', '140', 5, '18:48', '18:12'),
+(11, 'ΓΛΥΦΑΔΑ', '140', 6, '19:00', '18:00'),
+(12, 'ΑΓ. ΑΝΑΡΓΥΡΟΙ', '420', 1, '18:00', '20:00'),
+(13, 'ΑΓ. ΠΑΝΤΕΛΕΗΜΟΝΑ', '420', 2, '18:12', '19:48'),
+(14, 'ΣΚΛΑΒΕΝΙΤΗ', '420', 3, '18:24', '19:36'),
+(15, '	ΑΠΟΛΛΩΝ', '420', 4, '18:36', '19:24'),
+(16, 'ΠΕΙΡΑΙΑΣ', '420', 5, '18:48', '19:12'),
+(17, 'ΣΤ.ΑΓ.ΜΑΡΙΝΑ', 'M3', 1, '18:00', '20:10'),
+(18, 'ΣΤ.ΣΥΝΤΑΓΜΑΤΟΣ', 'M3', 2, '18:12', '20:00'),
+(19, 'ΣΤ.ΕΥΑΓΓΕΛΙΣΜΟΥ', 'M3', 3, '18:24', '19:48'),
+(20, '	ΣΤ.ΚΑΤΕΧΑΚΗ', 'M3', 4, '18:36', '19:36'),
+(21, 'ΣΤ.ΔΟΥΚ.ΠΛΑΚΕΝΤΙΑΣ', 'M3', 5, '18:48', '19:24'),
+(22, 'ΣΤ.ΑΕΡΟΔΡΟΜΙΟΥ', 'M3', 6, '19:00', '19:12'),
+(23, 'ΣΤ.ΠΕΙΡΑΙΑ', 'M1', 1, '18:00', '20:00'),
+(24, 'ΣΤ.ΜΟΝΑΣΤΗΡΑΚΙ', 'M1', 2, '18:12', '19:50'),
+(25, 'ΣΤ.ΑΓ.ΝΙΚΟΛΑΟΥ', 'M1', 3, '18:22', '19:40'),
+(26, 'ΣΤ.ΠΕΡΙΣΣΟΥ', 'M1', 4, '18:40', '19:22'),
 (27, 'ΣΤ.ΚΗΦΙΣΙΑΣ', 'M1', 5, '18:50', '19:12');
 
 --
@@ -312,18 +340,6 @@ ALTER TABLE `ticket`
   ADD UNIQUE KEY `code` (`code`);
 
 --
--- Indexes for table `vehicle_routes`
---
-ALTER TABLE `vehicle_routes`
-  ADD PRIMARY KEY (`vehicle_id`);
-
---
--- Indexes for table `vehicle_stations`
---
-ALTER TABLE `vehicle_stations`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -344,12 +360,6 @@ ALTER TABLE `steps`
 --
 ALTER TABLE `ticket`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `vehicle_stations`
---
-ALTER TABLE `vehicle_stations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
