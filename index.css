@@ -89,7 +89,7 @@ body {font-family: Verdana, sans-serif;}
 
 .month {
   padding: 70px 25px;
-  width: 400px;
+  width: 500px;
   background: #004d40;
   text-align: center;
 }
@@ -117,7 +117,7 @@ body {font-family: Verdana, sans-serif;}
 }
 
 .weekdays {
-  width: 400px;
+  width: 500px;
   margin: 0;
   padding: 10px 0;
   background-color: #ddd;
@@ -131,7 +131,7 @@ body {font-family: Verdana, sans-serif;}
 }
 
 .days {
-  width: 400px;
+  width: 500px;
   padding: 10px 0;
   background: #eee;
   margin: 0;

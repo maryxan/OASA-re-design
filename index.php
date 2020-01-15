@@ -26,9 +26,9 @@ include 'login_logout_button.php';
 <!--  ============= NAVIGATION BAR ================
  -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-	<a class="navbar-brand" href="index.php">OASA logo
-<!--    <img src="images/logo2.png" style="height:70px; width: 110px;" alt="">
- -->  </a>
+	<a class="navbar-brand" href="index.php">
+   <img src="images/logcopy2.png" style="height:50px; width: 80px;" alt="">
+  </a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
@@ -169,7 +169,7 @@ include 'login_logout_button.php';
                     <p class="mb-1">Λόγω της διεξαγωγής του «4ου αγώνα δρόμου Ιστορικής Μνήμης» στην περιοχή της Νέας Σμύρνης (επί της Ελευθερίου Βενιζέλου), θα υπάρξει διακοπή της κυκλοφορίας του Τραμ στο τμήμα «Παναγίτσα- Σύνταγμα».</p>
                     <small class="text-muted">από 07:00 έως 14:00.</small>
                   </a>
-                  <a href="#" class="list-group-item list-group-item-action">
+                  <a class="list-group-item list-group-item-action">
                     <div class="d-flex w-100 justify-content-between">
                       <h5 class="mb-1">Μεταβολές λεωφορειακών γραμμών λόγω έντονων καιρικών φαινομένων.</h5>
                       <small class="text-muted">4 μέρες πριν</small>
@@ -182,7 +182,7 @@ include 'login_logout_button.php';
 
   </div> 
   <br> <br> <br> <br> <br> <br> <br>
-<div class="d-flex justify-content-center">
+<!-- <div class="d-flex justify-content-center">
 <h2>Άρθρα και Σχετικά</h2>
 </div>
 <br>
@@ -198,11 +198,7 @@ include 'login_logout_button.php';
   <div class="column">
     <img src="images/old.jpg" alt="Mountains" style="width:100%">
   </div>
-</div>
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.2/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</div> -->
 
 </div> <!-- content -->
 
