@@ -69,7 +69,7 @@ include 'login_logout_button.php';
 </nav>
 
 <div class="bg-img">  
-	<form action="diadromi/diadromi.php" method="get" class="container">
+	<form action="diadromi/diadromi.php" method="get" class="container search-form">
 		<h1>Εύρεση διαδρομής</h1>
 		<label for="starting_point">Από:</label>
     <input type="text" placeholder="Σημείο εκκίνησης" name="starting_point">
@@ -79,42 +79,49 @@ include 'login_logout_button.php';
 	</form>
   
 </div>
+
 <div class="center_row">
 <br>
-<div class="row" style="margin-left: 600px;">
-      <div class="col-md-6 font">
-        <h1> Μια πόλη. Ένα δίκτυο.</h1>
-        <hr>       
-        <img src="images/icons.png" style="margin-left: 20px;">
-      </div>
-</div>      
+<div class="container">
+      <div class="col">
+          <div class="row d-flex justify-content-center">
+            <h3> Μια πόλη. Ένα δίκτυο.</h3>
+          </div>
+        <hr>   
+          <div class="row d-flex justify-content-center">
+            <img src="images/icons.png">            
+          </div>
+      </div>    
+</div>  
 </div>
 
 <br>
 <br>
-<div class="row" style="margin-left:20px;">
-            <div class="col-sm-12 col-md-6">
+<div class="row d-flex justify-content-center">
+          <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3 mt-3">
               <h2>Οι απεργίες του μήνα: </h2> <br>
             <div class="month">      
               <ul>
                 <li>
-                  Ιανουάριος<br>
+                  Ιανουαριος<br>
                   <span style="font-size:18px">2020</span>
                 </li>
               </ul>
             </div>
 
             <ul class="weekdays">
+              <li>Mo</li>
+              <li>Tu</li>
               <li>We</li>
               <li>Th</li>
               <li>Fr</li>
               <li>Sa</li>
               <li>Su</li>
-              <li>Mo</li>
-              <li>Tu</li>
             </ul>
 
             <ul class="days">  
+              <li></li>
+              <li></li>
               <li>1</li>
               <li>2</li>
               <li>3</li>
@@ -150,9 +157,10 @@ include 'login_logout_button.php';
 
             </div>
 
-            <div class="col-xs-6 col-md-3" style="margin-left: 60px;">
+            <div class="col-xs-0 col-sm-0 col-md-0 col-lg-0 col-xl-2"></div>
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3 mt-3 mb-3">
               <h2>Τελευταίες ανακοινώσεις: </h2> <br>
-                  <div class="list-group" style="width: 400px;">
+                  <div class="list-group" >
                   <a  class="list-group-item list-group-item-action">
                     <div class="d-flex w-100 justify-content-between">
                       <h5 class="mb-1">Μερική προσωρινή τροποποίηση της λεωφορειακής γραμμής 101 λόγω έργων στο Δήμο Αλίμου.</h5>
@@ -181,24 +189,6 @@ include 'login_logout_button.php';
             </div>
 
   </div> 
-  <br> <br> <br> <br> <br> <br> <br>
-<!-- <div class="d-flex justify-content-center">
-<h2>Άρθρα και Σχετικά</h2>
-</div>
-<br>
-<div class="row">
-  <div class="column">
-    ""
-    <img src="images/strike.jpg" alt="Snow" style="width:100%">
-  </div>
-  <div class="column">
-    "Αλλαγές στα δρομολόγια των γραμμών 250 και 732"
-    <img src="images/athensbus.jpg" alt="Forest" style="width:100%">
-  </div>
-  <div class="column">
-    <img src="images/old.jpg" alt="Mountains" style="width:100%">
-  </div>
-</div> -->
 
 </div> <!-- content -->
 

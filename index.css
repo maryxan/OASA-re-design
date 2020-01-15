@@ -38,7 +38,7 @@ background-color: #F8F8FF;
 }
   
   /* Add styles to the form container */
-.container {
+.search-form {
     position: absolute;
     left: 0;
     margin: 60px;
@@ -88,8 +88,7 @@ body {font-family: Verdana, sans-serif;}
 }
 
 .month {
-  padding: 70px 25px;
-  width: 500px;
+  padding: 60px 25px;
   background: #004d40;
   text-align: center;
 }
@@ -117,7 +116,6 @@ body {font-family: Verdana, sans-serif;}
 }
 
 .weekdays {
-  width: 500px;
   margin: 0;
   padding: 10px 0;
   background-color: #ddd;
@@ -131,7 +129,6 @@ body {font-family: Verdana, sans-serif;}
 }
 
 .days {
-  width: 500px;
   padding: 10px 0;
   background: #eee;
   margin: 0;
@@ -140,7 +137,7 @@ body {font-family: Verdana, sans-serif;}
 .days li {
   list-style-type: none;
   display: inline-block;
-  width: 14.8%;
+  width: 12%;
   text-align: center;
   margin-bottom: 5px;
   font-size:12px;
