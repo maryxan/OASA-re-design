@@ -21,7 +21,9 @@
 <body>
 <div class="content">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-	<a class="navbar-brand" href="../index.php">OASA logo</a>
+	<a class="navbar-brand" href="../index.php">
+   		<img src="../images/logcopy2.png" style="height:60px; width: 65px;" alt="">
+	</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
@@ -85,7 +87,7 @@
 				<a class="cd-faq__trigger" href="#0"><span>Πού μπορώ να βγάλω εισιτήριο?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
-            <p>Σε περίπτερα, σταθμούς προαστειακού, ΗΣΑΠ, μετρό, καθώς και διαδικτυακά μέσω της <a href="../tickets/tickets.php">συγκεκριμένης σελίδας</a></p>
+            <p>Σε περίπτερα, σταθμούς προαστειακού, ΗΣΑΠ, μετρό, καθώς και <a href="../tickets/tickets.php"> διαδικτυακά </a></p>
           </div>
 				</div> <!-- cd-faq__content -->
 			</li>
@@ -98,7 +100,7 @@
 				<a class="cd-faq__trigger" href="#0"><span>Πώς μπορώ να βρω τη διαδρομή για μία συγκεκριμένη στάση?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
-            <p>Ο συγκεκριμένος ιστοχώρος παρέχει αυτή τη δυνατότητα με διαδραστικό τρόπο σε αυτή τη <a href="../diadromi/diadromi.php">σελίδα </a> <!--href --></p>
+            <p>Ο συγκεκριμένος ιστοχώρος παρέχει αυτή τη δυνατότητα με διαδραστικό τρόπο <a href="../diadromi/diadromi.php">σε αυτή τη σελίδα </a> <!--href --></p>
           </div>
 				</div> <!-- cd-faq__content -->
 			</li>
@@ -107,7 +109,7 @@
 				<a class="cd-faq__trigger" href="#0"><span>Πώς μπορώ να μάθω αν έχει απεργία σήμερα ένα μέσο??</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
-            <p>Πηγαίνοντας στην Αρχική Σελίδα. </p>
+            <p>Πηγαίνοντας στην <a href="../index.php">Αρχική Σελίδα.</a> </p>
           </div>
 				</div> <!-- cd-faq__content -->
 			</li>
@@ -120,7 +122,7 @@
 				<a class="cd-faq__trigger" href="#0"><span>Πως μπορώ να κάνω εγγραφή στον ιστοχώρο?</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
-            <p>Μέσω της <a href="../signup/signup.php">σελίδας</a> εγγραφής!</p>
+            <p>Μέσω της <a href="../signup/signup.php">σελίδας εγγραφής!</a></p>
           </div>
 				</div>
 			</li>
