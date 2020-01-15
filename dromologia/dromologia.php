@@ -129,11 +129,45 @@
 	<!-- breadcrumbs -->
 	<nav aria-label="breadcrumb">
 	<ol class="breadcrumb">
-	<li class="breadcrumb-item"><a href="index.php">Αρχική</a></li>
+	<li class="breadcrumb-item"><a href="../index.php">Αρχική</a></li>
 	<li class="breadcrumb-item active" aria-current="page">Δρομολόγια</li>
 	</ol>
 	</nav>  
 
+	<div class="container mb-5">
+			<button class="info_accordion">Πληροφορίες</button>
+			<div class="panel">
+				<ul class="list-unstyled mt-3">
+					<div class="d-flex justify-content-end">
+			         <a href="../faq/faq.php">Συχνές ερωτήσεις</a>
+			         </div>
+					<li>
+						<h4>Πληροφορίες για τα Μέσα Μαζικής Μεταφοράς της Αθήνας</h4>
+						<hr>
+						<p> To Σύστημα Αστικών Συγκοινωνιών της Αθήνας αποτελείται από μέσα σταθερής τροχιάς (Μετρό, Τραμ, Προαστιακός) και μέσα οδικών μεταφορών (Αστικά Λεωφορεία, Τρόλεϊ). </p>
+						<p>Η λειτουργία του Μετρό και του Τραμ γίνεται από τη δημόσια εταιρία ΣΤΑ.ΣΥ. Α.Ε., των Λεωφορείων και Τρόλεϊ από την Ο.ΣΥ. και του Προαστιακού από την ΤΡΑΙΝΟΣΕ.</p>
+						<br>
+					</li>
+					<li>
+						<h4>Πληροφορίες για τα ΜΜΜ που υπάγονται στον ΟΑΣΑ</h4>
+						<hr>
+						<p>Μετρό:Το Μετρό της Αθήνας αποτελείται από 3 γραμμές</p>
+						<p>ΓΡΑΜΜΗ 1 (γνωστή και ως ΗΣΑΠ/Ηλεκτρικός): Εξυπηρετεί 24 σταθμούς. Συνδέεται με τη ΓΡΑΜΜΗ 2 στους σταθμούς Αττική και Ομόνοια, με τη ΓΡΑΜΜΗ 3 στο σταθμό Μοναστηράκι.</p>
+						<p>ΓΡΑΜΜΗ 2: Εξυπηρετεί 20 σταθμούς. Συνδέεται με τη ΓΡΑΜΜΗ 1 στους σταθμούς Αττική και Ομόνοια, με τη ΓΡΑΜΜΗ 3 στο σταθμό Σύνταγμα.</p>
+						<p>ΓΡΑΜΜΗ 3: Εξυπηρετεί 17 σταθμούς. Συνδέεται με τη ΓΡΑΜΜΗ 1 στο σταθμό Μοναστηράκι και με τη ΓΡΑΜΜΗ 2 στο σταθμό Σύνταγμα.</p>
+						<br>
+					</li>
+					<li>
+						<h4>Περιοχές που εξυπηρετεί ο ΟΑΣΑ</h4>
+						<hr>
+						<p>Η περιοχή που εξυπηρετείται σήμερα με αστική συγκοινωνία (περίπου 300 γραμμές αστικών Λεωφορείων) από τον Όμιλο ΟΑΣΑ είναι ο Νομός Αττικής σε όλη την εκτασή του. </p>
+						<p>Η συχνότητα δρομολογίων και το ωράριο όλων των γραμμών μεταβάλλεται ανάλογα με την ημέρα της εβδομάδας (καθημερινή – Σάββατο – Κυριακή) και την εποχή (χειμερινό – θερινό πρόγραμμα). Τις αργίες ισχύει το πρόγραμμα της Κυριακής.</p>
+						<br>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
 	<div class="container">
 
 		<?php
@@ -146,5 +180,23 @@
 include "../components/footer/footer.php";
 ?>
 </body>
+<script>
+var acc = document.getElementsByClassName("info_accordion");
+var i;
 
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+    this.classList.toggle("active");
+    /* Toggle between hiding and showing the active panel */
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
 	</html>

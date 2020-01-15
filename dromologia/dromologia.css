@@ -50,3 +50,37 @@
       align-items: stretch;
     }
   }
+
+
+  .info_accordion {
+  background-color: lightsteelblue;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+
+  font-family: "Verdana";
+  font-size: 18px;
+  font-weight: Bold;
+}
+
+
+.info_accordion:hover {
+  background-color: darkgray;
+}
+
+.info_accordion:active {
+  background-color: darkgray;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  background-color: lightgray;
+  display: none;
+  overflow: hidden;
+}
