@@ -151,8 +151,9 @@ if(isset($_GET["action"]))
 
  <hr>
  <br> <br> <br> <br> <br>
+ 
  <div class="cont">
-      
+   
     <?php
     $query = "SELECT * FROM ticket ORDER BY id ASC";
     $result = mysqli_query($conn, $query);
@@ -170,7 +171,7 @@ if(isset($_GET["action"]))
       <hr>
       <h4 class="text-info"><?php echo $row["name"]; ?></h4>
    
-      <h4 class="text-danger"><?php echo $row["price"];?>€</h4>
+      <h4 class="text-danger"><?php if($row["id"] == 3  && (isset(($_SESSION['reduced_ticket'])) && ($_SESSION['reduced_ticket']) == 1)) {echo $row["reduced_price"];} else {echo $row["price"];}?>€</h4>
 
     
       <br>
@@ -179,7 +180,7 @@ if(isset($_GET["action"]))
    
       <input type="hidden" name="name" value="<?php echo $row["name"]; ?>" />
    
-      <input type="hidden" name="price" value="<?php echo $row["price"]; ?>" /><br>
+      <input type="hidden" name="price" value="<?php if($row["id"] == 3  && (isset(($_SESSION['reduced_ticket'])) && ($_SESSION['reduced_ticket']) == 1)) {echo $row["reduced_price"];} else {echo $row["price"];}  ?>" /><br>
    
       <input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Προσθήκη" />
  

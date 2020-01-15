@@ -151,16 +151,7 @@ include 'login_logout_button.php';
             </div>
 
             <div class="col-xs-6 col-md-3" style="margin-left: 60px;">
-              <h2>Aνακοινώσεις: </h2> <br>
-              <!-- <h2>Ανακοινώσεις : </h2> <br>
-              <div class="card" style="width: 30rem;">
-              
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-              </ul>
-            </div> -->
+              <h2>Τελευταίες ανακοινώσεις: </h2> <br>
                   <div class="list-group" style="width: 400px;">
                   <a  class="list-group-item list-group-item-action">
                     <div class="d-flex w-100 justify-content-between">

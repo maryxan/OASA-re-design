@@ -24,10 +24,10 @@ if (isset($_POST['reg_user'])) {
   $password_2 = $_POST['password_2'] = mysqli_real_escape_string($conn, $_POST['password_2']);
 
   if(isset($_POST['reduced_ticket'])){
-    //$stok is checked and value = 1
+    //is checked and value = 1
     $reduced_ticket = 1;
     }else{
-    //$stok is nog checked and value=0
+    //is not checked and value=0
     $reduced_ticket=0;
 }
 
@@ -281,7 +281,7 @@ function check_password() {
    var password_length = $("#form_password").val().length;
    if (password_length < 6) {
       $("#password_error_message").html('<div class="alert alert-danger" role="alert">'+
-      'Ο κωδικός πρέπει να έχει μήκος τουλάχιστον 8 χαρακτήρων'+
+      'Ο κωδικός πρέπει να έχει μήκος τουλάχιστον 6 χαρακτήρων'+
       '</div>');
       $("#password_error_message").show();
       $("#form_password").css("border-bottom","2px solid #F90A0A");

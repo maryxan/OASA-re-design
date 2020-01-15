@@ -40,6 +40,7 @@ if (isset($_POST['login_user'])) {
       $_SESSION["surname"] = $row["surname"];
       $_SESSION["username"] = $row["username"];
       $_SESSION["email"] = $row["email"];
+      $_SESSION["reduced_ticket"] = $row["reduced_ticket"];
       header('location:../profile/profile.php');
     }else {
      array_push($errors, "Λανθασμένος συνδιασμός username/κωδικού");
