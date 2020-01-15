@@ -183,11 +183,11 @@ if (isset($_POST['reg_user'])) {
 
 
     <br><br>
-    <input type="checkbox" class="form-check-input" value = 1 name="reduced_ticket" style="margin-left:3px;" >
+    <input type="checkbox" class="form-check-input" value = 1 name="reduced_ticket" style="margin-left:3px;" onclick="" >
     <label class="form-check-label" for="reduced_ticket" style="margin-left: 20px;">Δικαιούμαι μειωμένο κόμιστρο (Απευθύνεται σε φοιτητές , ΑΜΕΑ και ανέργους).</label>
-
-    
-
+    <br>
+    <input id="form_AM" name="showthis" size="50" type="text" placeholder="Πληκτρολογίστε τον αριθμό του πάσου/κάρτας ανεργείας/κάρτα ΑΜΕΑ" />
+    <span class="error_form" id="AM_error_message"></span>
     
     <p>Η καταχώριση της εγγραφής σας συνεπάγεται ότι αποδέχεστε αυτόματα τους <a href="#" style="color:dodgerblue">Όρους Χρήσης</a>.</p>
 
@@ -207,6 +207,22 @@ if (isset($_POST['reg_user'])) {
       include "../components/footer/footer.php";
    ?>
 </body>
+
+<script>
+  $(function () {
+        $('input[name="showthis"]').hide();
+
+        //show it when the checkbox is clicked
+        $('input[name="reduced_ticket"]').on('click', function () {
+            if ($(this).prop('checked')) {
+                $('input[name="showthis"]').fadeIn();
+            } else {
+                $('input[name="showthis"]').hide();
+            }
+        });
+    });
+</script>
+
 <script>
    $(function() {
 
@@ -216,6 +232,7 @@ $("#email_error_message").hide();
 $("#password_error_message").hide();
 $("#retype_password_error_message").hide();
 $("#username_error_message").hide();
+$("#AM_error_message").hide();
 
 
 var error_fname = false;
@@ -224,6 +241,7 @@ var error_email = false;
 var error_password = false;
 var error_retype_password = false;
 var error_username = false;
+var error_AM = false;
 
 $("#form_fname").focusout(function(){
    check_fname();
@@ -242,6 +260,9 @@ $("#form_retype_password").focusout(function() {
 });
  $("#form_username").focusout(function() {
    check_username();
+});
+ $("#form_AM").focusout(function() {
+   check_AM();
 });
 
 function check_fname() {
@@ -338,7 +359,24 @@ function check_username() {
       error_username = true;
    }
 }
+function check_AM() {
+   var AM = $("#form_AM").val();
+   var amea = "1400107";
+   var foititis = "1400300";
+   var anergos = "1400108";
+   if (AM === amea || AM === foititis || AM === anergos) {
+     $("#AM_error_message").hide();
+      $("#form_AM").css("border-bottom","2px solid #34F458");
+   } else {
+       $("#AM_error_message").html('<div class="alert alert-danger" role="alert">'+
+      'Ο αριθμός δεν αντιστοιχεί σε πάσο ή καρτα'+
+      '</div>');
+      $("#AM_error_message").show();
+      $("#form_AM").css("border-bottom","2px solid #F90A0A");
+      error_am = true;
+   }
 
+}
 $("#registration_form").submit(function() {
    error_fname = false;
    error_sname = false;
